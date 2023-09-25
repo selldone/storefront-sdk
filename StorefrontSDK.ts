@@ -18,7 +18,6 @@ import XAPI from "./apis/XAPI";
 import { XapiShop } from "./shop/XapiShop";
 import CDN from "../../core/server/CDN";
 import URLS from "../../core/server/URLS";
-import CAPI from "../community/apis/CAPI";
 import { XapiAuth } from "./auth/XapiAuth";
 import { Shop } from "../../core/models/shop/shop.model";
 import { StorefrontAxiosSetup } from "./plugins/axios/StorefrontAxiosSetup";
@@ -29,10 +28,10 @@ import { XapiCoupon } from "./coupon/XapiCoupon";
 import { XapiOffer } from "./offer/XapiOffer";
 import { Currency, type ICurrency } from "../../core/enums/payment/Currency";
 
-import {XapiBasket} from "./basket/XapiBasket";
-import {XapiVendor} from "./vendor/XapiVendor";
-import {XapiAvocado} from "./avocado/XapiAvocado";
-import {XapiArticle} from "./article/XapiArticle";
+import { XapiBasket } from "./basket/XapiBasket";
+import { XapiVendor } from "./vendor/XapiVendor";
+import { XapiAvocado } from "./avocado/XapiAvocado";
+import { XapiArticle } from "./article/XapiArticle";
 
 const SDK_VERSION = "0.01";
 //█████████████████████████████████████████████████████████████
@@ -68,7 +67,6 @@ declare global {
     CDN: CDN;
     XAPI: XAPI;
     URLS: URLS;
-    CAPI: CAPI;
     ADDRESS_API: XAPI;
     ARTICLE_API: XAPI;
 
@@ -88,11 +86,11 @@ declare global {
       lottery: XapiLottery;
       coupon: XapiCoupon;
       offer: XapiOffer;
-      basket:XapiBasket;
-      vendor:XapiVendor;
-      avocado:XapiAvocado;
+      basket: XapiBasket;
+      vendor: XapiVendor;
+      avocado: XapiAvocado;
 
-      article:XapiArticle;
+      article: XapiArticle;
 
     };
   }
@@ -125,48 +123,49 @@ export class StorefrontSDK {
    * // Typical usage without providing shop name (relies on meta tag)
    * StorefrontSDK.Setup();
    */
-  static Setup(_shop_name?:string): void {
+  static Setup(_shop_name?: string): void {
     console.log("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
     console.log(`┣━━━━ Selldone® Storefront SDK | V${SDK_VERSION} ━━━━┫`);
     console.log("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 
-    this.CheckDependencies()
+    this.CheckDependencies();
 
+    let shop_name: string;
+    let shop_prefix_address: string;
+    let custom_home: Shop.Home | null;
 
-    let shop_name:string;
-    let shop_prefix_address:string;
-    let custom_home:Shop.Home|null;
+    if (window.$backoffice) {
+      console.style(
+        "You are using Storefront SDK within <b='color:#673AB7'>BACKOFFICE ENVIRONMENT</b>. So we initial it automatically compatible with Back Office SDK!"
+      );
 
-
-    if(window.$backoffice){
-      console.style("You are using Storefront SDK within <b='color:#673AB7'>BACKOFFICE ENVIRONMENT</b>. So we initial it automatically compatible with Back Office SDK!");
-
-      if(!_shop_name)throw "❌ Please set shop_name in the StorefrontSDK.Setup(...)!"
-      shop_name=_shop_name;
-      shop_prefix_address='';
-      custom_home=null;
+      if (!_shop_name)
+        throw "❌ Please set shop_name in the StorefrontSDK.Setup(...)!";
+      shop_name = _shop_name;
+      shop_prefix_address = "";
+      custom_home = null;
 
       //――――――――――――――――――――――――― Initialize Resources Origin ―――――――――――――――――――――――――
       // Define API repositories:
       window.XAPI = new XAPI();
-
-    }else{
+    } else {
       //――――――――――――――――――――――――― Shop Meta Tags ―――――――――――――――――――――――――
 
-       shop_name =_shop_name?_shop_name: SetupService.GetMetaValue("shop-name");
+      shop_name = _shop_name
+        ? _shop_name
+        : SetupService.GetMetaValue("shop-name");
       if (!shop_name)
         throw "❌ The shop name is not specified in the meta tag with the name 'shop-name'.";
 
-       shop_prefix_address = SetupService.GetMetaValue(
-          "shop-prefix-address",
-          ""
+      shop_prefix_address = SetupService.GetMetaValue(
+        "shop-prefix-address",
+        ""
       );
 
-       custom_home = SetupService.GetMetaValue("custom-home") as Shop.Home;
+      custom_home = SetupService.GetMetaValue("custom-home") as Shop.Home;
 
       //――――――――――――――――――――――――― Axios ―――――――――――――――――――――――――
       StorefrontAxiosSetup();
-
 
       //――――――――――――――――――――――――― Initialize Resources Origin ―――――――――――――――――――――――――
 
@@ -175,22 +174,16 @@ export class StorefrontSDK {
       window.XAPI = new XAPI();
       window.URLS = new URLS();
 
-      window.CAPI = new CAPI(); // Community API
-
       window.ADDRESS_API = window.XAPI;
       window.ARTICLE_API = window.XAPI;
-
     }
-
 
     //――――――――――――――――――――――――― Create Instance ―――――――――――――――――――――――――
     const _LOCAL_STORAGE_BASE_PATH = `shop/@${shop_name}/`;
 
     const _database = new StorefrontDatabase(shop_name);
 
-
-    window.$storefront =  {
-
+    window.$storefront = {
       name: shop_name,
       prefix_url: shop_prefix_address,
       local_storage_path: _LOCAL_STORAGE_BASE_PATH,
@@ -205,39 +198,38 @@ export class StorefrontSDK {
       lottery: new XapiLottery(shop_name),
       coupon: new XapiCoupon(shop_name),
       offer: new XapiOffer(shop_name),
-      basket:new XapiBasket(shop_name),
-      vendor:new XapiVendor(shop_name),
-      avocado:new XapiAvocado(shop_name),
+      basket: new XapiBasket(shop_name),
+      vendor: new XapiVendor(shop_name),
+      avocado: new XapiAvocado(shop_name),
 
-      article:new XapiArticle(shop_name),
+      article: new XapiArticle(shop_name),
+
     };
 
-
-    Object.defineProperty(window.$storefront, 'currency', {
-      get: function() {
+    Object.defineProperty(window.$storefront, "currency", {
+      get: function () {
         return _database.currency.getCurrency();
       },
-      set: function(value: ICurrency | keyof typeof Currency) {
+      set: function (value: ICurrency | keyof typeof Currency) {
         if (typeof value === "string") {
           value = Currency[value];
         }
         _database.currency.saveCurrency(value);
-      }
-
+      },
     });
 
-    window.$storefront.currency=_database.currency.getCurrency()
+    window.$storefront.currency = _database.currency.getCurrency();
 
-
-    console.style(`✅ Selldone® Storefront SDK [<b='color:#009688'>@${shop_name}</b>] initialized successfully.`);
-
+    console.style(
+      `✅ Selldone® Storefront SDK [<b='color:#009688'>@${shop_name}</b>] initialized successfully.`
+    );
   }
 
-
-  static CheckDependencies(){
+  static CheckDependencies() {
     if (typeof console.style !== "function") {
-      throw new Error("❌ console.style not found. Please initialize 'SelldoneCore.Setup()' before initializing the Storefront SDK.");
+      throw new Error(
+        "❌ console.style not found. Please initialize 'SelldoneCore.Setup()' before initializing the Storefront SDK."
+      );
     }
   }
-
 }

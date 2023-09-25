@@ -1,5 +1,10 @@
 # Selldone ⮕ Storefront SDK
 
+
+* **Mode:** 🌍 Public
+* **Use case:** To build custom storefront layout for shops that created by Selldone with ready to use SDK.
+
+
 A powerful toolkit that enables developers and entrepreneurs to easily create highly customized ecommerce platforms. In this article, we'll explore the capabilities of the Selldone SDK and how it can revolutionize the ecommerce landscape.
 
 ![Selldone Components](docs/images/selldone-sdk-layers.jpg)
