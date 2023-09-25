@@ -1,4 +1,4 @@
-# Selldone ⮕ Storefront SDK + Components
+# Selldone ⮕ Storefront SDK
 
 A powerful toolkit that enables developers and entrepreneurs to easily create highly customized ecommerce platforms. In this article, we'll explore the capabilities of the Selldone SDK and how it can revolutionize the ecommerce landscape.
 
