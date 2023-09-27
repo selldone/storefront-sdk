@@ -1,3 +1,5 @@
+![Selldone Official Storefront App](_docs/images/banner-storefront-sdk.jpg)
+
 # Selldone ⮕ Storefront SDK
 
 
