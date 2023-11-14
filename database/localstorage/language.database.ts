@@ -12,26 +12,28 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import type {ILanguage} from "../../../../core/enums/language/Language";
-import {Language} from "../../../../core/enums/language/Language";
+import type { ILanguage } from "../../../../core/enums/language/Language";
+import { Language } from "../../../../core/enums/language/Language";
 
 export class LanguageDatabase {
+  public shop_name: string;
 
-    public shop_name: string;
+  constructor(shop_name: string) {
+    this.shop_name = shop_name;
+  }
 
-    constructor(shop_name: string) {
-        this.shop_name = shop_name;
+  getLanguage(): ILanguage | null {
+    // Try to read from local storage:
+    const user_language = localStorage.getItem(`local-shop-${this.shop_name}`);
+    if (user_language && Language[user_language]) {
+      return Language[user_language];
     }
-
-    getLanguage(): ILanguage | null {
-        // Try to read from local storage:
-        const user_language = localStorage.getItem(`local-shop-${this.shop_name}`);
-        if (user_language && Language[user_language]) {
-            return Language[user_language];
-        }
-        return null;
-    }
-    setLanguage(language:ILanguage|string){
-        localStorage.setItem("local-shop-" + window.$storefront.name,(typeof language === 'object')?language.code:language );
-    }
+    return null;
+  }
+  setLanguage(language: ILanguage | string) {
+    localStorage.setItem(
+      "local-shop-" + this.shop_name,
+      typeof language === "object" ? language.code : language
+    );
+  }
 }

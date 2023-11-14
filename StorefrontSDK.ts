@@ -91,7 +91,6 @@ declare global {
       avocado: XapiAvocado;
 
       article: XapiArticle;
-
     };
   }
 }
@@ -203,7 +202,6 @@ export class StorefrontSDK {
       avocado: new XapiAvocado(shop_name),
 
       article: new XapiArticle(shop_name),
-
     };
 
     Object.defineProperty(window.$storefront, "currency", {
