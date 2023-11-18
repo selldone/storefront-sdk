@@ -12,10 +12,10 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { IErrorResponse } from "../../../../../core/server/APIAbstract";
+import { IErrorResponse } from "@core/server/APIAbstract";
 import { AxiosError } from "axios";
-import { LocalStorages } from "../../../../../core/helper/local-storage/LocalStorages";
-import { ExchangeRate } from "../../../../../core/models/shop/payment/exchange_rate.model";
+import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
+import { ExchangeRate } from "@core/models/shop/payment/exchange_rate.model";
 
 export default function fetchRates(
   this: any,

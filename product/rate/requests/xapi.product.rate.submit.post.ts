@@ -13,7 +13,7 @@
  */
 
 import type {XapiProductRate} from "../XapiProductRate";
-import type {ProductRating} from "../../../../../core/models/shop/product/product-rating.model";
+import type {ProductRating} from "@core/models/shop/product/product-rating.model";
 
 /**
  * Set rate for purchased product.
