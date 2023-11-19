@@ -16,7 +16,7 @@ import { LocalStorages } from "../../../../core/helper/local-storage/LocalStorag
 import { StorefrontDatabase } from "../StorefrontDatabase";
 import { Currency, ICurrency } from "../../../../core/enums/payment/Currency";
 import SetupService from "../../../../core/server/SetupService";
-import { TrackConfig } from "@/Applications/Selldone/plugins/gtag/TrackConfig";
+import { TrackConfig } from "@app-selldone/plugins/gtag/TrackConfig";
 
 export class CurrencyDatabase {
   /** Name of the shop for which the API operations will be performed. */
