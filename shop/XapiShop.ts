@@ -1,13 +1,13 @@
-import { APIAbstract } from "../../../core/server/APIAbstract";
+import { APIAbstract } from "@core/server/APIAbstract";
 import { XapiExchangeRate } from "./exchange-rates/XapiExchangeRate";
-import { ExchangeRate } from "../../../core/models/shop/payment/exchange_rate.model";
-import { LocalStorages } from "../../../core/helper/local-storage/LocalStorages";
-import { Shop } from "../../../core/models/shop/shop.model";
-import type { Basket } from "../../../core/models/shop/order/basket/basket.model";
+import { ExchangeRate } from "@core/models/shop/payment/exchange_rate.model";
+import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
+import { Shop } from "@core/models/shop/shop.model";
+import type { Basket } from "@core/models/shop/order/basket/basket.model";
 import { XapiLanguage } from "./language/XapiLanguage";
-import { Popup } from "../../../core/models/shop/popup/popup.model";
-import type { GatewayQue } from "../../../core/models/shop/payment/gateway-que.model";
-import {Club} from "../../../core/models/shop/club/club.model";
+import { Popup } from "@core/models/shop/popup/popup.model";
+import type { GatewayQue } from "@core/models/shop/payment/gateway-que.model";
+import {Club} from "@core/models/shop/club/club.model";
 
 /**
  * The `XapiShop` class provides an interface to interact with the shop-related

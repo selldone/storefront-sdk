@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "../../../core/server/APIAbstract";
+import { APIAbstract } from "@core/server/APIAbstract";
 import fetchLotteryPrizes from "./requests/xapi.lottery.get";
 
 export class XapiLottery extends APIAbstract {

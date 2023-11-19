@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { LocalStorages } from "../../../../core/helper/local-storage/LocalStorages";
+import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
 import { StorefrontDatabase } from "../StorefrontDatabase";
 
 export class CouponDatabase {

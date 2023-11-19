@@ -1,4 +1,4 @@
-import { APIAbstract } from "../../../../core/server/APIAbstract";
+import { APIAbstract } from "@core/server/APIAbstract";
 import fetchLanguagePack from "./requests/xapi.language.get";
 
 export class XapiLanguage extends APIAbstract {

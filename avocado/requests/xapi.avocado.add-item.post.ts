@@ -13,7 +13,7 @@
  */
 
 import type {XapiAvocado} from "../XapiAvocado";
-import type {AvocadoItem} from "../../../../core/models/shop/order/avocado/avocado.item";
+import type {AvocadoItem} from "@core/models/shop/order/avocado/avocado.item";
 
 
 

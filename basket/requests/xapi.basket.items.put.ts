@@ -12,10 +12,10 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "../../../../core/enums/payment/Currency";
-import { BasketItem } from "../../../../core/models/shop/order/basket/basket_item.model";
+import { Currency } from "@core/enums/payment/Currency";
+import { BasketItem } from "@core/models/shop/order/basket/basket_item.model";
 import { XapiBasket } from "../XapiBasket";
-import { Basket } from "../../../../core/models/shop/order/basket/basket.model";
+import { Basket } from "@core/models/shop/order/basket/basket.model";
 
 /**
  * Fetches eligible coupons for the buyer.

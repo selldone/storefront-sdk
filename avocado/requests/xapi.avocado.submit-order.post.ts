@@ -12,9 +12,9 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "../../../../core/enums/payment/Currency";
+import { Currency } from "@core/enums/payment/Currency";
 import type {XapiAvocado} from "../XapiAvocado";
-import type {Avocado} from "../../../../core/models/shop/order/avocado/avocado.order";
+import type {Avocado} from "@core/models/shop/order/avocado/avocado.order";
 
 
 

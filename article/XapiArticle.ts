@@ -1,4 +1,4 @@
-import { APIAbstract } from "../../../core/server/APIAbstract";
+import { APIAbstract } from "@core/server/APIAbstract";
 import {XapiArticleTag} from "./tag/XapiArticleTag";
 
 export class XapiArticle extends APIAbstract {

@@ -12,8 +12,8 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import type { ILanguage } from "../../../../core/enums/language/Language";
-import { Language } from "../../../../core/enums/language/Language";
+import type { ILanguage } from "@core/enums/language/Language";
+import { Language } from "@core/enums/language/Language";
 
 export class LanguageDatabase {
   public shop_name: string;

@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "../../../../core/enums/payment/Currency";
+import { Currency } from "@core/enums/payment/Currency";
 import { XapiUser } from "../XapiUser";
 
 export default function setUserCurrency(

@@ -1,5 +1,5 @@
 import setArticleTags from "./requests/xapi.article.tags.post";
-import {APIAbstract} from "../../../../core/server/APIAbstract";
+import {APIAbstract} from "@core/server/APIAbstract";
 import updateTag from "./requests/xapi.article.tags.put";
 import getTags from "./requests/Xapi.article.tags.get";
 

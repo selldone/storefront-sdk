@@ -12,8 +12,8 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "../../../../core/enums/payment/Currency";
-import { Coupon } from "../../../../core/models/shop/incentives/coupon/coupon.model";
+import { Currency } from "@core/enums/payment/Currency";
+import { Coupon } from "@core/models/shop/incentives/coupon/coupon.model";
 import {XapiCoupon} from "../XapiCoupon";
 
 /**

@@ -1,5 +1,5 @@
 import submitMyRate from "./requests/xapi.product.rate.submit.post";
-import {APIAbstract} from "../../../../core/server/APIAbstract";
+import {APIAbstract} from "@core/server/APIAbstract";
 
 
 export class XapiProductRate extends APIAbstract {

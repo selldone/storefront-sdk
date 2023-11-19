@@ -1,4 +1,4 @@
-import {APIAbstract} from "../../../core/server/APIAbstract";
+import {APIAbstract} from "@core/server/APIAbstract";
 import getVendor from "./requests/xapi.vendor.get";
 
 

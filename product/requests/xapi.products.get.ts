@@ -13,8 +13,8 @@
  */
 
 import { XapiProduct } from "../XapiProduct";
-import { Product } from "../../../../core/models/shop/product/product.model";
-import { Category } from "../../../../core/models/shop/category/category.model";
+import { Product } from "@core/models/shop/product/product.model";
+import { Category } from "@core/models/shop/category/category.model";
 
 export default function fetchProducts(
   this: XapiProduct,

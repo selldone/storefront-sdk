@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "../../../core/server/APIAbstract";
+import { APIAbstract } from "@core/server/APIAbstract";
 import submitOrder from "./requests/xapi.avocado.submit-order.post";
 import addItem from "./requests/xapi.avocado.add-item.post";
 import updateReceiverInfo from "./requests/xapi.avocado.receiver-info.put";

@@ -1,4 +1,4 @@
-import { APIAbstract } from "../../../core/server/APIAbstract";
+import { APIAbstract } from "@core/server/APIAbstract";
 import fetchProducts from "./requests/xapi.products.get";
 import getInfo from "./requests/xapi.product.get";
 import {XapiProductRate} from "./rate/XapiProductRate";

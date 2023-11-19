@@ -1,5 +1,5 @@
-import SetupService from "../../../core/server/SetupService";
-import {Currency} from "../../../core/enums/payment/Currency";
+import SetupService from "@core/server/SetupService";
+import {Currency} from "@core/enums/payment/Currency";
 
 export default class XAPI {
   selldone_xapi_url: string = "";

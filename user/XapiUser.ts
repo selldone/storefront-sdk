@@ -1,5 +1,5 @@
-import { LocalStorages } from "../../../core/helper/local-storage/LocalStorages";
-import { APIAbstract, type IErrorResponse } from "../../../core/server/APIAbstract";
+import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
+import { APIAbstract, type IErrorResponse } from "@core/server/APIAbstract";
 import { AxiosError } from "axios";
 import setUserCurrency from "./requests/xapi.user.currency.put";
 import setFcmToken from "./requests/xapi.user.fcm.post";

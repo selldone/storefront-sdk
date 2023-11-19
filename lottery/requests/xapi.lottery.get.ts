@@ -13,7 +13,7 @@
  */
 
 import { XapiLottery } from "../XapiLottery";
-import {Lottery} from "../../../../core/models/shop/incentives/lottery/lottery.model";
+import {Lottery} from "@core/models/shop/incentives/lottery/lottery.model";
 
 /**
  * Fetches the lottery prizes that the current customer has won.

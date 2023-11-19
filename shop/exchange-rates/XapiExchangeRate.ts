@@ -1,4 +1,4 @@
-import { APIAbstract } from "../../../../core/server/APIAbstract";
+import { APIAbstract } from "@core/server/APIAbstract";
 import fetchRates from "./requests/xapi.exchange-rates.get";
 
 export class XapiExchangeRate extends APIAbstract {

@@ -1,5 +1,5 @@
-import SetupService from "../../../../core/server/SetupService";
-import { LocalStorages } from "../../../../core/helper/local-storage/LocalStorages";
+import SetupService from "@core/server/SetupService";
+import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
 
 export function StorefrontAxiosSetup() {
   const shop_name = SetupService.GetMetaValue("shop-name");
