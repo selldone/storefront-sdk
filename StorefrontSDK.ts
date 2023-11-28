@@ -32,6 +32,7 @@ import { XapiBasket } from "./basket/XapiBasket";
 import { XapiVendor } from "./vendor/XapiVendor";
 import { XapiAvocado } from "./avocado/XapiAvocado";
 import { XapiArticle } from "./article/XapiArticle";
+import { StorefrontRoutesName } from "@core/enums/route/StorefrontRoutesName";
 
 const SDK_VERSION = "0.01";
 //█████████████████████████████████████████████████████████████
@@ -91,6 +92,9 @@ declare global {
       avocado: XapiAvocado;
 
       article: XapiArticle;
+
+      // Routes Name:
+      routes: typeof StorefrontRoutesName;
     };
   }
 }
@@ -202,6 +206,8 @@ export class StorefrontSDK {
       avocado: new XapiAvocado(shop_name),
 
       article: new XapiArticle(shop_name),
+
+      routes: StorefrontRoutesName,
     };
 
     Object.defineProperty(window.$storefront, "currency", {
