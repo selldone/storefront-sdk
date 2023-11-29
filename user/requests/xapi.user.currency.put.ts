@@ -21,7 +21,7 @@ export default function setUserCurrency(
 ) {
   const params = { currency: currency };
   const url = window.XAPI.PUT_SET_USER_CURRENCY(this.shop_name);
-  return this.putNow<xapi.user.currency.put.IResponse>(url, params);
+  return this.putNow<xapi.user.currency.put.IResponse>(url, params,{accept_error_response:true}/*If guest shopping be disabled, then Selldone return error! But we want to accept this as correct response!*/);
 }
 
 //█████████████████████████████████████████████████████████████
