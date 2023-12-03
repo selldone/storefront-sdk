@@ -1,3 +1,5 @@
+![License](https://img.shields.io/github/license/selldone/storefront-sdk.svg)
+
 ![Selldone Official Storefront App](_docs/images/banner-storefront-sdk.jpg)
 
 # Selldone ⮕ Storefront SDK
