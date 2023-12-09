@@ -15,7 +15,7 @@
 import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
 import { StorefrontDatabase } from "../StorefrontDatabase";
 import { Currency, ICurrency } from "@core/enums/payment/Currency";
-import SetupService from "@core/server/SetupService";
+import { SetupService } from "@core/server/SetupService";
 import { TrackConfig } from "@core/enums/gtag/TrackConfig";
 
 export class CurrencyDatabase {

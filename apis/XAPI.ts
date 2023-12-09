@@ -12,10 +12,10 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import SetupService from "@core/server/SetupService";
-import {Currency} from "@core/enums/payment/Currency";
+import { SetupService } from "@core/server/SetupService";
+import { Currency } from "@core/enums/payment/Currency";
 
-export default class XAPI {
+export class XAPI {
   selldone_xapi_url: string = "";
 
   /**
@@ -27,9 +27,7 @@ export default class XAPI {
    *
    */
   constructor() {
-
-      this.selldone_xapi_url = SetupService.GetMetaValue("selldone-xapi")
-
+    this.selldone_xapi_url = SetupService.GetMetaValue("selldone-xapi");
   }
 
   //―――――――――――――――――――――― Login By SMS ――――――――――――――――――――

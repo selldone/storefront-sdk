@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import SetupService from "@core/server/SetupService";
+import { SetupService } from "@core/server/SetupService";
 import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
 
 export function StorefrontAxiosSetup() {
