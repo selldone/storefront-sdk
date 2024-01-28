@@ -13,7 +13,7 @@
  */
 
 import { SetupService } from "@core/server/SetupService";
-import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
+import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
 
 export function StorefrontAxiosSetup() {
   const shop_name = SetupService.GetMetaValue("shop-name");
@@ -78,7 +78,7 @@ export function StorefrontAxiosSetup() {
 
   // 🞧 Popup: We save seen_pops in localstorage (Client) and send in the header request
   const seen_pops = localStorage.getItem(
-    LocalStorages.GetSeenPopups(`shop/@${shop_name}/`)
+    StorefrontLocalStorages.GetSeenPopups(`shop/@${shop_name}/`)
   );
   if (seen_pops) {
     window.axios.defaults.headers.common["S-Pops"] = seen_pops;
@@ -118,9 +118,9 @@ export function StorefrontAxiosSetup() {
   //――――――――――――――――――――――――― Set Guest Code in header ―――――――――――――――――――――――――
   // ▀▀▀▀▀▀▀▀▀ 🥶 Guest ▀▀▀▀▀▀▀▀▀
   // Set guest code (use for guest basket)
-  if (LocalStorages.GetShopGuestCode()) {
+  if (StorefrontLocalStorages.GetShopGuestCode()) {
     // 🞧 Header: Add guest code to all headers:
     window.axios.defaults.headers.common["S-Guest"] =
-      LocalStorages.GetShopGuestCode();
+      StorefrontLocalStorages.GetShopGuestCode();
   }
 }

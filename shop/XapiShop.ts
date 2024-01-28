@@ -15,7 +15,7 @@
 import { APIAbstract } from "@core/server/APIAbstract";
 import { XapiExchangeRate } from "./exchange-rates/XapiExchangeRate";
 import { ExchangeRate } from "@core/models/shop/payment/exchange_rate.model";
-import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
+import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
 import { Shop } from "@core/models/shop/shop.model";
 import type { Basket } from "@core/models/shop/order/basket/basket.model";
 import { XapiLanguage } from "./language/XapiLanguage";
@@ -64,7 +64,7 @@ export class XapiShop extends APIAbstract {
    */
   public fetchShop(): Promise<XapiShop.IGetShopInfoResponse> {
     const url = window.XAPI.GET_SHOP_INFO(this.shop_name);
-    const guest_codes = LocalStorages.GetShopHistoryGuestAllCodes().limit(10); // We use it to get pending transactions!
+    const guest_codes = StorefrontLocalStorages.GetShopHistoryGuestAllCodes().limit(10); // We use it to get pending transactions!
     const params = { guest_codes: guest_codes };
     return this.getNow<XapiShop.IGetShopInfoResponse>(url, params);
   }

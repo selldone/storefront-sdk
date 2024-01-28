@@ -14,7 +14,7 @@
 
 import { IErrorResponse } from "@core/server/APIAbstract";
 import { AxiosError } from "axios";
-import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
+import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
 import { ExchangeRate } from "@core/models/shop/payment/exchange_rate.model";
 
 export default function fetchRates(
@@ -25,8 +25,8 @@ export default function fetchRates(
   onError?: (error: IErrorResponse | AxiosError) => void
 ): void {
   const params = {
-    codes: LocalStorages.GetShopHistoryGuestAllCodes(),
-    guest_code: LocalStorages.GetShopGuestCode(),
+    codes: StorefrontLocalStorages.GetShopHistoryGuestAllCodes(),
+    guest_code: StorefrontLocalStorages.GetShopGuestCode(),
   };
   const url = window.XAPI.GET_EXCHANGE_RATES(this.shop_name);
   this.getDebounce(url, params, onSuccess, onError, {

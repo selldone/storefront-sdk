@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
+import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
 import { StorefrontDatabase } from "../StorefrontDatabase";
 import { Currency, ICurrency } from "@core/enums/payment/Currency";
 import { SetupService } from "@core/server/SetupService";
@@ -31,7 +31,7 @@ export class CurrencyDatabase {
 
     // Try to read from local storage:
     const user_currency = localStorage.getItem(
-      LocalStorages.GetUserCurrencyPath(_base_path)
+      StorefrontLocalStorages.GetUserCurrencyPath(_base_path)
     );
     if (user_currency && Currency[user_currency]) {
       return Currency[user_currency];
@@ -54,7 +54,7 @@ export class CurrencyDatabase {
 
     localStorage.setItem(
       // @ts-ignore
-      LocalStorages.GetUserCurrencyPath(_base_path),
+      StorefrontLocalStorages.GetUserCurrencyPath(_base_path),
       currencyCode
     );
     TrackConfig.SetCurrency(currencyCode);

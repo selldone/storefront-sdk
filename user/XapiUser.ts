@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
+import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
 import { APIAbstract, type IErrorResponse } from "@core/server/APIAbstract";
 import { AxiosError } from "axios";
 import setUserCurrency from "./requests/xapi.user.currency.put";
@@ -36,8 +36,8 @@ export class XapiUser extends APIAbstract {
     onError?: (error: IErrorResponse | AxiosError) => void
   ): void {
     const params = {
-      codes: LocalStorages.GetShopHistoryGuestAllCodes(),
-      guest_code: LocalStorages.GetShopGuestCode(),
+      codes: StorefrontLocalStorages.GetShopHistoryGuestAllCodes(),
+      guest_code: StorefrontLocalStorages.GetShopGuestCode(),
     };
     const url = window.XAPI.GET_USER();
     this.getDebounce(url, params, onSuccess, onError, {

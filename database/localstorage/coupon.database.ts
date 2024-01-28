@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { LocalStorages } from "@core/helper/local-storage/LocalStorages";
+import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
 import { StorefrontDatabase } from "../StorefrontDatabase";
 
 export class CouponDatabase {
@@ -25,7 +25,7 @@ export class CouponDatabase {
 
   getCouponCodes() {
     const raw = localStorage.getItem(
-      LocalStorages.GetShopCouponsCodes(window.$storefront.local_storage_path)
+      StorefrontLocalStorages.GetShopCouponsCodes(window.$storefront.local_storage_path)
     );
     if (raw)
       try {
@@ -42,7 +42,7 @@ export class CouponDatabase {
     if (!codes.includes(code)) codes.push(code);
 
     localStorage.setItem(
-        LocalStorages.GetShopCouponsCodes(window.$storefront.local_storage_path),
+        StorefrontLocalStorages.GetShopCouponsCodes(window.$storefront.local_storage_path),
         JSON.stringify(codes)
     );
   }
@@ -52,7 +52,7 @@ export class CouponDatabase {
     if (codes.includes(code)) codes.splice(codes.indexOf(code), 1);
 
     localStorage.setItem(
-        LocalStorages.GetShopCouponsCodes(window.$storefront.local_storage_path),
+        StorefrontLocalStorages.GetShopCouponsCodes(window.$storefront.local_storage_path),
         JSON.stringify(codes)
     );
   }

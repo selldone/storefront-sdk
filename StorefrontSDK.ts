@@ -34,7 +34,7 @@ import { XapiAvocado } from "./avocado/XapiAvocado";
 import { XapiArticle } from "./article/XapiArticle";
 import { StorefrontRoutesName } from "@core/enums/route/StorefrontRoutesName";
 
-const SDK_VERSION = "0.01";
+const SDK_VERSION = "0.02";
 //█████████████████████████████████████████████████████████████
 //―――――――――――――― Global Types ―――――――――――――――
 //█████████████████████████████████████████████████████████████
