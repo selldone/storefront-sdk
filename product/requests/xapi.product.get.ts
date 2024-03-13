@@ -12,12 +12,11 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { XapiProduct } from "../XapiProduct";
-import { Product } from "@core/models/shop/product/product.model";
+import {XapiProduct} from "../XapiProduct";
+import {Product} from "@core/models/shop/product/product.model";
 import {Currency} from "@core/enums/payment/Currency";
 import {Category} from "@core/models/shop/category/category.model";
 import type {Article} from "@core/models/article/article.model";
-
 
 /**
  * Language of returned article determine by 'X-Localization' in the header.
@@ -28,31 +27,30 @@ import type {Article} from "@core/models/article/article.model";
 export default function getInfo(
   this: XapiProduct,
   product_id: string | number,
-  options?: xapi.product.get.IOptions
+  options?: xapi.product.get.IOptions,
 ): Promise<xapi.product.get.IResponse> {
-  product_id=parseInt(''+product_id)
-  const url = window.XAPI.GET_PRODUCT_INFO(this.shop_name,product_id);
+  product_id = parseInt("" + product_id);
+  const url = window.XAPI.GET_PRODUCT_INFO(this.shop_name, product_id);
 
-  return this.getNow<xapi.product.get.IResponse>(url, options,(caches)=>{
+  return this.getNow<xapi.product.get.IResponse>(url, options, (caches) => {
     // Find product in previously fetched products list:
     let foundProduct = null;
 
     for (const [cacheKey, cacheValue] of caches.entries()) {
-      const products = cacheValue?.products as Product[] || null || undefined;
+      const products = (cacheValue?.products as Product[]) || null || undefined;
 
       if (Array.isArray(products)) {
-        const found = products.find(p => p.id === product_id);
+        const found = products.find((p) => p.id === product_id);
 
         if (found) {
-         // console.log('WE FIND!', product_id, found);
+          // console.log('WE FIND!', product_id, found);
           foundProduct = found;
           break; // Exit the loop once the product is found
         }
       }
     }
 
-if(foundProduct)return {product:foundProduct}
-
+    if (foundProduct) return { product: foundProduct };
   });
 }
 
@@ -63,36 +61,34 @@ if(foundProduct)return {product:foundProduct}
 export namespace xapi.product.get {
   export interface IResponse {
     product: Product & {
-      article_pack:{
-        article?:(Article & {tags:string[]})|null;
-        can_edit?:boolean;  // Current user has access to edit article.
+      article_pack: {
+        article?: (Article & { tags: string[] }) | null;
+        can_edit?: boolean; // Current user has access to edit article.
 
         // Current customer interactions with article:
-        liked?:boolean;
-        stared?:boolean;
-        follow?:boolean;
-        catch_power?:boolean;
-        reported?:boolean;
-      }
+        liked?: boolean;
+        stared?: boolean;
+        follow?: boolean;
+        catch_power?: boolean;
+        reported?: boolean;
+      };
     };
 
-    campaign_id:number|null;
-    link_id:number|null;
-    comments_count:number|null;
-    'preferred-language':keyof typeof Currency,
+    campaign_id: number | null;
+    link_id: number | null;
+    comments_count: number | null;
+    "preferred-language": keyof typeof Currency;
 
-
-    categories?:Pick<Category,'id'| 'title'| 'name'| 'description'| 'parent_id'| 'icon' >[];
+    categories?: Pick<
+      Category,
+      "id" | "title" | "name" | "description" | "parent_id" | "icon"
+    >[];
 
     // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ 🟣 Marketplace 🟣 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    vendors?:IVendorOptions[];
-
-
-
-
+    vendors?: IVendorOptions[];
   }
 
-  export interface IVendorOptions{
+  export interface IVendorOptions {
     id: number; // Corresponds to 'vendor_products.id AS id'
     name: string; // Corresponds to 'vendors.name AS name'
     description: string; // Corresponds to 'vendors.description AS description'
@@ -115,8 +111,8 @@ export namespace xapi.product.get {
    * @see getFilteredProducts for more details.
    */
   export interface IOptions {
-    "augmented-categories"?:number   // Return n categories in the parent folder of current category
-    "augmented-cross-sells"?:boolean // Return cross-selling items (max 3 items)
-    no_article?:boolean // Not return article (product description)
+    "augmented-categories"?: number; // Return n categories in the parent folder of current category
+    "augmented-cross-sells"?: boolean; // Return cross-selling items (max 3 items)
+    no_article?: boolean; // Not return article (product description)
   }
 }
