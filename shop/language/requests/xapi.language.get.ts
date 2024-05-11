@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { ExchangeRate } from "@core/models/shop/payment/exchange_rate.model";
+import { ExchangeRate } from "@selldone/core-js/models/shop/payment/exchange_rate.model";
 import { XapiLanguage } from "../XapiLanguage";
 
 export default function fetchLanguagePack(

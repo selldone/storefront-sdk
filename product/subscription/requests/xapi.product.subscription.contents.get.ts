@@ -13,8 +13,8 @@
  */
 
 import type {XapiProductSubscription} from "../XapiProductSubscription";
-import type {ProductContent} from "@core/models/shop/product/product-content.model";
-import type {ProductFile} from "@core/models/shop/product/product-file.model";
+import type {ProductContent} from "@selldone/core-js/models/shop/product/product-content.model";
+import type {ProductFile} from "@selldone/core-js/models/shop/product/product-file.model";
 
 
 export default function getContents(

@@ -13,27 +13,27 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { SetupService } from "@core/server/SetupService";
+import { SetupService } from "@selldone/core-js/server/SetupService";
 import { XapiUser } from "./user/XapiUser";
 import { XAPI } from "./apis/XAPI";
 import { XapiShop } from "./shop/XapiShop";
-import { CDN } from "@core/server/CDN";
-import { URLS } from "@core/server/URLS";
+import { CDN } from "@selldone/core-js/server/CDN";
+import { URLS } from "@selldone/core-js/server/URLS";
 import { XapiAuth } from "./auth/XapiAuth";
-import { Shop } from "@core/models/shop/shop.model";
+import { Shop } from "@selldone/core-js/models/shop/shop.model";
 import { StorefrontAxiosSetup } from "./plugins/axios/StorefrontAxiosSetup";
 import { XapiProduct } from "./product/XapiProduct";
 import { XapiLottery } from "./lottery/XapiLottery";
 import { StorefrontDatabase } from "./database/StorefrontDatabase";
 import { XapiCoupon } from "./coupon/XapiCoupon";
 import { XapiOffer } from "./offer/XapiOffer";
-import { Currency, type ICurrency } from "@core/enums/payment/Currency";
+import { Currency, type ICurrency } from "@selldone/core-js/enums/payment/Currency";
 
 import { XapiBasket } from "./basket/XapiBasket";
 import { XapiVendor } from "./vendor/XapiVendor";
 import { XapiAvocado } from "./avocado/XapiAvocado";
 import { XapiArticle } from "./article/XapiArticle";
-import { StorefrontRoutesName } from "@core/enums/route/StorefrontRoutesName";
+import { StorefrontRoutesName } from "@selldone/core-js/enums/route/StorefrontRoutesName.ts";
 
 const SDK_VERSION = "0.02";
 //█████████████████████████████████████████████████████████████

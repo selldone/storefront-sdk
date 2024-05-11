@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@core/server/APIAbstract";
+import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
 import addItem from "./requests/xapi.basket.items.put";
 import removeItem from "./requests/xapi.basket.items.delete";
 

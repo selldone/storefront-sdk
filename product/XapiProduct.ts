@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {APIAbstract} from "@core/server/APIAbstract";
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
 import fetchProducts from "./requests/xapi.products.get";
 import getInfo from "./requests/xapi.product.get";
 import {XapiProductRate} from "./rate/XapiProductRate";

@@ -13,8 +13,8 @@
  */
 
 import type {XapiAvocado} from "../XapiAvocado";
-import type {Avocado} from "@core/models/shop/order/avocado/avocado.order";
-import type {Basket} from "@core/models/shop/order/basket/basket.model";
+import type {Avocado} from "@selldone/core-js/models/shop/order/avocado/avocado.order";
+import type {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
 
 
 

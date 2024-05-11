@@ -12,8 +12,8 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { SetupService } from "@core/server/SetupService";
-import { Currency } from "@core/enums/payment/Currency";
+import { SetupService } from "@selldone/core-js/server/SetupService";
+import { Currency } from "@selldone/core-js/enums/payment/Currency";
 
 export class XAPI {
   selldone_xapi_url: string = "";

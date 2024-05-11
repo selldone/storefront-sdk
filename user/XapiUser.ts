@@ -12,8 +12,8 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
-import { APIAbstract, type IErrorResponse } from "@core/server/APIAbstract";
+import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
+import { APIAbstract, type IErrorResponse } from "@selldone/core-js/server/APIAbstract";
 import { AxiosError } from "axios";
 import setUserCurrency from "./requests/xapi.user.currency.put";
 import setFcmToken from "./requests/xapi.user.fcm.post";

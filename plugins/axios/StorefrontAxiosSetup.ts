@@ -12,8 +12,8 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { SetupService } from "@core/server/SetupService";
-import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
+import { SetupService } from "@selldone/core-js/server/SetupService";
+import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
 
 export function StorefrontAxiosSetup() {
   const shop_name = SetupService.GetMetaValue("shop-name");

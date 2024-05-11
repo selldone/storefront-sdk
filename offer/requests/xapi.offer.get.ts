@@ -12,9 +12,9 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "@core/enums/payment/Currency";
+import { Currency } from "@selldone/core-js/enums/payment/Currency";
 import { XapiOffer } from "../XapiOffer";
-import { Offer } from "@core/models/shop/incentives/offer/offer.model";
+import { Offer } from "@selldone/core-js/models/shop/incentives/offer/offer.model";
 
 export default function fetchOffers(
   this: XapiOffer,

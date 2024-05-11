@@ -12,11 +12,11 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
+import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
 import { StorefrontDatabase } from "../StorefrontDatabase";
-import { Currency, ICurrency } from "@core/enums/payment/Currency";
-import { SetupService } from "@core/server/SetupService";
-import { TrackConfig } from "@core/enums/gtag/TrackConfig";
+import { Currency, ICurrency } from "@selldone/core-js/enums/payment/Currency";
+import { SetupService } from "@selldone/core-js/server/SetupService";
+import { TrackConfig } from "@selldone/core-js/enums/gtag/TrackConfig";
 
 export class CurrencyDatabase {
   /** Name of the shop for which the API operations will be performed. */

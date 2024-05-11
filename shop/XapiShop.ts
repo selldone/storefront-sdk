@@ -12,16 +12,16 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@core/server/APIAbstract";
+import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
 import { XapiExchangeRate } from "./exchange-rates/XapiExchangeRate";
-import { ExchangeRate } from "@core/models/shop/payment/exchange_rate.model";
-import { StorefrontLocalStorages } from "@core/helper/local-storage/StorefrontLocalStorages";
-import { Shop } from "@core/models/shop/shop.model";
-import type { Basket } from "@core/models/shop/order/basket/basket.model";
+import { ExchangeRate } from "@selldone/core-js/models/shop/payment/exchange_rate.model";
+import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
+import { Shop } from "@selldone/core-js/models/shop/shop.model";
+import type { Basket } from "@selldone/core-js/models/shop/order/basket/basket.model";
 import { XapiLanguage } from "./language/XapiLanguage";
-import { Popup } from "@core/models/shop/popup/popup.model";
-import type { GatewayQue } from "@core/models/shop/payment/gateway-que.model";
-import {Club} from "@core/models/shop/club/club.model";
+import { Popup } from "@selldone/core-js/models/shop/popup/popup.model";
+import type { GatewayQue } from "@selldone/core-js/models/shop/payment/gateway-que.model";
+import {Club} from "@selldone/core-js/models/shop/club/club.model";
 
 /**
  * The `XapiShop` class provides an interface to interact with the shop-related

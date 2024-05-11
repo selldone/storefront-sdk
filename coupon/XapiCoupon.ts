@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@core/server/APIAbstract";
+import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
 import fetchAvailableCoupons from "../coupon/requests/xapi.coupons.get";
 
 export class XapiCoupon extends APIAbstract {

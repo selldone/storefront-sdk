@@ -14,7 +14,7 @@
 
 
 import {XapiVendor} from "../XapiVendor";
-import type {Vendor} from "@core/models/shop/vendor/vendor.model";
+import type {Vendor} from "@selldone/core-js/models/shop/vendor/vendor.model";
 
 export default function getVendor(
   this: XapiVendor,
