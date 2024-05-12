@@ -22,6 +22,10 @@ import { XapiLanguage } from "./language/XapiLanguage";
 import { Popup } from "@selldone/core-js/models/shop/popup/popup.model";
 import type { GatewayQue } from "@selldone/core-js/models/shop/payment/gateway-que.model";
 import {Club} from "@selldone/core-js/models/shop/club/club.model";
+import {Transportation} from "@selldone/core-js/models/shop/shipping/transportation.model.ts";
+import {Gateway} from "@selldone/core-js/models/shop/gateway/gateway.model.ts";
+import {ShopMenu} from "@selldone/core-js/models/shop/design/menu.model.ts";
+import {ProductBadge} from "@selldone/core-js/models/shop/product/badge.model.ts";
 
 /**
  * The `XapiShop` class provides an interface to interact with the shop-related
