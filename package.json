@@ -1,6 +1,6 @@
 {
   "name": "@selldone/sdk-storefront",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "type": "module",
   "author": "Mehrdad Pajuhaan <mehrdad@selldone.com> (https://selldone.com)",
@@ -12,11 +12,11 @@
   },
 
   "bugs": {
-    "url": "https://github.com/selldone/sdk-storefront/issues"
+    "url": "https://github.com/selldone/storefront-sdk/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/selldone/sdk-storefront.git"
+    "url": "git+https://github.com/selldone/storefront-sdk.git"
   },
   "homepage": "https://selldone.com",
   "license": "MIT",
