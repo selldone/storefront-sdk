@@ -22,7 +22,7 @@ To install Selldone Core in your project, use the following command:
 
 
 ```bash
-npm install selldone/sdk-storefront
+npm install @selldone/sdk-storefront
 ```
 ```bash
 yarn add @selldone/sdk-storefront
