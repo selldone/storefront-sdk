@@ -15,6 +15,34 @@
 
 A powerful toolkit that enables developers and entrepreneurs to easily create highly customized ecommerce platforms. In this article, we'll explore the capabilities of the Selldone SDK and how it can revolutionize the ecommerce landscape.
 
+
+## Installation
+
+To install Selldone Core in your project, use the following command:
+
+
+```bash
+npm install selldone/sdk-storefront
+```
+```bash
+yarn add @selldone/sdk-storefront
+```
+
+## Usage
+
+Here's a basic example to get you started:
+
+```javascript
+import {StorefrontSDK} from "@selldone/sdk-storefront";
+
+// ━━━ Storefront SDK (xapi,...) ━━━
+StorefrontSDK.Setup(); // Set up the Shop SDK.
+```
+
+
+
+
+
 ![Selldone Components](docs/images/selldone-sdk-layers.jpg)
 
 ## Selldone SDK - A Comprehensive Toolkit for Custom Ecommerce Development
