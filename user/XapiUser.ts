@@ -17,6 +17,7 @@ import { APIAbstract, type IErrorResponse } from "@selldone/core-js/server/APIAb
 import { AxiosError } from "axios";
 import setUserCurrency from "./requests/xapi.user.currency.put";
 import setFcmToken from "./requests/xapi.user.fcm.post";
+import {UserProfile} from "@selldone/core-js/models/user/user_profile.model";
 
 
 export class XapiUser extends APIAbstract {

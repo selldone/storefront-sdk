@@ -1,43 +1,41 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "ESNext",
+    "module": "amd",
+    "outFile": "./dist/bundle.js",  // Output all compiled code to a single file
     "importHelpers": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
 
-    "noEmitOnError": false,
+    "noEmitOnError": true,  // Consider changing to true to avoid emitting files on error
 
+    "composite": false,  // Must be false if using outFile
 
     "jsx": "preserve",
-    "jsxImportSource": "vue",
 
-    "noImplicitThis": false,
-    "strict": true,
-
+    "noImplicitThis": true,  // Changed to true for consistent strict checking
+    "strict": true,  // Enable strict type checking
 
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
 
-
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
+    "sourceMap": true,  // Set to false if you don't need source maps for production
     "baseUrl": ".",
-    "allowImportingTsExtensions": true,
+    "noEmit": false,  // Changed to false because 'noEmit' and 'outFile' cannot both be true
+    "allowImportingTsExtensions": false,
     "downlevelIteration": true,
     "lib": [
       "esnext",
       "dom",
       "dom.iterable",
-      "scripthost",
+      "scripthost"
     ],
     "rootDir": ".",
     "paths": {
-      "@selldone/sdk-storefront/*": [
-        "*"
-      ]
+     // "@selldone/sdk-storefront/*": ["*"]
     }
   },
   "include": [

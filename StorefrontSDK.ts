@@ -33,7 +33,7 @@ import { XapiBasket } from "./basket/XapiBasket";
 import { XapiVendor } from "./vendor/XapiVendor";
 import { XapiAvocado } from "./avocado/XapiAvocado";
 import { XapiArticle } from "./article/XapiArticle";
-import { StorefrontRoutesName } from "@selldone/core-js/enums/route/StorefrontRoutesName.ts";
+import { StorefrontRoutesName } from "@selldone/core-js/enums/route/StorefrontRoutesName";
 
 const SDK_VERSION = "0.02";
 //█████████████████████████████████████████████████████████████

@@ -1,8 +1,7 @@
 {
   "name": "@selldone/sdk-storefront",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
-  "type": "module",
   "author": "Mehrdad Pajuhaan <mehrdad@selldone.com> (https://selldone.com)",
   "main": "index.ts",
   "scripts": {
@@ -10,7 +9,6 @@
     "clean": "tsc --build --clean",
     "publish": "npm publish --access public"
   },
-
   "bugs": {
     "url": "https://github.com/selldone/storefront-sdk/issues"
   },
@@ -20,13 +18,10 @@
   },
   "homepage": "https://selldone.com",
   "license": "MIT",
-
   "dependencies": {
     "@selldone/core-js": "^1.0.0",
-
     "axios": "^1.6.8",
     "lodash-es": "^4.17.21"
-
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
@@ -35,6 +30,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-prettier": "^5.1.0",
     "prettier": "^3.2.5",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }

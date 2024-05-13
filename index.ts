@@ -1,6 +1,6 @@
 
 
-import { StorefrontSDK } from './StorefrontSDK.ts';
+import { StorefrontSDK } from './StorefrontSDK';
 
 export {
     StorefrontSDK
