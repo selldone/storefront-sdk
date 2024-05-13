@@ -179,6 +179,9 @@ export namespace xapi.products.get {
      * Only return page if with_parent be true! It returns linked custom page of current category (parent).
      */
     with_page?: boolean;
+
+
+    with_total?:boolean
   }
 
   /**
