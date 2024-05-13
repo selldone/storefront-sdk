@@ -43,11 +43,13 @@ StorefrontSDK.Setup(); // Set up the Shop SDK.
 
 
 
-![Selldone Components](docs/images/selldone-sdk-layers.jpg)
 
 ## Selldone SDK - A Comprehensive Toolkit for Custom Ecommerce Development
 
 The Selldone SDK is a comprehensive software development kit that contains all the essential components needed to create an online storefront and manage customer authentication. By utilizing the open-source components provided by the SDK, developers can create custom ecommerce platforms tailored to their specific needs.
+
+
+![Selldone Components](docs/images/selldone-sdk-layers.jpg)
 
 ## Designed for Ease of Use
 
