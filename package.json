@@ -1,13 +1,14 @@
 {
   "name": "@selldone/sdk-storefront",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "private": false,
   "author": "Mehrdad Pajuhaan <mehrdad@selldone.com> (https://selldone.com)",
   "main": "index.ts",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "clean": "tsc --build --clean",
-    "publish": "npm publish --access public"
+    "publish": "npm publish"
   },
   "bugs": {
     "url": "https://github.com/selldone/storefront-sdk/issues"

@@ -36,6 +36,7 @@ export default function getInfo(
     // Find product in previously fetched products list:
     let foundProduct = null;
 
+    // @ts-ignore
     for (const [cacheKey, cacheValue] of caches.entries()) {
       const products = (cacheValue?.products as Product[]) || null || undefined;
 

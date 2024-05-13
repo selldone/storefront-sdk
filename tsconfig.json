@@ -1,20 +1,19 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "amd",
-    "outFile": "./dist/bundle.js",  // Output all compiled code to a single file
+    "module": "ESNext",  // Change module to UMD
+    "outDir": "./dist/",
     "importHelpers": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
 
-    "noEmitOnError": true,  // Consider changing to true to avoid emitting files on error
+    "noEmitOnError": true,
 
-    "composite": false,  // Must be false if using outFile
+    "composite": false,
 
     "jsx": "preserve",
 
-    "noImplicitThis": true,  // Changed to true for consistent strict checking
-    "strict": true,  // Enable strict type checking
+    "noImplicitThis": true,
+    "strict": true,
 
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
@@ -22,9 +21,9 @@
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,  // Set to false if you don't need source maps for production
+    "sourceMap": true,
     "baseUrl": ".",
-    "noEmit": false,  // Changed to false because 'noEmit' and 'outFile' cannot both be true
+    "noEmit": false,
     "allowImportingTsExtensions": false,
     "downlevelIteration": true,
     "lib": [
@@ -35,14 +34,15 @@
     ],
     "rootDir": ".",
     "paths": {
-     // "@selldone/sdk-storefront/*": ["*"]
+      // Adjust paths according to your project structure
+      // "@selldone/sdk-storefront/*": ["src/*"]
     }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "*.ts",
-    "*.tsx",
+    "*.tsx"
   ],
   "exclude": [
     "node_modules",

@@ -39,6 +39,7 @@ export function StorefrontAxiosSetup() {
     const expire_date = new Date();
     expire_date.setUTCSeconds(window.SelldoneUser.expires_in);
 
+    // @ts-ignore
     window.$cookies.set(
       "access_token",
       window.SelldoneUser.access_token,
@@ -48,6 +49,7 @@ export function StorefrontAxiosSetup() {
       false
     );
   } else {
+    // @ts-ignore
     const access_token = window.$cookies.get("access_token");
 
     if (access_token) {

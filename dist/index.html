@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Fetch Example</title>
+
+
+</head>
+<body>
+<button id="fetchProductsBtn">Fetch Products</button>
+<ul id="productsList"></ul>
+
+
+
+<script type="module">
+    import { StorefrontSDK } from './index.js';
+
+    document.getElementById('fetchProductsBtn').addEventListener('click', function() {
+        console.log('StorefrontSDK', StorefrontSDK);
+        StorefrontSDK.Setup(); // Set up the Shop SDK.
+        // rest of your code...
+    });
+</script>
+
+<script>
+
+    // Access StorefrontSDK directly from the global scope
+
+
+    document.getElementById('fetchProductsBtn').addEventListener('click', function() {
+
+        console.log('window.StorefrontSDK',window.StorefrontSDK)
+        window.StorefrontSDK.Setup(); // Set up the Shop SDK.
+
+        fetchProducts('your_directory', false, 10, {
+            categories_count: 10,
+            with_parent: true,
+            with_page: true,
+            sort: null,
+            available: false,
+            search: null,
+            search_type: null,
+            dirs: null,
+            filter: null,
+            products_only: false,
+            categories_only: false,
+            with_total: true,
+            bounds: null,
+            tags: null,
+            vendor_id: null,
+            surrounded: false,
+        });
+    });
+
+    function handleSuccessResponse({ products }) {
+        const productsList = document.getElementById('productsList');
+        productsList.innerHTML = ''; // Clear previous results
+
+        products.forEach(product => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${product.name} - ${product.price}`;
+            productsList.appendChild(listItem);
+        });
+    }
+
+    function fetchProducts(dir, more, limit, options) {
+        window.$storefront.products
+            .optimize(600) // Cache products for 600 seconds
+            .fetchProducts(dir, more ? this.products.length : 0, limit, options)
+            .then(handleSuccessResponse)
+            .catch(error => {
+                console.error('Failed to fetch products:', error);
+                alert('Error fetching products. Check the console for more details.');
+            });
+    }
+
+</script>
+</body>
+</html>
