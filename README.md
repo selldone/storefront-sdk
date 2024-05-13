@@ -39,6 +39,19 @@ import {StorefrontSDK} from "@selldone/sdk-storefront";
 StorefrontSDK.Setup(); // Set up the Shop SDK.
 ```
 
+## Add Meta Tags to HTML
+To integrate your web application with the Selldone ecosystem effectively, it's essential to embed specific meta tags within the <head> section of your HTML. These tags enable the Selldone SDK to establish a connection with the Selldone API, facilitating the retrieval of your shop's data.
+
+```html
+<!-- 🏬 Shop Name -->
+<meta name="shop-name" content="toysworld">
+
+<!-- 🎗 Prefix address of app Ex./my-shop-path -->
+<meta name="shop-prefix-address" content="">
+
+<!-- 📰 Shop custom page -->
+<meta name="custom-home" content="shop">
+```
 
 
 

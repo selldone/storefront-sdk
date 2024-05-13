@@ -97,7 +97,7 @@ export namespace xapi.products.get {
      * Sort type of the list.
      * @example newest
      */
-    sort?: string;
+    sort?: 'most_visited'|'most_popular'|'newest'|'bestselling'|'cheapest'|'most_expensive'|'random'|'related';
 
     /**
      * Search text.
@@ -109,7 +109,7 @@ export namespace xapi.products.get {
      * Search type. Can be null or category.
      * @example category
      */
-    search_type?: string;
+    search_type?: 'exact'|'quote'|'tax'|'valuation'|'new';
 
     /**
      * Multiple category IDs.
