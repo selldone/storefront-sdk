@@ -22,6 +22,17 @@
   ],
   "homepage": "https://selldone.com",
   "license": "MIT",
+  "keywords": [
+    "Selldone",
+    "eCommerce",
+    "JavaScript",
+    "Storefront",
+    "Selldone",
+    "SDK",
+    "WooCommerceAlternative",
+    "TypeScript",
+    "OpenSource"
+  ],
   "dependencies": {
     "@selldone/core-js": "^1.0.0",
     "axios": "^1.6.8",
