@@ -13,6 +13,7 @@
  */
 
 import {ILanguage} from "./enums/language/Language";
+import Cookie from "../selldone-vue-core/utils/cookie/cookie";
 
 declare global {
   interface Window {
@@ -23,7 +24,8 @@ declare global {
     selldone_config: any; // Specify the type according to what selldone_config is supposed to be.
     extra_footer:any,
 
-    $cookies:any,
+    $cookies:Cookie,
+    $i18n_global:any,
 
 
   }

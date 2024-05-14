@@ -3,5 +3,11 @@
 import { StorefrontSDK } from './StorefrontSDK';
 
 export {
-    StorefrontSDK
+    StorefrontSDK,
+    helloWorld
 };
+
+function helloWorld() {
+    console.log('Hello World!');
+}
+helloWorld();

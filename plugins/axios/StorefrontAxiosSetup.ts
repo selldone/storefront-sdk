@@ -14,6 +14,7 @@
 
 import { SetupService } from "@selldone/core-js/server/SetupService";
 import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
+import axios from 'axios';
 
 export function StorefrontAxiosSetup() {
   const shop_name = SetupService.GetMetaValue("shop-name");
@@ -22,7 +23,7 @@ export function StorefrontAxiosSetup() {
     ""
   );
 
-  window.axios = require("axios");
+  window.axios = axios;
 
   // 🞧 Header: CORS
   window.axios.defaults.headers.common["Access-Control-Allow-Origin"] =
@@ -45,7 +46,7 @@ export function StorefrontAxiosSetup() {
       window.SelldoneUser.access_token,
       expire_date.toUTCString(),
       shop_prefix_address,
-      null,
+      undefined,
       false
     );
   } else {

@@ -34,6 +34,7 @@ import { XapiVendor } from "./vendor/XapiVendor";
 import { XapiAvocado } from "./avocado/XapiAvocado";
 import { XapiArticle } from "./article/XapiArticle";
 import { StorefrontRoutesName } from "@selldone/core-js/enums/route/StorefrontRoutesName";
+import { SelldoneCore } from "@selldone/core-js";
 
 const SDK_VERSION = "0.02";
 //█████████████████████████████████████████████████████████████
@@ -231,10 +232,14 @@ export class StorefrontSDK {
   }
 
   static CheckDependencies() {
-    if (typeof console.style !== "function") {
-      throw new Error(
-        "❌ console.style not found. Please initialize 'SelldoneCore.Setup()' before initializing the Storefront SDK."
+    if (!window.CDN) {
+      // ━━━ Selldone Core (gapi,...) ━━━
+      console.log(
+        "⚡ we auto initialized 'SelldoneCore.Setup()'! You can manually do it before initializing the Storefront SDK."
       );
+
+      SelldoneCore.Setup();
+
     }
   }
 }

@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "ESNext",  // Change module to UMD
-    "outDir": "./dist/",
+    "target": "ESNext",
+    "module": "ESNext",                          // Universal Module Definition (UMD) format for broad compatibility
+    "declaration": true,                      // Generates corresponding '.d.ts' file
+    "outDir": "./dist",
     "importHelpers": true,
     "moduleResolution": "node",
 
@@ -16,10 +17,10 @@
     "strict": true,
 
     "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
+    "skipLibCheck": true,                     // Skip type checking of declaration files
 
-    "esModuleInterop": true,
+    "esModuleInterop": true,                  // Enable interoperability between CommonJS and ES Modules
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
@@ -32,7 +33,6 @@
       "dom.iterable",
       "scripthost"
     ],
-    "rootDir": ".",
     "paths": {
       // Adjust paths according to your project structure
       // "@selldone/sdk-storefront/*": ["src/*"]
@@ -47,6 +47,7 @@
   "exclude": [
     "node_modules",
     "_docs",
-    "public"
+    "public",
+    "dist"
   ]
 }

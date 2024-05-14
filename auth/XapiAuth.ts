@@ -36,8 +36,5 @@ export class XapiAuth extends APIAbstract {
 export namespace XapiAuth {
 
 
-  export enum LoginSource {
-    CUSTOMER = "customer",
-    VENDOR = "vendor",
-  }
+
 }

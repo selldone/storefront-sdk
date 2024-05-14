@@ -5,35 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Fetch Example</title>
 
+    <!-- 🌌 Business OS -->
+    <meta content="Shop" name="Classification">
+    <meta content="Selldone" name="copyright">
+
+    <!-- 🏬 Shop Name -->
+    <meta content="toysworld" name="shop-name">
+
+    <!-- 🎗 Prefix address of app Ex./@pajuhaan  -->
+    <meta content="" name="shop-prefix-address">
+
+    <!-- 📰 Shop custom page -->
+    <meta content="shop" name="custom-home">
+
+    <!-- ―――――――――――――――― Start ❯ Business OS Configuration ―――――――――――――――― -->
+
+    <!-- 🪁 Service Origin -->
+    <meta content="https://selldone.com" name="service-url">
+
+
+    <!-- 🎯 APIs -->
+    <meta content="https://gapi.selldone.com" name="selldone-gapi">
+    <meta content="https://xapi.selldone.com" name="selldone-xapi">
+    <meta content="https://iframe.selldone.com" name="selldone-iframe">
+    <meta content="https://capi.selldone.com" name="selldone-capi">
+
+    <!-- 🌍 CDNs -->
+    <meta content="https://selldone.com/cdn-shop-images-1" name="selldone-cdn-images">
+    <meta content="https://selldone.com/cdn-shop-jsons-1" name="selldone-cdn-jsons">
+    <meta content="https://selldone.com/cdn-videos" name="selldone-cdn-videos">
+    <meta content="https://selldone.com/cdn-shop-temp-files" name="selldone-cdn-temp-files">
+    <meta content="https://selldone.com/cdn-ar" name="selldone-cdn-ar">
+    <meta content="https://selldone.com/cdn-id" name="selldone-cdn-id">
+    <meta content="true" name="storage-redirect">
+    <meta content="https://cdn.selldone.com" name="storage-redirect-host">
+    <meta content="true" name="storage-redirect-thumbnails">
+
+    <style>
+        /* Button Styles */
+        #fetchProductsBtn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            border-radius: 16px;
+        }
+
+        #fetchProductsBtn:hover {
+            background-color: #45a049;
+        }
+
+        /* List Styles */
+        .list {
+            list-style-type: none;
+            padding: 0;
+            max-width: 460px;
+        }
+
+        .list li {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+        .list li img {
+            border-radius: 6px;
+            margin-inline-end: 8px;
+        }
+
+        .list li:last-child {
+            border-bottom: none;
+        }
+    </style>
 
 </head>
 <body>
 <button id="fetchProductsBtn">Fetch Products</button>
-<ul id="productsList"></ul>
+<h3>Products</h3>
+<ul id="productsList" class="list"></ul>
 
+<h3>Categories</h3>
+<ul id="categoriesList" class="list"></ul>
 
-
-<script type="module">
-    import { StorefrontSDK } from './index.js';
-
-    document.getElementById('fetchProductsBtn').addEventListener('click', function() {
-        console.log('StorefrontSDK', StorefrontSDK);
-        StorefrontSDK.Setup(); // Set up the Shop SDK.
-        // rest of your code...
-    });
+<script src="./bundle.js"></script>
+<script>
+    // Use the global variable StorefrontSDK
+    const sdk = storefront.StorefrontSDK;
+    sdk.Setup()
 </script>
+
 
 <script>
 
     // Access StorefrontSDK directly from the global scope
+    document.getElementById('fetchProductsBtn').addEventListener('click', function () {
 
-
-    document.getElementById('fetchProductsBtn').addEventListener('click', function() {
-
-        console.log('window.StorefrontSDK',window.StorefrontSDK)
-        window.StorefrontSDK.Setup(); // Set up the Shop SDK.
-
-        fetchProducts('your_directory', false, 10, {
+        fetchProducts(null, false, 10, {
             categories_count: 10,
             with_parent: true,
             with_page: true,
@@ -53,15 +129,55 @@
         });
     });
 
-    function handleSuccessResponse({ products }) {
+    function handleSuccessResponse({products,folders}) {
         const productsList = document.getElementById('productsList');
         productsList.innerHTML = ''; // Clear previous results
 
         products.forEach(product => {
             const listItem = document.createElement('li');
-            listItem.textContent = `${product.name} - ${product.price}`;
+
+            // Create an img element and set its src to the product's image URL
+            const productImage = document.createElement('img');
+            productImage.src = window.CDN.GET_SHOP_IMAGE_PATH(product.icon, 128);
+            productImage.alt = product.title;
+            productImage.width = 50; // Set the width of the image
+
+            // Append the img element to the list item
+            listItem.appendChild(productImage);
+
+            // Create a div element to contain the product title and price
+            const productInfo = document.createElement('div');
+            productInfo.innerHTML = `${product.title} <br> <b>${product.price} ${product.currency}</b>`;
+
+            // Append the div element to the list item
+            listItem.appendChild(productInfo);
+
             productsList.appendChild(listItem);
         });
+
+        const foldersList = document.getElementById('categoriesList');
+        folders.forEach(folder => {
+            const listItem = document.createElement('li');
+
+            // Create an img element and set its src to the folder's image URL
+            const folderImage = document.createElement('img');
+            folderImage.src = window.CDN.GET_SHOP_IMAGE_PATH(folder.icon, 128);
+            folderImage.alt = folder.title;
+            folderImage.width = 50; // Set the width of the image
+
+            // Append the img element to the list item
+            listItem.appendChild(folderImage);
+
+            // Create a div element to contain the folder title and price
+            const folderInfo = document.createElement('div');
+            folderInfo.innerHTML = `${folder.title}`;
+
+            // Append the div element to the list item
+            listItem.appendChild(folderInfo);
+
+            foldersList.appendChild(listItem);
+        });
+
     }
 
     function fetchProducts(dir, more, limit, options) {
@@ -71,7 +187,6 @@
             .then(handleSuccessResponse)
             .catch(error => {
                 console.error('Failed to fetch products:', error);
-                alert('Error fetching products. Check the console for more details.');
             });
     }
 

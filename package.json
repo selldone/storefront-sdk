@@ -1,12 +1,12 @@
 {
   "name": "@selldone/sdk-storefront",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "private": false,
   "author": "Mehrdad Pajuhaan <mehrdad@selldone.com> (https://selldone.com)",
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "rollup -c",
     "clean": "tsc --build --clean",
     "publish": "npm publish"
   },
@@ -25,12 +25,18 @@
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-url": "^8.0.2",
     "@types/lodash-es": "^4.17.12",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
     "eslint": "^8.56.0",
     "eslint-plugin-prettier": "^5.1.0",
     "prettier": "^3.2.5",
+    "rollup": "^4.17.2",
+    "rollup-plugin-typescript2": "^0.36.0",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
