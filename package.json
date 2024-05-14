@@ -6,7 +6,7 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "build": "rollup -c",
+    "bundle": "rollup -c",
     "clean": "tsc --build --clean",
     "publish": "npm publish"
   },
