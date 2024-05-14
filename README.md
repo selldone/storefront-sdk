@@ -31,12 +31,25 @@ yarn add @selldone/sdk-storefront
 
 Here's a basic example to get you started:
 
+### Use in Vue, React, Bootstrap, or any other JS Framework
 ```javascript
 import {StorefrontSDK} from "@selldone/sdk-storefront";
 
 // ━━━ Storefront SDK (xapi,...) ━━━
 StorefrontSDK.Setup(); // Set up the Shop SDK.
 ```
+
+### Use in Html
+```html  
+<script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@1.0.12/dist/bundle.min.js"></script>
+<script>
+   // Use the global variable StorefrontSDK
+   const sdk = storefront.StorefrontSDK;
+   sdk.Setup()
+</script>
+```
+
+Change `1.0.12` to last version!
 
 ## Add Meta Tags to HTML
 
@@ -53,6 +66,31 @@ API, facilitating the retrieval of your shop's data.
 
 <!-- 📰 Shop custom page -->
 <meta name="custom-home" content="shop">
+
+
+<!-- ―――――――――――――――― Start ❯ Business OS Configuration ―――――――――――――――― -->
+
+<!-- 🪁 Service Origin -->
+<meta content="https://selldone.com" name="service-url">
+
+
+<!-- 🎯 APIs -->
+<meta content="https://gapi.selldone.com" name="selldone-gapi">
+<meta content="https://xapi.selldone.com" name="selldone-xapi">
+<meta content="https://iframe.selldone.com" name="selldone-iframe">
+<meta content="https://capi.selldone.com" name="selldone-capi">
+
+<!-- 🌍 CDNs -->
+<meta content="https://selldone.com/cdn-shop-images-1" name="selldone-cdn-images">
+<meta content="https://selldone.com/cdn-shop-jsons-1" name="selldone-cdn-jsons">
+<meta content="https://selldone.com/cdn-videos" name="selldone-cdn-videos">
+<meta content="https://selldone.com/cdn-shop-temp-files" name="selldone-cdn-temp-files">
+<meta content="https://selldone.com/cdn-ar" name="selldone-cdn-ar">
+<meta content="https://selldone.com/cdn-id" name="selldone-cdn-id">
+<meta content="true" name="storage-redirect">
+<meta content="https://cdn.selldone.com" name="storage-redirect-host">
+<meta content="true" name="storage-redirect-thumbnails">
+
 ```
 
 ## Starter Documentation
