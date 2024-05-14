@@ -2,14 +2,26 @@ import typescript from 'rollup-plugin-typescript2';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import url from '@rollup/plugin-url';
+import terser from '@rollup/plugin-terser';
+
+
 export default {
     input: 'index.ts', // Your entry point
-    output: {
-        file: 'dist/bundle.js',
-        format: 'iife', // Immediately Invoked Function Expression for standalone bundle
-        name: 'storefront', // Global variable name for your library
-        sourcemap: true,
-    },
+    output: [
+        {
+            file: 'dist/bundle.js',
+            format: 'iife', // Immediately Invoked Function Expression for standalone bundle
+            name: 'storefront', // Global variable name for your library
+            sourcemap: true,
+        },
+        {
+            file: 'dist/bundle.min.js',
+            format: 'iife', // Immediately Invoked Function Expression for standalone bundle
+            name: 'storefront', // Global variable name for your library
+            sourcemap: true,
+            plugins: [terser()] // Minify this output
+        }
+    ],
     plugins: [
         nodeResolve({
             browser: true,
