@@ -1,6 +1,6 @@
 {
   "name": "@selldone/sdk-storefront",
-  "version": "1.0.12",
+  "version": "1.5.14",
   "private": false,
   "author": "Mehrdad Pajuhaan <mehrdad@selldone.com> (https://selldone.com)",
   "main": "index.ts",
