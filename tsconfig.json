@@ -33,6 +33,7 @@
       "dom.iterable",
       "scripthost"
     ],
+    "rootDir": ".",
     "paths": {
       // Adjust paths according to your project structure
       // "@selldone/sdk-storefront/*": ["src/*"]
