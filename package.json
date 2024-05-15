@@ -1,6 +1,6 @@
 {
   "name": "@selldone/sdk-storefront",
-  "version": "1.5.15",
+  "version": "1.5.15-2",
   "private": false,
   "author": "Mehrdad Pajuhaan <mehrdad@selldone.com> (https://selldone.com)",
   "main": "index.ts",
@@ -17,7 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/selldone/storefront-sdk.git"
   },
-
+  "files": [
+    "dist"
+  ],
   "homepage": "https://selldone.com",
   "license": "MIT",
   "keywords": [
@@ -32,7 +34,7 @@
     "OpenSource"
   ],
   "dependencies": {
-    "@selldone/core-js": "^1.0.0",
+    "@selldone/core-js": "latest",
     "axios": "^1.6.8",
     "lodash-es": "^4.17.21"
   },

@@ -13,7 +13,7 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import {CustomerSource} from "../../selldone-vue-core/enums/customer/source/CustomerSource";
+import {CustomerSource} from "@selldone/core-js/enums/customer/source/CustomerSource";
 
 export class XapiAuthSMS extends APIAbstract {
     public shop_name: string;

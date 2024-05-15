@@ -13,7 +13,7 @@
  */
 
 import {ILanguage} from "./enums/language/Language";
-import Cookie from "../selldone-vue-core/utils/cookie/cookie";
+import Cookie from "@selldone/core-js/utils/cookie/cookie";
 
 declare global {
   interface Window {
