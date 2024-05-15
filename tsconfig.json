@@ -3,7 +3,7 @@
     "target": "ESNext",
     "module": "ESNext",                          // Universal Module Definition (UMD) format for broad compatibility
     "declaration": true,                      // Generates corresponding '.d.ts' file
-    "outDir": "./test",
+    "outDir": "./dist",
     "importHelpers": true,
     "moduleResolution": "node",
 
