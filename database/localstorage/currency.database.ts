@@ -12,11 +12,10 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
-import { StorefrontDatabase } from "../StorefrontDatabase";
-import { Currency, ICurrency } from "@selldone/core-js/enums/payment/Currency";
-import { SetupService } from "@selldone/core-js/server/SetupService";
-import { TrackConfig } from "@selldone/core-js/enums/gtag/TrackConfig";
+import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
+import {Currency, ICurrency} from "@selldone/core-js/enums/payment/Currency";
+import {SetupService} from "@selldone/core-js/server/SetupService";
+import {TrackConfig} from "@selldone/core-js/enums/gtag/TrackConfig";
 
 export class CurrencyDatabase {
   /** Name of the shop for which the API operations will be performed. */
@@ -31,7 +30,7 @@ export class CurrencyDatabase {
 
     // Try to read from local storage:
     const user_currency = localStorage.getItem(
-      StorefrontLocalStorages.GetUserCurrencyPath(_base_path)
+      StorefrontLocalStorages.GetUserCurrencyPath(_base_path),
     );
     if (user_currency && Currency[user_currency]) {
       return Currency[user_currency];
@@ -42,8 +41,10 @@ export class CurrencyDatabase {
     if (!_default_code) return Currency.USD;
     return Currency[_default_code];
   }
+
   saveCurrency(currency: ICurrency | keyof typeof Currency) {
     let currencyCode: string;
+    if(!currency)return;
 
     if (typeof currency === "string") {
       currencyCode = currency;
@@ -55,7 +56,7 @@ export class CurrencyDatabase {
     localStorage.setItem(
       // @ts-ignore
       StorefrontLocalStorages.GetUserCurrencyPath(_base_path),
-      currencyCode
+      currencyCode,
     );
     TrackConfig.SetCurrency(currencyCode);
   }

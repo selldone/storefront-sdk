@@ -13,28 +13,28 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { SetupService } from "@selldone/core-js/server/SetupService";
-import { XapiUser } from "./user/XapiUser";
-import { XAPI } from "./apis/XAPI";
-import { XapiShop } from "./shop/XapiShop";
-import { CDN } from "@selldone/core-js/server/CDN";
-import { URLS } from "@selldone/core-js/server/URLS";
-import { XapiAuth } from "./auth/XapiAuth";
-import { Shop } from "@selldone/core-js/models/shop/shop.model";
-import { StorefrontAxiosSetup } from "./plugins/axios/StorefrontAxiosSetup";
-import { XapiProduct } from "./product/XapiProduct";
-import { XapiLottery } from "./lottery/XapiLottery";
-import { StorefrontDatabase } from "./database/StorefrontDatabase";
-import { XapiCoupon } from "./coupon/XapiCoupon";
-import { XapiOffer } from "./offer/XapiOffer";
-import { Currency, type ICurrency } from "@selldone/core-js/enums/payment/Currency";
+import {SetupService} from "@selldone/core-js/server/SetupService";
+import {XapiUser} from "./user/XapiUser";
+import {XAPI} from "./apis/XAPI";
+import {XapiShop} from "./shop/XapiShop";
+import {CDN} from "@selldone/core-js/server/CDN";
+import {URLS} from "@selldone/core-js/server/URLS";
+import {XapiAuth} from "./auth/XapiAuth";
+import {Shop} from "@selldone/core-js/models/shop/shop.model";
+import {StorefrontAxiosSetup} from "./plugins/axios/StorefrontAxiosSetup";
+import {XapiProduct} from "./product/XapiProduct";
+import {XapiLottery} from "./lottery/XapiLottery";
+import {StorefrontDatabase} from "./database/StorefrontDatabase";
+import {XapiCoupon} from "./coupon/XapiCoupon";
+import {XapiOffer} from "./offer/XapiOffer";
+import {Currency, type ICurrency,} from "@selldone/core-js/enums/payment/Currency";
 
-import { XapiBasket } from "./basket/XapiBasket";
-import { XapiVendor } from "./vendor/XapiVendor";
-import { XapiAvocado } from "./avocado/XapiAvocado";
-import { XapiArticle } from "./article/XapiArticle";
-import { StorefrontRoutesName } from "@selldone/core-js/enums/route/StorefrontRoutesName";
-import { SelldoneCore } from "@selldone/core-js";
+import {XapiBasket} from "./basket/XapiBasket";
+import {XapiVendor} from "./vendor/XapiVendor";
+import {XapiAvocado} from "./avocado/XapiAvocado";
+import {XapiArticle} from "./article/XapiArticle";
+import {StorefrontRoutesName} from "@selldone/core-js/enums/route/StorefrontRoutesName";
+import {SelldoneCore} from "@selldone/core-js";
 
 const SDK_VERSION = "0.02";
 //█████████████████████████████████████████████████████████████
@@ -141,7 +141,7 @@ export class StorefrontSDK {
 
     if (window.$backoffice) {
       console.style(
-        "You are using Storefront SDK within <b='color:#673AB7'>BACKOFFICE ENVIRONMENT</b>. So we initial it automatically compatible with Back Office SDK!"
+        "You are using Storefront SDK within <b='color:#673AB7'>BACKOFFICE ENVIRONMENT</b>. So we initial it automatically compatible with Back Office SDK!",
       );
 
       if (!_shop_name)
@@ -164,7 +164,7 @@ export class StorefrontSDK {
 
       shop_prefix_address = SetupService.GetMetaValue(
         "shop-prefix-address",
-        ""
+        "",
       );
 
       custom_home = SetupService.GetMetaValue("custom-home") as Shop.Home;
@@ -227,7 +227,7 @@ export class StorefrontSDK {
     window.$storefront.currency = _database.currency.getCurrency();
 
     console.style(
-      `✅ Selldone® Storefront SDK [<b='color:#009688'>@${shop_name}</b>] initialized successfully.`
+      `✅ Selldone® Storefront SDK [<b='color:#009688'>@${shop_name}</b>] initialized successfully.`,
     );
   }
 
@@ -235,11 +235,10 @@ export class StorefrontSDK {
     if (!window.CDN) {
       // ━━━ Selldone Core (gapi,...) ━━━
       console.log(
-        "⚡ we auto initialized 'SelldoneCore.Setup()'! You can manually do it before initializing the Storefront SDK."
+        "⚡ we auto initialized 'SelldoneCore.Setup()'! You can manually do it before initializing the Storefront SDK.",
       );
 
       SelldoneCore.Setup();
-
     }
   }
 }
