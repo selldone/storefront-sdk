@@ -12,16 +12,16 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { XapiProduct } from "../XapiProduct";
-import { Product } from "@selldone/core-js/models/shop/product/product.model";
-import { Category } from "@selldone/core-js/models/shop/category/category.model";
+import {XapiProduct} from "../XapiProduct";
+import {Product} from "@selldone/core-js/models/shop/product/product.model";
+import {Category} from "@selldone/core-js/models/shop/category/category.model";
 
 export default function fetchProducts(
   this: XapiProduct,
   dir: string | null = null,
   offset: number = 0,
   limit: number = 10,
-  options?: xapi.products.get.IOptions
+  options?: xapi.products.get.IOptions,
 ): Promise<xapi.products.get.IResponse> {
   const url = window.XAPI.GET_PRODUCTS(this.shop_name);
 
@@ -97,7 +97,15 @@ export namespace xapi.products.get {
      * Sort type of the list.
      * @example newest
      */
-    sort?: 'most_visited'|'most_popular'|'newest'|'bestselling'|'cheapest'|'most_expensive'|'random'|'related';
+    sort?:
+      | "most_visited"
+      | "most_popular"
+      | "newest"
+      | "bestselling"
+      | "cheapest"
+      | "most_expensive"
+      | "random"
+      | "related";
 
     /**
      * Search text.
@@ -109,7 +117,7 @@ export namespace xapi.products.get {
      * Search type. Can be null or category.
      * @example category
      */
-    search_type?: 'exact'|'quote'|'tax'|'valuation'|'new';
+    search_type?: "exact" | "quote" | "tax" | "valuation" | "new";
 
     /**
      * Multiple category IDs.
@@ -180,8 +188,7 @@ export namespace xapi.products.get {
      */
     with_page?: boolean;
 
-
-    with_total?:boolean
+    with_total?: boolean;
   }
 
   /**
