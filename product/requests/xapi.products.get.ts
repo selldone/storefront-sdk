@@ -110,6 +110,8 @@ export namespace xapi.products.get {
     /**
      * Search text.
      * @example "example search text"
+     *
+     * User value '*' : It will return all products.
      */
     search?: string;
 
