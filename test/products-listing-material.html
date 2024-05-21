@@ -58,8 +58,12 @@
     <h2>How It Works:</h2>
     <ol class="mx-6">
         <li>Load Vue3 and Vuetify to utilize components such as <code>v-btn</code>, <code>v-row</code>, and others.</li>
-        <li>Load the Storefront SDK script to access Selldone's storefront APIs, enabling product data retrieval through <code>window.$storefront.products.fetchProducts(...)</code>.</li>
-        <li>Fetch product data from the store identified as 'toysworld', configured via meta tags like <code>&lt;meta name="shop-name" content="toysworld"&gt;</code>.</li>
+        <li>Load the Storefront SDK script to access Selldone's storefront APIs, enabling product data retrieval through
+            <code>window.$storefront.products.fetchProducts(...)</code>.
+        </li>
+        <li>Fetch product data from the store identified as 'toysworld', configured via meta tags like <code>&lt;meta
+            name="shop-name" content="toysworld"&gt;</code>.
+        </li>
     </ol>
 
 </div>
@@ -67,53 +71,73 @@
 <div id="app">
     <v-app>
 
-        <v-sheet color="#ef3c51" style="overflow-x: auto;width: 100%" class="my-5 py-3 py-sm-5 mx-auto" :style="$vuetify.display.xlAndUp?'border-radius:2rem;max-width:1720px;width:98%;':''">
+        <v-sheet :color="properties?.background_color" style="overflow-x: auto;width: 100%" class="my-5 py-3 py-sm-5 mx-auto"
+                 :style="[$vuetify.display.xlAndUp?'border-radius:2rem;max-width:1720px;width:98%;':'',
+                 {
+                     '--height':properties?.height,
+                     '--width':properties?.width,
+                     '--image-height':'calc(var(--height) * 0.7)',
+                     '--font-size-header':properties?.font_size_header,
+                     '--font-size-text':properties?.font_size_text,
+
+                 }]">
             <v-container fluid>
-                <v-row class="flex-nowrap" align="stretch">
-                    <v-col style="min-width: 200px;max-width: 200px" class="text-center d-flex flex-column align-center">
+                <v-row class="flex-nowrap" align="stretch" justify="start">
+                    <v-col style="min-width: var(--width);max-width: var(--width)"
+                           class="text-center d-flex flex-column align-center flex-grow-0">
                         <v-spacer></v-spacer>
-                       <div>
-                           <h4 class="my-3 text-h4">Incredible Offer Deal</h4>
+                        <div>
+                            <h3 class="my-3" style="font-size: var(--font-size-header)"><b>{{ properties?.title }}</b>
+                            </h3>
 
-                           <v-img src="https://cdn.selldone.com/app/shops/115/pages/1926/images/confettisvg967788a152da6f5a63ca8fef86119157.svg"
-                                  height="100px" width="100px" class="mx-auto my-3"></v-img>
-                       </div>
+                            <v-img :src="properties?.icon"
+                                   height="100px" width="100px" class="mx-auto my-3"></v-img>
+                        </div>
                         <v-spacer></v-spacer>
-                            <v-btn color="#fff" variant="text" :href="`/?search=*&sort=most_popular&filter=${JSON.stringify({only_has_discount:true})}`">More Info
-                                <span class="material-icons">chevron_right</span>
-                            </v-btn>
-                    </v-col>
-                    <v-col v-for="(product, index) in products" :key="index" class="pa-1" >
-                            <v-card
-                                    style="width: 200px;min-height: 320px;height: 100%"
-                                    :rounded="index==0?'s-xl':undefined"
-                                    flat>
-                                <v-img :src="getImageUrl(product.icon)" height="200px"></v-img>
-                                <div class="d-flex justify-space-between pa-2">
-                                    <b>{{ product.price }}
-                                        {{ product.currency }}</b>
-                                    <v-chip color="red" size="x-small" variant="flat">
-                                        {{Math.round(100*(product.discount)/(product.price))}}%
-                                    </v-chip>
-                                </div>
-                                <v-card-text class="text-wrap">{{ product.title }}</v-card-text>
+                        <v-btn color="#fff" variant="text" :to="getProductsListingTo()" target="_blank">
+                            {{ properties?.action_offer }}
 
-                            </v-card>
+                            <span class="material-icons">  {{ properties?.action_offer_icon }} </span>
+                        </v-btn>
                     </v-col>
-                    <v-col  class="pa-1" >
+                    <v-col v-for="(product, index) in products" :key="index" class="pa-1 flex-grow-0 text-start">
                         <v-card
-                                style="width: 200px;min-height: 320px;height: 100%"
+                                style="width: var(--width);min-height: var(--height);height: 100%"
+                                :rounded="index==0?'s-xl':undefined"
+                                flat
+                                :to="getProductTo(product)"
+                        >
+                            <v-img :src="getImageUrl(product.icon)" height="var(--image-height)"  :cover="properties?.cover"></v-img>
+                            <div class="d-flex justify-space-between pa-2">
+                                <b>{{ product.price }}
+                                    {{ product.currency }}</b>
+                                <v-chip color="red" size="x-small" variant="flat">
+                                    {{ Math.round(100 * (product.discount) / (product.price)) }}%
+                                </v-chip>
+                            </div>
+                            <v-card-text class="text-wrap pb-2" style="font-size: var(--font-size-text);overflow: hidden;">{{ product.title }}</v-card-text>
+
+                        </v-card>
+                    </v-col>
+                    <v-col class="pa-1 flex-grow-0 pe-8">
+                        <v-card
+                                style="width: var(--width);min-height: var(--height);height: 100%"
                                 rounded="e-xl" class="d-flex flex-column align-center justify-center"
                                 flat
-                                :href="`/?search=*&sort=most_popular&filter=${JSON.stringify({only_has_discount:true})}`"
+                                :to="getProductsListingTo()"
+                                target="_blank"
                         >
 
-                            <div style="height: 56px;width: 56px;border-radius: 50%;border: solid thin #eee" class="d-flex align-center justify-center">
-                                <span class="material-icons">trending_flat</span>
+                            <div style="height: 56px;width: 56px;border-radius: 50%;border: solid thin #eee"
+                                 class="d-flex align-center justify-center">
+                                <span class="material-icons">
+                                {{ properties?.action_more_icon }}
+                                </span>
                             </div>
 
                             <div class="mt-5">
-                                View All
+
+                                {{ properties?.action_more }}
                             </div>
 
                         </v-card>
@@ -122,7 +146,6 @@
             </v-container>
         </v-sheet>
     </v-app>
-
 
 
 </div>
@@ -139,6 +162,32 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         const app = createApp({
+            props: {
+                // This will be feed by landing builder if you want to build a dynamic and customizable landing section!
+                properties: {
+                    default: () => ({
+                        title: 'Incredible Offer Deal',
+                        background_color:'#ef3c51',
+
+                        limit: 10,
+                        icon: 'https://cdn.selldone.com/app/shops/115/pages/1926/images/confettisvg967788a152da6f5a63ca8fef86119157.svg',
+                        action_offer: 'More Info',
+                        action_offer_icon: 'chevron_right',
+
+                        action_more: 'View All',
+                        action_more_icon: 'trending_flat',
+
+                        height: '240px',
+                        width:'200px',
+                        font_size_header: '1.5rem',
+                        font_size_text: '0.85rem',
+
+                        cover:false,
+
+                        with_limited_time:false
+                    }),
+                },
+            },
             data() {
                 return {
 
@@ -161,14 +210,32 @@
                 },
                 getImageUrl(path, size) {
                     return window.CDN.GET_SHOP_IMAGE_PATH(path, size)
+                },
+                getProductTo(product) {
+                    return {
+                        name: window.$storefront.routes.PRODUCT_PAGE,
+                        params: {
+                            product_id: product.id,
+                        }
+                    }
+                },
+                getProductsListingTo() {
+                    return {
+                        name: window.$storefront.routes.SHOP_PAGE,
+                        query: {
+                            search: '*',
+                            sort: 'most_popular',
+                            filter: JSON.stringify({only_has_discount: true})
+                        }
+                    }
                 }
             },
             created() {
                 const sdk = storefront.StorefrontSDK;
                 sdk.Setup();
 
-                this.fetchProducts('*', false, 10, {
-                    categories_count: 10,
+                this.fetchProducts('*', false, this.properties?.limit, {
+                    categories_count: 0,
                     with_parent: true,
                     with_page: true,
                     sort: 'random',
@@ -176,7 +243,7 @@
                     search: null,
                     search_type: null,
                     dirs: null,
-                    filter: JSON.stringify({only_has_discount:true}),
+                    filter: JSON.stringify({only_has_discount: true,limited_offer:this.properties?.with_limited_time}),
                     products_only: false,
                     categories_only: false,
                     with_total: true,

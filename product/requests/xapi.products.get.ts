@@ -226,5 +226,11 @@ export namespace xapi.products.get {
      * Selected specifications for filtering products.
      */
     selected_spec?: any[][] | null;
+
+    /**
+     * If true, only products with limited offer will be retrieved.
+     * If a number, only products with limited offer and the given number of hours left will be retrieved.
+     */
+    limited_offer?: boolean | number | null;
   }
 }
