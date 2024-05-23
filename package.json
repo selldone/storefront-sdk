@@ -1,6 +1,6 @@
 {
   "name": "@selldone/sdk-storefront",
-  "version": "1.5.15-9",
+  "version": "1.5.23",
   "private": false,
   "author": "Mehrdad Pajuhaan <mehrdad@selldone.com> (https://selldone.com)",
   "description": "A TypeScript SDK to connect to your shop and build a fully functional storefront and website by simply developing a frontend web application. All backend operations are seamlessly managed by the serverless Selldone solution.",
