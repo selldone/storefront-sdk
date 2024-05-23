@@ -69,8 +69,7 @@ export class XapiShop extends APIAbstract {
   public fetchShop(): Promise<XapiShop.IGetShopInfoResponse> {
     const url = window.XAPI.GET_SHOP_INFO(this.shop_name);
     // @ts-ignore
-    const guest_codes =
-      StorefrontLocalStorages.GetShopHistoryGuestAllCodes().limit(10); // We use it to get pending transactions!
+    const guest_codes = StorefrontLocalStorages.GetShopHistoryGuestAllCodes().limit(10); // We use it to get pending transactions!
     const params = { guest_codes: guest_codes };
     return this.getNow<XapiShop.IGetShopInfoResponse>(url, params);
   }
