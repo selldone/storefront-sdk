@@ -12,11 +12,9 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "@selldone/core-js/enums/payment/Currency";
+import {Currency} from "@selldone/core-js/enums/payment/Currency";
 import type {XapiAvocado} from "../XapiAvocado";
 import type {Avocado} from "@selldone/core-js/models/shop/order/avocado/avocado.order";
-
-
 
 export default function submitOrder(
   this: XapiAvocado,
@@ -24,13 +22,10 @@ export default function submitOrder(
   currency: keyof typeof Currency,
 ) {
   const params = {
-    currency: currency
+    currency: currency,
   };
 
-  const url = window.XAPI.POST_RESERVE_AVOCADO(
-    this.shop_name,
-      hash
-  );
+  const url = window.XAPI.POST_RESERVE_AVOCADO(this.shop_name, hash);
   return this.postNow<xapi.avocado.submit_order.post.IResponse>(url, params);
 }
 
@@ -40,8 +35,7 @@ export default function submitOrder(
 
 export namespace xapi.avocado.submit_order.post {
   export interface IResponse {
-    success:boolean;
+    success: boolean;
     avocado: Avocado;
   }
-
 }

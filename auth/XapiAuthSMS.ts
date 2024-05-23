@@ -16,183 +16,183 @@ import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
 import {CustomerSource} from "@selldone/core-js/enums/customer/source/CustomerSource";
 
 export class XapiAuthSMS extends APIAbstract {
-    public shop_name: string;
+  public shop_name: string;
 
-    constructor(shop_name: string) {
-        super();
-        this.shop_name = shop_name;
-    }
+  constructor(shop_name: string) {
+    super();
+    this.shop_name = shop_name;
+  }
 
-    /**
-     * Requests an OTP (One-Time Password) for phone-based authentication.
-     *
-     * This method sends a request to the specified endpoint to generate and send an OTP
-     * to the user's phone. It's typically used in two-factor authentication or phone number
-     * verification processes.
-     *
-     * @param {string | number} dial_code - The dial code of the country/region (e.g., +1 for the US).
-     * @param {string} country_code - The ISO code of the country (e.g., 'US' for the United States).
-     * @param {string | number} phone - The phone number to which the OTP should be sent.
-     *
-     * @returns {Promise<ISMSRequestOTPServerResponse>} - Returns a promise that resolves with the
-     *                                                    server's response to the OTP request.
-     *
-     * @example
-     *
-     * requestOTP('+1', 'US', '1234567890')
-     *   .then(response => console.log(response))
-     *   .catch(error => console.error(error));
-     *
-     */
-    public requestOTP(
-        dial_code: string | number,
-        country_code: string,
-        phone: string | number
-    ): Promise<ISMSRequestOTPServerResponse> {
-        const params = {
-            dial_code: dial_code,
-            country_code: country_code,
-            phone: phone,
-        };
-        const url = window.XAPI.SHOP_LOGIN_REQUEST(this.shop_name);
-        return this.postNow<ISMSRequestOTPServerResponse>(url, params);
-    }
+  /**
+   * Requests an OTP (One-Time Password) for phone-based authentication.
+   *
+   * This method sends a request to the specified endpoint to generate and send an OTP
+   * to the user's phone. It's typically used in two-factor authentication or phone number
+   * verification processes.
+   *
+   * @param {string | number} dial_code - The dial code of the country/region (e.g., +1 for the US).
+   * @param {string} country_code - The ISO code of the country (e.g., 'US' for the United States).
+   * @param {string | number} phone - The phone number to which the OTP should be sent.
+   *
+   * @returns {Promise<ISMSRequestOTPServerResponse>} - Returns a promise that resolves with the
+   *                                                    server's response to the OTP request.
+   *
+   * @example
+   *
+   * requestOTP('+1', 'US', '1234567890')
+   *   .then(response => console.log(response))
+   *   .catch(error => console.error(error));
+   *
+   */
+  public requestOTP(
+    dial_code: string | number,
+    country_code: string,
+    phone: string | number,
+  ): Promise<ISMSRequestOTPServerResponse> {
+    const params = {
+      dial_code: dial_code,
+      country_code: country_code,
+      phone: phone,
+    };
+    const url = window.XAPI.SHOP_LOGIN_REQUEST(this.shop_name);
+    return this.postNow<ISMSRequestOTPServerResponse>(url, params);
+  }
 
-    /**
-     * Verifies the OTP (One-Time Password) received by the user.
-     *
-     * This method sends the user's OTP to the specified endpoint for verification. It's typically
-     * used to confirm the user's phone number in processes like two-factor authentication or
-     * phone number verification.
-     *
-     * @param {string | number} dial_code - The dial code of the country/region (e.g., +1 for the US).
-     * @param {string} country_code - The ISO code of the country (e.g., 'US' for the United States).
-     * @param {string | number} phone - The phone number for which the OTP was requested.
-     * @param {string | number} verification_code - The OTP received by the user.
-     * @param {CustomerSource} source - The origin of the OTP request, either 'customer' or 'vendor'.
-     *
-     * @returns {Promise<ISMSVerifyOTPServerResponse>} - Returns a promise that resolves with the
-     *                                                    server's response to the OTP verification.
-     *
-     * @example
-     *
-     * verifyOTP('+1', 'US', '1234567890', '123456', CustomerSource.CUSTOMER)
-     *   .then(response => console.log(response))
-     *   .catch(error => console.error(error));
-     *
-     */
-    public verifyOTP(
-        dial_code: string | number,
-        country_code: string,
-        phone: string | number,
-        verification_code: string | number,
-        source: CustomerSource | null
-    ): Promise<
-        | ISMSVerifyOTPServerResponse_Register
-        | ISMSVerifyOTPServerResponse_Select
-        | ISMSVerifyOTPServerResponse_Login
-    > {
-        const params = {
-            dial_code: dial_code,
-            country_code: country_code,
-            phone: phone,
-            verification_code: verification_code,
-            source: source ? source : CustomerSource.CUSTOMER,
-        };
-        const url = window.XAPI.SHOP_LOGIN_VERIFY(this.shop_name);
-        return this.postNow<
-            | ISMSVerifyOTPServerResponse_Register
-            | ISMSVerifyOTPServerResponse_Select
-            | ISMSVerifyOTPServerResponse_Login
-        >(url, params);
-    }
+  /**
+   * Verifies the OTP (One-Time Password) received by the user.
+   *
+   * This method sends the user's OTP to the specified endpoint for verification. It's typically
+   * used to confirm the user's phone number in processes like two-factor authentication or
+   * phone number verification.
+   *
+   * @param {string | number} dial_code - The dial code of the country/region (e.g., +1 for the US).
+   * @param {string} country_code - The ISO code of the country (e.g., 'US' for the United States).
+   * @param {string | number} phone - The phone number for which the OTP was requested.
+   * @param {string | number} verification_code - The OTP received by the user.
+   * @param {CustomerSource} source - The origin of the OTP request, either 'customer' or 'vendor'.
+   *
+   * @returns {Promise<ISMSVerifyOTPServerResponse>} - Returns a promise that resolves with the
+   *                                                    server's response to the OTP verification.
+   *
+   * @example
+   *
+   * verifyOTP('+1', 'US', '1234567890', '123456', CustomerSource.CUSTOMER)
+   *   .then(response => console.log(response))
+   *   .catch(error => console.error(error));
+   *
+   */
+  public verifyOTP(
+    dial_code: string | number,
+    country_code: string,
+    phone: string | number,
+    verification_code: string | number,
+    source: CustomerSource | null,
+  ): Promise<
+    | ISMSVerifyOTPServerResponse_Register
+    | ISMSVerifyOTPServerResponse_Select
+    | ISMSVerifyOTPServerResponse_Login
+  > {
+    const params = {
+      dial_code: dial_code,
+      country_code: country_code,
+      phone: phone,
+      verification_code: verification_code,
+      source: source ? source : CustomerSource.CUSTOMER,
+    };
+    const url = window.XAPI.SHOP_LOGIN_VERIFY(this.shop_name);
+    return this.postNow<
+      | ISMSVerifyOTPServerResponse_Register
+      | ISMSVerifyOTPServerResponse_Select
+      | ISMSVerifyOTPServerResponse_Login
+    >(url, params);
+  }
 
-    /**
-     * Initiates the user selection process based on the provided code and source.
-     *
-     * @param code - The unique code associated with the user. This can be a string or number.
-     * @param source - The source from which the login is initiated (e.g., customer, vendor, etc.),
-     *                 represented by the CustomerSource enumeration.
-     *
-     * @returns A Promise that resolves to an `ISMSVerifyOTPServerResponse_Login` object which contains
-     *          information about the login process. This object can include the method of verification
-     *          (specifically, `SuccessVerifyMethod.LOGIN`), an optional token, and the expiration time
-     *          for that token.
-     *
-     * @example
-     * selectUser("1234", CustomerSource.CUSTOMER)
-     *   .then(response => {
-     *     console.log(response.token);
-     *   })
-     *   .catch(error => {
-     *     console.error("Failed to select user:", error);
-     *   });
-     *
-     */
-    public selectUser(
-        code: string | number,
-        source: CustomerSource | null
-    ): Promise<ISMSVerifyOTPServerResponse_Login> {
-        const params = {
-            code: code,
-            source: source ? source : CustomerSource.CUSTOMER,
-        };
-        const url = window.XAPI.SHOP_LOGIN_SELECT_USER(this.shop_name);
-        return this.postNow<ISMSVerifyOTPServerResponse_Login>(url, params);
-    }
+  /**
+   * Initiates the user selection process based on the provided code and source.
+   *
+   * @param code - The unique code associated with the user. This can be a string or number.
+   * @param source - The source from which the login is initiated (e.g., customer, vendor, etc.),
+   *                 represented by the CustomerSource enumeration.
+   *
+   * @returns A Promise that resolves to an `ISMSVerifyOTPServerResponse_Login` object which contains
+   *          information about the login process. This object can include the method of verification
+   *          (specifically, `SuccessVerifyMethod.LOGIN`), an optional token, and the expiration time
+   *          for that token.
+   *
+   * @example
+   * selectUser("1234", CustomerSource.CUSTOMER)
+   *   .then(response => {
+   *     console.log(response.token);
+   *   })
+   *   .catch(error => {
+   *     console.error("Failed to select user:", error);
+   *   });
+   *
+   */
+  public selectUser(
+    code: string | number,
+    source: CustomerSource | null,
+  ): Promise<ISMSVerifyOTPServerResponse_Login> {
+    const params = {
+      code: code,
+      source: source ? source : CustomerSource.CUSTOMER,
+    };
+    const url = window.XAPI.SHOP_LOGIN_SELECT_USER(this.shop_name);
+    return this.postNow<ISMSVerifyOTPServerResponse_Login>(url, params);
+  }
 
-    /**
-     * Registers a new user based on the provided details.
-     *
-     * @param code - The unique verification code associated with the user, which can be a string or number.
-     * @param name - The name of the user to be registered.
-     * @param email - The email address of the user. This can be `null` if no email is provided or applicable.
-     * @param password - The password for the user. This can be `null` if no password is chosen or required.
-     * @param no_email_mode - A boolean flag indicating whether the user registration should operate in
-     *                        a mode that doesn't require an email. If `true`, email becomes optional.
-     * @param source - The source from which the registration is initiated, represented by the
-     *                 CustomerSource enumeration.
-     *
-     * @returns A Promise that resolves to an `ISMSVerifyOTPServerResponse_Login` object which contains
-     *          information about the registration and potential login process. This object will include
-     *          the method of verification (specifically, `SuccessVerifyMethod.LOGIN`), an optional token,
-     *          and the expiration time for that token.
-     *
-     * @example
-     * registerUser("1234", "John Doe", "john@example.com", "securePass123", false, CustomerSource.CUSTOMER)
-     *   .then(response => {
-     *     console.log(response.token);
-     *   })
-     *   .catch(error => {
-     *     console.error("Failed to register user:", error);
-     *   });
-     *
-     * @throws Will throw an error if the request fails or if the server responds with an error status.
-     */
-    public registerUser(
-        code: string | number,
-        name: string,
-        email: string | null,
-        password: string | null,
-        no_email_mode: boolean,
-        source: CustomerSource | null
-    ): Promise<ISMSVerifyOTPServerResponse_Login> {
-        const params = {
-            code: code,
-            name: name,
-            email: email,
-            password: password,
-            no_email_mode: no_email_mode,
-            source: source ? source : CustomerSource.CUSTOMER,
-        };
-        const url = window.XAPI.SHOP_LOGIN_NEW_USER(this.shop_name);
-        return this.postNow<ISMSVerifyOTPServerResponse_Login>(url, params);
-    }
+  /**
+   * Registers a new user based on the provided details.
+   *
+   * @param code - The unique verification code associated with the user, which can be a string or number.
+   * @param name - The name of the user to be registered.
+   * @param email - The email address of the user. This can be `null` if no email is provided or applicable.
+   * @param password - The password for the user. This can be `null` if no password is chosen or required.
+   * @param no_email_mode - A boolean flag indicating whether the user registration should operate in
+   *                        a mode that doesn't require an email. If `true`, email becomes optional.
+   * @param source - The source from which the registration is initiated, represented by the
+   *                 CustomerSource enumeration.
+   *
+   * @returns A Promise that resolves to an `ISMSVerifyOTPServerResponse_Login` object which contains
+   *          information about the registration and potential login process. This object will include
+   *          the method of verification (specifically, `SuccessVerifyMethod.LOGIN`), an optional token,
+   *          and the expiration time for that token.
+   *
+   * @example
+   * registerUser("1234", "John Doe", "john@example.com", "securePass123", false, CustomerSource.CUSTOMER)
+   *   .then(response => {
+   *     console.log(response.token);
+   *   })
+   *   .catch(error => {
+   *     console.error("Failed to register user:", error);
+   *   });
+   *
+   * @throws Will throw an error if the request fails or if the server responds with an error status.
+   */
+  public registerUser(
+    code: string | number,
+    name: string,
+    email: string | null,
+    password: string | null,
+    no_email_mode: boolean,
+    source: CustomerSource | null,
+  ): Promise<ISMSVerifyOTPServerResponse_Login> {
+    const params = {
+      code: code,
+      name: name,
+      email: email,
+      password: password,
+      no_email_mode: no_email_mode,
+      source: source ? source : CustomerSource.CUSTOMER,
+    };
+    const url = window.XAPI.SHOP_LOGIN_NEW_USER(this.shop_name);
+    return this.postNow<ISMSVerifyOTPServerResponse_Login>(url, params);
+  }
 }
 
 interface ISMSRequestOTPServerResponse {
-    success: boolean;
-    phone: string;
+  success: boolean;
+  phone: string;
 }
 
 /**
@@ -225,35 +225,35 @@ interface ISMSRequestOTPServerResponse {
  *
  */
 interface ISMSVerifyOTPServerResponse {
-    method: SuccessVerifyMethod;
+  method: SuccessVerifyMethod;
 }
 
 interface ISMSVerifyOTPServerResponse_Register
-    extends ISMSVerifyOTPServerResponse {
-    method: SuccessVerifyMethod.REGISTER;
-    code: string;
+  extends ISMSVerifyOTPServerResponse {
+  method: SuccessVerifyMethod.REGISTER;
+  code: string;
 }
 
 interface ISMSVerifyOTPServerResponse_Select
-    extends ISMSVerifyOTPServerResponse {
-    method: SuccessVerifyMethod.SELECT;
-    // More than one user with same phone number:
-    users: ISMSVerifyOTPServerResponse_Select_User[];
+  extends ISMSVerifyOTPServerResponse {
+  method: SuccessVerifyMethod.SELECT;
+  // More than one user with same phone number:
+  users: ISMSVerifyOTPServerResponse_Select_User[];
 }
 
 export interface ISMSVerifyOTPServerResponse_Select_User {
-    id: number;
-    name: string;
-    email: string | number;
-    code: string
+  id: number;
+  name: string;
+  email: string | number;
+  code: string;
 }
 
 interface ISMSVerifyOTPServerResponse_Login
-    extends ISMSVerifyOTPServerResponse {
-    method: SuccessVerifyMethod.LOGIN;
-    // Single user with this phone number:
-    token: string;
-    expires_in: number;
+  extends ISMSVerifyOTPServerResponse {
+  method: SuccessVerifyMethod.LOGIN;
+  // Single user with this phone number:
+  token: string;
+  expires_in: number;
 }
 
 /**
@@ -266,7 +266,7 @@ interface ISMSVerifyOTPServerResponse_Login
  *
  */
 export enum SuccessVerifyMethod {
-    REGISTER = "register",
-    SELECT = "select",
-    LOGIN = "login",
+  REGISTER = "register",
+  SELECT = "select",
+  LOGIN = "login",
 }

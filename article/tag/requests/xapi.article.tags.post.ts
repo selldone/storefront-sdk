@@ -12,19 +12,16 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-
 import type {XapiArticleTag} from "../XapiArticleTag";
-
-
 
 export default function setArticleTags(
   this: XapiArticleTag,
   shop_id: string | number,
   article_id: string | number,
-  tags:string[]|null
-){
-  const url = window.XAPI.POST_SET_SHOP_ARTICLE_TAGS(shop_id,article_id);
-const params={tags:tags}
+  tags: string[] | null,
+) {
+  const url = window.XAPI.POST_SET_SHOP_ARTICLE_TAGS(shop_id, article_id);
+  const params = { tags: tags };
   return this.postNow<xapi.article.tags.post.IResponse>(url, params);
 }
 
@@ -34,8 +31,6 @@ const params={tags:tags}
 
 export namespace xapi.article.tags.post {
   export interface IResponse {
-    tags:string[]
+    tags: string[];
   }
-
-
 }

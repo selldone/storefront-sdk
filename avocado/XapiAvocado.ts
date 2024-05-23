@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
 import submitOrder from "./requests/xapi.avocado.submit-order.post";
 import addItem from "./requests/xapi.avocado.add-item.post";
 import updateReceiverInfo from "./requests/xapi.avocado.receiver-info.put";
@@ -20,16 +20,15 @@ import getOrder from "./requests/xapi.avocado.order.get";
 
 export class XapiAvocado extends APIAbstract {
   public shop_name: string;
+  public addItem = addItem;
+  public updateReceiverInfo = updateReceiverInfo;
+  public submitOrder = submitOrder;
+  public getOrder = getOrder;
 
   constructor(shop_name: string) {
     super();
     this.shop_name = shop_name;
   }
-
-  public addItem = addItem;
-  public updateReceiverInfo = updateReceiverInfo;
-  public submitOrder = submitOrder;
-  public getOrder = getOrder;
 }
 
 //█████████████████████████████████████████████████████████████

@@ -12,15 +12,15 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { SetupService } from "@selldone/core-js/server/SetupService";
-import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
-import axios from 'axios';
+import {SetupService} from "@selldone/core-js/server/SetupService";
+import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
+import axios from "axios";
 
 export function StorefrontAxiosSetup() {
   const shop_name = SetupService.GetMetaValue("shop-name");
   const shop_prefix_address = SetupService.GetMetaValue(
     "shop-prefix-address",
-    ""
+    "",
   );
 
   window.axios = axios;
@@ -47,7 +47,7 @@ export function StorefrontAxiosSetup() {
       expire_date.toUTCString(),
       shop_prefix_address,
       undefined,
-      false
+      false,
     );
   } else {
     // @ts-ignore
@@ -81,7 +81,7 @@ export function StorefrontAxiosSetup() {
 
   // 🞧 Popup: We save seen_pops in localstorage (Client) and send in the header request
   const seen_pops = localStorage.getItem(
-    StorefrontLocalStorages.GetSeenPopups(`shop/@${shop_name}/`)
+    StorefrontLocalStorages.GetSeenPopups(`shop/@${shop_name}/`),
   );
   if (seen_pops) {
     window.axios.defaults.headers.common["S-Pops"] = seen_pops;

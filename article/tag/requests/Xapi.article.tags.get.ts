@@ -12,18 +12,12 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-
-
-
-
-
-
 import type {XapiArticleTag} from "../XapiArticleTag";
 
 export default function getTags(
   this: XapiArticleTag,
   vendor_id: string | number,
-){
+) {
   const url = window.XAPI.GET_SHOP_ARTICLE_TAGS(vendor_id);
   return this.getNow<xapi.article.tags.get.IResponse>(url);
 }
@@ -34,8 +28,6 @@ export default function getTags(
 
 export namespace xapi.article.tags.get {
   export interface IResponse {
-    tags:string[]
+    tags: string[];
   }
-
-
 }

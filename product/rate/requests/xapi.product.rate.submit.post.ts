@@ -24,7 +24,7 @@ import type {ProductRating} from "@selldone/core-js/models/shop/product/product-
 export default function submitMyRate(
   this: XapiProductRate,
   product_id: string | number,
-  user_rating: Record<string, number>
+  user_rating: Record<string, number>,
 ): Promise<xapi.product.rate.submit.post.IResponse> {
   const url = window.XAPI.POST_SET_PRODUCT_RATING(this.shop_name, product_id);
   const params = { user_rating: user_rating };
@@ -37,13 +37,10 @@ export default function submitMyRate(
 
 export namespace xapi.product.rate.submit.post {
   export interface IResponse {
-    success:boolean;
-    my_ratings: {rate_id:number,value:number}[];
-    ratings: Pick<ProductRating, 'id'| 'name'| 'value'| 'count'>[] ;
-    rate_count: number ;
-    rate: number ;
-
+    success: boolean;
+    my_ratings: { rate_id: number; value: number }[];
+    ratings: Pick<ProductRating, "id" | "name" | "value" | "count">[];
+    rate_count: number;
+    rate: number;
   }
-
-
 }

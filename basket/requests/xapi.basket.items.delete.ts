@@ -12,10 +12,9 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "@selldone/core-js/enums/payment/Currency";
-import { BasketItem } from "@selldone/core-js/models/shop/order/basket/basket_item.model";
-import { XapiBasket } from "../XapiBasket";
-import { Basket } from "@selldone/core-js/models/shop/order/basket/basket.model";
+import {Currency} from "@selldone/core-js/enums/payment/Currency";
+import {XapiBasket} from "../XapiBasket";
+import {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
 
 /**
  * Fetches eligible coupons for the buyer.
@@ -26,7 +25,7 @@ export default function removeItem(
   this: XapiBasket,
   product_id: number,
   variant_id: number | null,
-  options?: xapi.basket.items.remove.IOption
+  options?: xapi.basket.items.remove.IOption,
 ) {
   const params = {
     currency: options?.currency
@@ -38,7 +37,7 @@ export default function removeItem(
 
   const url = window.XAPI.DELETE_PHYSICAL_ITEM_FROM_BASKET(
     this.shop_name,
-    product_id
+    product_id,
   );
   return this.deleteNow<xapi.basket.items.remove.IResponse>(url, params);
 }
@@ -53,6 +52,7 @@ export namespace xapi.basket.items.remove {
     basket: Basket;
     bill: Basket.IBill;
   }
+
   export interface IOption {
     currency?: keyof typeof Currency;
   }

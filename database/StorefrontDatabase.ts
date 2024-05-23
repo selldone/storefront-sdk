@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { CouponDatabase } from "./localstorage/coupon.database";
+import {CouponDatabase} from "./localstorage/coupon.database";
 import {CurrencyDatabase} from "./localstorage/currency.database";
 import {LanguageDatabase} from "./localstorage/language.database";
 
@@ -23,6 +23,7 @@ export class StorefrontDatabase {
   public coupon: CouponDatabase;
   public currency: CurrencyDatabase;
   public language: LanguageDatabase;
+
   constructor(shop_name: string) {
     this.shop_name = shop_name;
 
@@ -30,6 +31,4 @@ export class StorefrontDatabase {
     this.currency = new CurrencyDatabase(this.shop_name);
     this.language = new LanguageDatabase(this.shop_name);
   }
-
-
 }

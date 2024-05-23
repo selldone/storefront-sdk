@@ -12,16 +12,14 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-
 import {XapiVendor} from "../XapiVendor";
 import type {Vendor} from "@selldone/core-js/models/shop/vendor/vendor.model";
 
 export default function getVendor(
   this: XapiVendor,
-  vendor_id: string|number
+  vendor_id: string | number,
 ) {
-
-  const url = window.XAPI.GET_VENDOR_INFO(this.shop_name,vendor_id);
+  const url = window.XAPI.GET_VENDOR_INFO(this.shop_name, vendor_id);
   return this.getNow<xapi.vendor.get.IResponse>(url);
 }
 
@@ -29,9 +27,11 @@ export default function getVendor(
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace xapi.vendor.get{
+export namespace xapi.vendor.get {
   export interface IResponse {
-
-    vendor: Pick<Vendor, 'id' | 'status' | 'enable' | 'name' | 'description' | 'icon'>;
+    vendor: Pick<
+      Vendor,
+      "id" | "status" | "enable" | "name" | "description" | "icon"
+    >;
   }
 }

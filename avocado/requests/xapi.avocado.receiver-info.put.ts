@@ -16,20 +16,18 @@ import type {XapiAvocado} from "../XapiAvocado";
 import type {Avocado} from "@selldone/core-js/models/shop/order/avocado/avocado.order";
 import type {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
 
-
-
 export default function updateReceiverInfo(
   this: XapiAvocado,
   hash: string,
   receiver_info: Basket.IReceiverInfo,
 ) {
   const params = {
-    receiver_info: receiver_info
+    receiver_info: receiver_info,
   };
 
   const url = window.XAPI.PUT_SET_CUSTOMER_INFO_FOR_AVOCADO(
     this.shop_name,
-      hash
+    hash,
   );
   return this.putNow<xapi.avocado.receiver_info.put.IResponse>(url, params);
 }
@@ -38,10 +36,9 @@ export default function updateReceiverInfo(
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace xapi.avocado.receiver_info.put{
+export namespace xapi.avocado.receiver_info.put {
   export interface IResponse {
-    success:boolean;
+    success: boolean;
     avocado: Avocado;
   }
-
 }

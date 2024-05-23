@@ -12,18 +12,17 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
 import fetchLanguagePack from "./requests/xapi.language.get";
 
 export class XapiLanguage extends APIAbstract {
   public shop_name: string;
+  public fetchLanguagePack = fetchLanguagePack;
 
   constructor(shop_name: string) {
     super();
     this.shop_name = shop_name;
   }
-
-  public fetchLanguagePack = fetchLanguagePack;
 }
 
 //█████████████████████████████████████████████████████████████

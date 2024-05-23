@@ -12,18 +12,17 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
 import fetchRates from "./requests/xapi.exchange-rates.get";
 
 export class XapiExchangeRate extends APIAbstract {
   public shop_name: string;
+  public fetchRates = fetchRates;
 
   constructor(shop_name: string) {
     super();
     this.shop_name = shop_name;
   }
-
-  public fetchRates = fetchRates;
 }
 
 export namespace XapiExchangeRate {}

@@ -12,12 +12,11 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { ExchangeRate } from "@selldone/core-js/models/shop/payment/exchange_rate.model";
-import { XapiLanguage } from "../XapiLanguage";
+import {XapiLanguage} from "../XapiLanguage";
 
 export default function fetchLanguagePack(
   this: XapiLanguage,
-  local: string
+  local: string,
 ): Promise<xapi.language.get.IResponse> {
   const url = window.XAPI.GET_SHOP_LANGUAGE_PACK(this.shop_name, local);
   return this.getNow<xapi.language.get.IResponse>(url);

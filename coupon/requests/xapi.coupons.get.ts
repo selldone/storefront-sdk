@@ -12,8 +12,8 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "@selldone/core-js/enums/payment/Currency";
-import { Coupon } from "@selldone/core-js/models/shop/incentives/coupon/coupon.model";
+import {Currency} from "@selldone/core-js/enums/payment/Currency";
+import {Coupon} from "@selldone/core-js/models/shop/incentives/coupon/coupon.model";
 import {XapiCoupon} from "../XapiCoupon";
 
 /**
@@ -23,9 +23,12 @@ import {XapiCoupon} from "../XapiCoupon";
 
 export default function fetchAvailableCoupons(
   this: XapiCoupon,
-  currency: keyof typeof Currency
+  currency: keyof typeof Currency,
 ) {
-  const params = { currency: currency, codes: window.$storefront.database.coupon.getCouponCodes(), };
+  const params = {
+    currency: currency,
+    codes: window.$storefront.database.coupon.getCouponCodes(),
+  };
 
   const url = window.XAPI.GET_FETCH_COUPONS(this.shop_name);
   return this.getNow<xapi.coupons.get.IResponse>(url, params);

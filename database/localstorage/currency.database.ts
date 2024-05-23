@@ -44,7 +44,7 @@ export class CurrencyDatabase {
 
   saveCurrency(currency: ICurrency | keyof typeof Currency) {
     let currencyCode: string;
-    if(!currency)return;
+    if (!currency) return;
 
     if (typeof currency === "string") {
       currencyCode = currency;

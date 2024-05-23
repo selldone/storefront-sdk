@@ -12,9 +12,8 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
-import { XapiAuthSMS } from "./XapiAuthSMS";
-
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
+import {XapiAuthSMS} from "./XapiAuthSMS";
 
 export class XapiAuth extends APIAbstract {
   public shop_name: string;
@@ -32,9 +31,4 @@ export class XapiAuth extends APIAbstract {
   }
 }
 
-
-export namespace XapiAuth {
-
-
-
-}
+export namespace XapiAuth {}

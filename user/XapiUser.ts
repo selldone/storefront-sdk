@@ -12,13 +12,12 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
-import { APIAbstract, type IErrorResponse } from "@selldone/core-js/server/APIAbstract";
-import { AxiosError } from "axios";
+import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
+import {APIAbstract, type IErrorResponse,} from "@selldone/core-js/server/APIAbstract";
+import {AxiosError} from "axios";
 import setUserCurrency from "./requests/xapi.user.currency.put";
 import setFcmToken from "./requests/xapi.user.fcm.post";
 import {UserProfile} from "@selldone/core-js/models/user/user_profile.model";
-
 
 export class XapiUser extends APIAbstract {
   /** Name of the shop for which the API operations will be performed. */
@@ -34,7 +33,7 @@ export class XapiUser extends APIAbstract {
 
   fetchMyInfo(
     onSuccess: (data: XapiUser.IMeServerResponse) => void,
-    onError?: (error: IErrorResponse | AxiosError) => void
+    onError?: (error: IErrorResponse | AxiosError) => void,
   ): void {
     const params = {
       codes: StorefrontLocalStorages.GetShopHistoryGuestAllCodes(),
@@ -45,9 +44,7 @@ export class XapiUser extends APIAbstract {
       max_valid_status_code: 500 /*We assume any error response except 5xx (server error) as success response to be able auto logout user!*/,
     });
   }
-
-
-}//█████████████████████████████████████████████████████████████
+} //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
@@ -80,7 +77,4 @@ export namespace XapiUser {
 
     access: boolean;
   }
-
-
-
 }

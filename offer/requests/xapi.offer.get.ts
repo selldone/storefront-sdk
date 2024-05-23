@@ -12,13 +12,13 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "@selldone/core-js/enums/payment/Currency";
-import { XapiOffer } from "../XapiOffer";
-import { Offer } from "@selldone/core-js/models/shop/incentives/offer/offer.model";
+import {Currency} from "@selldone/core-js/enums/payment/Currency";
+import {XapiOffer} from "../XapiOffer";
+import {Offer} from "@selldone/core-js/models/shop/incentives/offer/offer.model";
 
 export default function fetchOffers(
   this: XapiOffer,
-  currency: keyof typeof Currency
+  currency: keyof typeof Currency,
 ): Promise<xapi.offer.get.IResponse> {
   const params = {
     currency: currency,

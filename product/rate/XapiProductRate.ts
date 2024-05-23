@@ -18,14 +18,13 @@ import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
 
 export class XapiProductRate extends APIAbstract {
 
-  public shop_name: string;
+    public shop_name: string;
+    public submitMyRate = submitMyRate;
 
-  constructor(shop_name: string) {
-    super();
-    this.shop_name = shop_name;
-  }
-
-  public submitMyRate = submitMyRate;
+    constructor(shop_name: string) {
+        super();
+        this.shop_name = shop_name;
+    }
 
 
 }

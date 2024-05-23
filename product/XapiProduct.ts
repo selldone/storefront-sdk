@@ -20,6 +20,10 @@ import {XapiProductSubscription} from "./subscription/XapiProductSubscription";
 
 export class XapiProduct extends APIAbstract {
   public shop_name: string;
+  public rate: XapiProductRate;
+  public subscription: XapiProductSubscription;
+  public fetchProducts = fetchProducts;
+  public getInfo = getInfo;
 
   constructor(shop_name: string) {
     super();
@@ -27,12 +31,6 @@ export class XapiProduct extends APIAbstract {
     this.rate = new XapiProductRate(shop_name);
     this.subscription = new XapiProductSubscription(shop_name);
   }
-
-  public rate: XapiProductRate;
-  public subscription: XapiProductSubscription;
-
-  public fetchProducts = fetchProducts;
-  public getInfo = getInfo;
 }
 
 //█████████████████████████████████████████████████████████████

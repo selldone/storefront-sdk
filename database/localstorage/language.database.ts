@@ -12,8 +12,8 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import type { ILanguage } from "@selldone/core-js/enums/language/Language";
-import { Language } from "@selldone/core-js/enums/language/Language";
+import type {ILanguage} from "@selldone/core-js/enums/language/Language";
+import {Language} from "@selldone/core-js/enums/language/Language";
 
 export class LanguageDatabase {
   public shop_name: string;
@@ -30,10 +30,11 @@ export class LanguageDatabase {
     }
     return null;
   }
+
   setLanguage(language: ILanguage | string) {
     localStorage.setItem(
       "local-shop-" + this.shop_name,
-      typeof language === "object" ? language.code : language
+      typeof language === "object" ? language.code : language,
     );
   }
 }

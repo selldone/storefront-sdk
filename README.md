@@ -105,7 +105,7 @@ The Selldone SDK is a comprehensive software development kit that contains all t
 an online storefront and manage customer authentication. By utilizing the open-source components provided by the SDK,
 developers can create custom ecommerce platforms tailored to their specific needs.
 
-![Selldone Components](docs/images/selldone-sdk-layers.jpg)
+![Selldone Components](_docs/images/selldone-sdk-layers.jpg)
 
 ## Designed for Ease of Use
 
@@ -138,7 +138,7 @@ domain. My to-do list will be:
    designed web app.
 4. Now my users can subscribe to my service, connect their Selldone shop to it, and offer their services through it.
 
-![Self hosted app strategy](docs/images/selldone-saas-hosting-strategies-1.jpg)
+![Self hosted app strategy](_docs/images/selldone-saas-hosting-strategies-1.jpg)
 
 In this scenario, you directly charge your customers, and you have the flexibility to offer more features to your
 customers. But also, you should handle adding domains and issuing SSL on your backend.
@@ -154,7 +154,7 @@ In this scenario, my to-do list will be:
    of all the technical aspects, such as domain management, SSL issuance, and web app hosting. This allows you to focus
    on creating a unique and engaging user experience while Selldone handles the backend complexities.
 
-![Server-less app strategy](docs/images/selldone-saas-hosting-strategies-2.jpg)
+![Server-less app strategy](_docs/images/selldone-saas-hosting-strategies-2.jpg)
 
 ### Imagine Then Build by AI + Selldone
 

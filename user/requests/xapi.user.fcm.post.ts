@@ -12,12 +12,9 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { XapiUser } from "../XapiUser";
+import {XapiUser} from "../XapiUser";
 
-export default function setFcmToken(
-  this: XapiUser,
-  token: string
-) {
+export default function setFcmToken(this: XapiUser, token: string) {
   const params = { token: token };
   const url = window.XAPI.POST_SET_FCM_TOKEN(this.shop_name);
   return this.postNow<xapi.user.fcm.post.IResponse>(url, params);
@@ -27,7 +24,7 @@ export default function setFcmToken(
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace xapi.user.fcm.post{
+export namespace xapi.user.fcm.post {
   export interface IResponse {
     success: boolean;
   }

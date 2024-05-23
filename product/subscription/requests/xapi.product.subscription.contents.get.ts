@@ -16,18 +16,22 @@ import type {XapiProductSubscription} from "../XapiProductSubscription";
 import type {ProductContent} from "@selldone/core-js/models/shop/product/product-content.model";
 import type {ProductFile} from "@selldone/core-js/models/shop/product/product-file.model";
 
-
 export default function getContents(
   this: XapiProductSubscription,
   product_id: string | number,
-  offset:number,
-  limit:number,
-
-  options: xapi.product.subscription.contents.get.IOptions
+  offset: number,
+  limit: number,
+  options: xapi.product.subscription.contents.get.IOptions,
 ) {
-  const url = window.XAPI.GET_PRODUCT_MEMBERSHIP_CONTENTS(this.shop_name, product_id);
-  const params = { offset: offset,limit:limit ,...options};
-  return this.getNow<xapi.product.subscription.contents.get.IResponse>(url, params);
+  const url = window.XAPI.GET_PRODUCT_MEMBERSHIP_CONTENTS(
+    this.shop_name,
+    product_id,
+  );
+  const params = { offset: offset, limit: limit, ...options };
+  return this.getNow<xapi.product.subscription.contents.get.IResponse>(
+    url,
+    params,
+  );
 }
 
 //█████████████████████████████████████████████████████████████
@@ -36,8 +40,22 @@ export default function getContents(
 
 export namespace xapi.product.subscription.contents.get {
   export interface IResponse {
-    contents:(Pick<ProductContent, 'id'| 'shop_id'| 'product_id'| 'title'| 'description'|'rate'|'rate_count'|'created_at'|'updated_at'> &{
-      files:Pick<ProductFile, 'id'| 'product_id'| 'content_id'| 'name'| 'size'>
+    contents: (Pick<
+      ProductContent,
+      | "id"
+      | "shop_id"
+      | "product_id"
+      | "title"
+      | "description"
+      | "rate"
+      | "rate_count"
+      | "created_at"
+      | "updated_at"
+    > & {
+      files: Pick<
+        ProductFile,
+        "id" | "product_id" | "content_id" | "name" | "size"
+      >;
     })[];
     total: number;
   }
@@ -47,6 +65,4 @@ export namespace xapi.product.subscription.contents.get {
     sortBy?: string;
     sortDesc?: boolean;
   }
-
-
 }

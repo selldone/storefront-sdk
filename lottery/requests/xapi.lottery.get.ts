@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { XapiLottery } from "../XapiLottery";
+import {XapiLottery} from "../XapiLottery";
 import {Lottery} from "@selldone/core-js/models/shop/incentives/lottery/lottery.model";
 
 /**
@@ -25,7 +25,7 @@ import {Lottery} from "@selldone/core-js/models/shop/incentives/lottery/lottery.
 
 export default function fetchLotteryPrizes(
   this: XapiLottery,
-  options?: xapi.lottery.get.IOptions
+  options?: xapi.lottery.get.IOptions,
 ): Promise<xapi.lottery.get.IResponse> {
   const params = {
     limit: options?.limit ? options.limit : 10,

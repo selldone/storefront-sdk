@@ -12,8 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
-import { StorefrontDatabase } from "../StorefrontDatabase";
+import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
 
 export class CouponDatabase {
   /** Name of the shop for which the API operations will be performed. */
@@ -25,7 +24,9 @@ export class CouponDatabase {
 
   getCouponCodes() {
     const raw = localStorage.getItem(
-      StorefrontLocalStorages.GetShopCouponsCodes(window.$storefront.local_storage_path)
+      StorefrontLocalStorages.GetShopCouponsCodes(
+        window.$storefront.local_storage_path,
+      ),
     );
     if (raw)
       try {
@@ -37,26 +38,27 @@ export class CouponDatabase {
     return [];
   }
 
-  addCouponCode(code:string) {
+  addCouponCode(code: string) {
     const codes = window.$storefront.database.coupon.getCouponCodes();
     if (!codes.includes(code)) codes.push(code);
 
     localStorage.setItem(
-        StorefrontLocalStorages.GetShopCouponsCodes(window.$storefront.local_storage_path),
-        JSON.stringify(codes)
+      StorefrontLocalStorages.GetShopCouponsCodes(
+        window.$storefront.local_storage_path,
+      ),
+      JSON.stringify(codes),
     );
   }
 
-  removeCouponCode(code:string) {
-    const codes =  window.$storefront.database.coupon.getCouponCodes();
+  removeCouponCode(code: string) {
+    const codes = window.$storefront.database.coupon.getCouponCodes();
     if (codes.includes(code)) codes.splice(codes.indexOf(code), 1);
 
     localStorage.setItem(
-        StorefrontLocalStorages.GetShopCouponsCodes(window.$storefront.local_storage_path),
-        JSON.stringify(codes)
+      StorefrontLocalStorages.GetShopCouponsCodes(
+        window.$storefront.local_storage_path,
+      ),
+      JSON.stringify(codes),
     );
   }
-
-
-
 }

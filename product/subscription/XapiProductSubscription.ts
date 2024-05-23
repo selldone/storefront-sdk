@@ -18,14 +18,13 @@ import getContents from "./requests/xapi.product.subscription.contents.get";
 
 export class XapiProductSubscription extends APIAbstract {
 
-  public shop_name: string;
+    public shop_name: string;
+    public getContents = getContents;
 
-  constructor(shop_name: string) {
-    super();
-    this.shop_name = shop_name;
-  }
-
-  public getContents = getContents;
+    constructor(shop_name: string) {
+        super();
+        this.shop_name = shop_name;
+    }
 
 
 }

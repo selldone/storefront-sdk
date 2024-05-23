@@ -15,24 +15,16 @@
 import type {XapiAvocado} from "../XapiAvocado";
 import type {AvocadoItem} from "@selldone/core-js/models/shop/order/avocado/avocado.item";
 
-
-
 export default function addItem(
   this: XapiAvocado,
   hash: string,
-  title:string,
-  message:string|null,
-  link:string|null,
-  photo: Blob|null,
-  count:number
-
+  title: string,
+  message: string | null,
+  link: string | null,
+  photo: Blob | null,
+  count: number,
 ) {
-
-
-  const url = window.XAPI.POST_ADD_OPEN_AVOCADO_ITEM(
-    this.shop_name,
-      hash
-  );
+  const url = window.XAPI.POST_ADD_OPEN_AVOCADO_ITEM(this.shop_name, hash);
 
   const params = new FormData();
   if (photo) params.append("photo", photo);
@@ -40,7 +32,6 @@ export default function addItem(
   if (message) params.append("message", message);
   if (link) params.append("link", link);
   params.append("count", count.toString());
-
 
   return this.postNow<xapi.avocado.add_item.post.IResponse>(url, params);
 }
@@ -51,8 +42,7 @@ export default function addItem(
 
 export namespace xapi.avocado.add_item.post {
   export interface IResponse {
-    success:boolean;
+    success: boolean;
     item: AvocadoItem;
   }
-
 }

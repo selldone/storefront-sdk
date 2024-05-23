@@ -15,19 +15,8 @@
 import type {XapiAvocado} from "../XapiAvocado";
 import type {Avocado} from "@selldone/core-js/models/shop/order/avocado/avocado.order";
 
-
-
-export default function getOrder(
-  this: XapiAvocado,
-  hash: string,
-
-) {
-
-
-  const url = window.XAPI.GET_CUSTOMER_INFO_FOR_AVOCADO(
-    this.shop_name,
-      hash
-  );
+export default function getOrder(this: XapiAvocado, hash: string) {
+  const url = window.XAPI.GET_CUSTOMER_INFO_FOR_AVOCADO(this.shop_name, hash);
 
   return this.getNow<xapi.avocado.order.get.IResponse>(url);
 }
@@ -40,5 +29,4 @@ export namespace xapi.avocado.order.get {
   export interface IResponse {
     avocado: Avocado;
   }
-
 }

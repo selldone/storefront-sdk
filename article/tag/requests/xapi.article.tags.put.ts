@@ -12,22 +12,19 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-
 import type {XapiArticleTag} from "../XapiArticleTag";
-
-
 
 export default function updateTag(
   this: XapiArticleTag,
   shop_id: string | number,
-  old_tag: string ,
-  new_tag: string ,
-){
+  old_tag: string,
+  new_tag: string,
+) {
   const url = window.XAPI.PUT_CHANGE_TAG(shop_id);
-const params={
-  old: old_tag,
-  new: new_tag,
-}
+  const params = {
+    old: old_tag,
+    new: new_tag,
+  };
   return this.putNow<xapi.article.tags.put.IResponse>(url, params);
 }
 
@@ -37,8 +34,6 @@ const params={
 
 export namespace xapi.article.tags.put {
   export interface IResponse {
-    success:boolean
+    success: boolean;
   }
-
-
 }

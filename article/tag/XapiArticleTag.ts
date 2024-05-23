@@ -19,20 +19,14 @@ import getTags from "./requests/Xapi.article.tags.get";
 
 export class XapiArticleTag extends APIAbstract {
   public shop_name: string;
-
+  public setArticleTags = setArticleTags;
+  public updateTag = updateTag;
+  public getTags = getTags;
 
   constructor(shop_name: string) {
     super();
     this.shop_name = shop_name;
   }
-
-
-  public setArticleTags = setArticleTags;
-  public updateTag = updateTag;
-  public getTags = getTags;
-
-
-
 }
 
 //█████████████████████████████████████████████████████████████

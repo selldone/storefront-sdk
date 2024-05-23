@@ -12,18 +12,17 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
 import fetchLotteryPrizes from "./requests/xapi.lottery.get";
 
 export class XapiLottery extends APIAbstract {
   public shop_name: string;
+  public fetchLotteryPrizes = fetchLotteryPrizes;
 
   constructor(shop_name: string) {
     super();
     this.shop_name = shop_name;
   }
-
-  public fetchLotteryPrizes = fetchLotteryPrizes;
 }
 
 //█████████████████████████████████████████████████████████████

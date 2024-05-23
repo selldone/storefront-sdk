@@ -12,10 +12,10 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { Currency } from "@selldone/core-js/enums/payment/Currency";
-import { BasketItem } from "@selldone/core-js/models/shop/order/basket/basket_item.model";
-import { XapiBasket } from "../XapiBasket";
-import { Basket } from "@selldone/core-js/models/shop/order/basket/basket.model";
+import {Currency} from "@selldone/core-js/enums/payment/Currency";
+import {BasketItem} from "@selldone/core-js/models/shop/order/basket/basket_item.model";
+import {XapiBasket} from "../XapiBasket";
+import {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
 
 /**
  * Fetches eligible coupons for the buyer.
@@ -27,7 +27,7 @@ export default function addItem(
   product_id: number,
   variant_id: number | null,
   count: number,
-  options?: xapi.basket.items.put.IOption
+  options?: xapi.basket.items.put.IOption,
 ) {
   const params = {
     currency: options?.currency
@@ -45,7 +45,7 @@ export default function addItem(
 
   const url = window.XAPI.PUT_PHYSICAL_ITEM_IN_BASKET(
     this.shop_name,
-    product_id
+    product_id,
   );
   return this.putNow<xapi.basket.items.put.IResponse>(url, params, {
     accept_error_response:
@@ -68,6 +68,7 @@ export namespace xapi.basket.items.put {
     basket: Basket;
     bill: Basket.IBill;
   }
+
   export interface IOption {
     currency?: keyof typeof Currency;
     preferences?: BasketItem.IPreferences | null;

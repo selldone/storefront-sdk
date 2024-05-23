@@ -12,15 +12,15 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
-import { XapiExchangeRate } from "./exchange-rates/XapiExchangeRate";
-import { ExchangeRate } from "@selldone/core-js/models/shop/payment/exchange_rate.model";
-import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
-import { Shop } from "@selldone/core-js/models/shop/shop.model";
-import type { Basket } from "@selldone/core-js/models/shop/order/basket/basket.model";
-import { XapiLanguage } from "./language/XapiLanguage";
-import { Popup } from "@selldone/core-js/models/shop/popup/popup.model";
-import type { GatewayQue } from "@selldone/core-js/models/shop/payment/gateway-que.model";
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
+import {XapiExchangeRate} from "./exchange-rates/XapiExchangeRate";
+import {ExchangeRate} from "@selldone/core-js/models/shop/payment/exchange_rate.model";
+import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
+import {Shop} from "@selldone/core-js/models/shop/shop.model";
+import type {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
+import {XapiLanguage} from "./language/XapiLanguage";
+import {Popup} from "@selldone/core-js/models/shop/popup/popup.model";
+import type {GatewayQue} from "@selldone/core-js/models/shop/payment/gateway-que.model";
 import {Club} from "@selldone/core-js/models/shop/club/club.model";
 import {Transportation} from "@selldone/core-js/models/shop/shipping/transportation.model";
 import {Gateway} from "@selldone/core-js/models/shop/gateway/gateway.model";
@@ -69,7 +69,8 @@ export class XapiShop extends APIAbstract {
   public fetchShop(): Promise<XapiShop.IGetShopInfoResponse> {
     const url = window.XAPI.GET_SHOP_INFO(this.shop_name);
     // @ts-ignore
-    const guest_codes = StorefrontLocalStorages.GetShopHistoryGuestAllCodes().limit(10); // We use it to get pending transactions!
+    const guest_codes =
+      StorefrontLocalStorages.GetShopHistoryGuestAllCodes().limit(10); // We use it to get pending transactions!
     const params = { guest_codes: guest_codes };
     return this.getNow<XapiShop.IGetShopInfoResponse>(url, params);
   }
@@ -144,8 +145,10 @@ export namespace XapiShop {
     lng: number;
     lat: number;
   }
+
   export interface ISeenPopup {
-    [key: number]: string; // Date format
     last: string; // Date format
+
+    [key: number]: string; // Date format
   }
 }

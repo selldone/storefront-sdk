@@ -12,17 +12,17 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { IErrorResponse } from "@selldone/core-js/server/APIAbstract";
-import { AxiosError } from "axios";
-import { StorefrontLocalStorages } from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
-import { ExchangeRate } from "@selldone/core-js/models/shop/payment/exchange_rate.model";
+import {IErrorResponse} from "@selldone/core-js/server/APIAbstract";
+import {AxiosError} from "axios";
+import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
+import {ExchangeRate} from "@selldone/core-js/models/shop/payment/exchange_rate.model";
 
 export default function fetchRates(
   this: any,
   onSuccess: (
-    data: xapi.exchange_rates.get.IExchangeRatesServerResponse
+    data: xapi.exchange_rates.get.IExchangeRatesServerResponse,
   ) => void,
-  onError?: (error: IErrorResponse | AxiosError) => void
+  onError?: (error: IErrorResponse | AxiosError) => void,
 ): void {
   const params = {
     codes: StorefrontLocalStorages.GetShopHistoryGuestAllCodes(),

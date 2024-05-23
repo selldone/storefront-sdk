@@ -12,20 +12,19 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
 import addItem from "./requests/xapi.basket.items.put";
 import removeItem from "./requests/xapi.basket.items.delete";
 
 export class XapiBasket extends APIAbstract {
   public shop_name: string;
+  public addItem = addItem;
+  public removeItem = removeItem;
 
   constructor(shop_name: string) {
     super();
     this.shop_name = shop_name;
   }
-
-  public addItem = addItem;
-  public removeItem = removeItem;
 }
 
 //█████████████████████████████████████████████████████████████
