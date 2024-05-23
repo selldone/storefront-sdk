@@ -13,7 +13,7 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import {CustomerSource} from "@selldone/core-js/enums/customer/source/CustomerSource";
+import {Customer} from "@selldone/core-js/models/shop/customer/customer.model";
 
 export class XapiAuthSMS extends APIAbstract {
   public shop_name: string;
@@ -69,14 +69,14 @@ export class XapiAuthSMS extends APIAbstract {
    * @param {string} country_code - The ISO code of the country (e.g., 'US' for the United States).
    * @param {string | number} phone - The phone number for which the OTP was requested.
    * @param {string | number} verification_code - The OTP received by the user.
-   * @param {CustomerSource} source - The origin of the OTP request, either 'customer' or 'vendor'.
+   * @param {Customer.Source} source - The origin of the OTP request, either 'customer' or 'vendor'.
    *
    * @returns {Promise<ISMSVerifyOTPServerResponse>} - Returns a promise that resolves with the
    *                                                    server's response to the OTP verification.
    *
    * @example
    *
-   * verifyOTP('+1', 'US', '1234567890', '123456', CustomerSource.CUSTOMER)
+   * verifyOTP('+1', 'US', '1234567890', '123456', Customer.Source.CUSTOMER)
    *   .then(response => console.log(response))
    *   .catch(error => console.error(error));
    *
@@ -86,7 +86,7 @@ export class XapiAuthSMS extends APIAbstract {
     country_code: string,
     phone: string | number,
     verification_code: string | number,
-    source: CustomerSource | null,
+    source: Customer.Source | null,
   ): Promise<
     | ISMSVerifyOTPServerResponse_Register
     | ISMSVerifyOTPServerResponse_Select
@@ -97,7 +97,7 @@ export class XapiAuthSMS extends APIAbstract {
       country_code: country_code,
       phone: phone,
       verification_code: verification_code,
-      source: source ? source : CustomerSource.CUSTOMER,
+      source: source ? source : Customer.Source.CUSTOMER,
     };
     const url = window.XAPI.SHOP_LOGIN_VERIFY(this.shop_name);
     return this.postNow<
@@ -112,7 +112,7 @@ export class XapiAuthSMS extends APIAbstract {
    *
    * @param code - The unique code associated with the user. This can be a string or number.
    * @param source - The source from which the login is initiated (e.g., customer, vendor, etc.),
-   *                 represented by the CustomerSource enumeration.
+   *                 represented by the Customer.Source enumeration.
    *
    * @returns A Promise that resolves to an `ISMSVerifyOTPServerResponse_Login` object which contains
    *          information about the login process. This object can include the method of verification
@@ -120,7 +120,7 @@ export class XapiAuthSMS extends APIAbstract {
    *          for that token.
    *
    * @example
-   * selectUser("1234", CustomerSource.CUSTOMER)
+   * selectUser("1234", Customer.Source.CUSTOMER)
    *   .then(response => {
    *     console.log(response.token);
    *   })
@@ -131,11 +131,11 @@ export class XapiAuthSMS extends APIAbstract {
    */
   public selectUser(
     code: string | number,
-    source: CustomerSource | null,
+    source: Customer.Source | null,
   ): Promise<ISMSVerifyOTPServerResponse_Login> {
     const params = {
       code: code,
-      source: source ? source : CustomerSource.CUSTOMER,
+      source: source ? source : Customer.Source.CUSTOMER,
     };
     const url = window.XAPI.SHOP_LOGIN_SELECT_USER(this.shop_name);
     return this.postNow<ISMSVerifyOTPServerResponse_Login>(url, params);
@@ -151,7 +151,7 @@ export class XapiAuthSMS extends APIAbstract {
    * @param no_email_mode - A boolean flag indicating whether the user registration should operate in
    *                        a mode that doesn't require an email. If `true`, email becomes optional.
    * @param source - The source from which the registration is initiated, represented by the
-   *                 CustomerSource enumeration.
+   *                 Customer.Source enumeration.
    *
    * @returns A Promise that resolves to an `ISMSVerifyOTPServerResponse_Login` object which contains
    *          information about the registration and potential login process. This object will include
@@ -159,7 +159,7 @@ export class XapiAuthSMS extends APIAbstract {
    *          and the expiration time for that token.
    *
    * @example
-   * registerUser("1234", "John Doe", "john@example.com", "securePass123", false, CustomerSource.CUSTOMER)
+   * registerUser("1234", "John Doe", "john@example.com", "securePass123", false, Customer.Source.CUSTOMER)
    *   .then(response => {
    *     console.log(response.token);
    *   })
@@ -175,7 +175,7 @@ export class XapiAuthSMS extends APIAbstract {
     email: string | null,
     password: string | null,
     no_email_mode: boolean,
-    source: CustomerSource | null,
+    source: Customer.Source | null,
   ): Promise<ISMSVerifyOTPServerResponse_Login> {
     const params = {
       code: code,
@@ -183,7 +183,7 @@ export class XapiAuthSMS extends APIAbstract {
       email: email,
       password: password,
       no_email_mode: no_email_mode,
-      source: source ? source : CustomerSource.CUSTOMER,
+      source: source ? source : Customer.Source.CUSTOMER,
     };
     const url = window.XAPI.SHOP_LOGIN_NEW_USER(this.shop_name);
     return this.postNow<ISMSVerifyOTPServerResponse_Login>(url, params);
