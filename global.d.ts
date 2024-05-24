@@ -13,7 +13,7 @@
  */
 
 import {ILanguage} from "./enums/language/Language";
-import Cookie from "@selldone/core-js/utils/cookie/cookie";
+import Cookie from "@selldone/core-js";
 
 declare global {
   interface Window {
@@ -22,15 +22,12 @@ declare global {
     $language: ILanguage;
 
     selldone_config: any; // Specify the type according to what selldone_config is supposed to be.
-    extra_footer:any,
+    extra_footer: any;
 
-    $cookies:Cookie,
-    $i18n_global:any,
-
-
+    $cookies: Cookie;
+    $i18n_global: any;
   }
 }
-
 
 // Export nothing to ensure this file can only be used for type declarations
 export {};

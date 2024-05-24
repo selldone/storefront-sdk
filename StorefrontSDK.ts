@@ -13,12 +13,12 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {SetupService} from "@selldone/core-js/server/SetupService";
+import {SetupService} from "@selldone/core-js";
 import {XapiUser} from "./user/XapiUser";
 import {XAPI} from "./apis/XAPI";
 import {XapiShop} from "./shop/XapiShop";
-import {CDN} from "@selldone/core-js/server/CDN";
-import {URLS} from "@selldone/core-js/server/URLS";
+import {CDN} from "@selldone/core-js";
+import {URLS} from "@selldone/core-js";
 import {XapiAuth} from "./auth/XapiAuth";
 import {Shop} from "@selldone/core-js/models/shop/shop.model";
 import {StorefrontAxiosSetup} from "./plugins/axios/StorefrontAxiosSetup";
