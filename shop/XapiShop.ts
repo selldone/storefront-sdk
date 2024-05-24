@@ -12,9 +12,9 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
+import {APIAbstract} from "@selldone/core-js";
 import {XapiExchangeRate} from "./exchange-rates/XapiExchangeRate";
-import {ExchangeRate} from "@selldone/core-js/models/shop/payment/exchange_rate.model";
+import {ExchangeRate} from "@selldone/core-js";
 import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
 import {Shop} from "@selldone/core-js/models/shop/shop.model";
 import type {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
@@ -22,7 +22,7 @@ import {XapiLanguage} from "./language/XapiLanguage";
 import {Popup} from "@selldone/core-js/models/shop/popup/popup.model";
 import type {GatewayQue} from "@selldone/core-js/models/shop/payment/gateway-que.model";
 import {Club} from "@selldone/core-js/models/shop/club/club.model";
-import {Transportation} from "@selldone/core-js/models/shop/shipping/transportation.model";
+import {Transportation} from "@selldone/core-js/models/shop/transportation/transportation.model";
 import {Gateway} from "@selldone/core-js/models/shop/gateway/gateway.model";
 import {ShopMenu} from "@selldone/core-js/models/shop/design/menu.model";
 import {ProductBadge} from "@selldone/core-js/models/shop/product/badge.model";
