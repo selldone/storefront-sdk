@@ -14,12 +14,12 @@
 
 import type {XapiAvocado} from "../XapiAvocado";
 import type {Avocado} from "@selldone/core-js/models/shop/order/avocado/avocado.order";
-import type {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
+import {Order} from "@selldone/core-js";
 
 export default function updateReceiverInfo(
   this: XapiAvocado,
   hash: string,
-  receiver_info: Basket.IReceiverInfo,
+  receiver_info: Order.IReceiverInfo,
 ) {
   const params = {
     receiver_info: receiver_info,

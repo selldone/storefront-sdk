@@ -14,7 +14,7 @@
 
 import {Currency} from "@selldone/core-js/enums/payment/Currency";
 import {XapiBasket} from "../XapiBasket";
-import {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
+import {Basket} from "@selldone/core-js";
 
 /**
  * Fetches eligible coupons for the buyer.
@@ -50,7 +50,7 @@ export namespace xapi.basket.items.remove {
   export interface IResponse {
     success: boolean;
     basket: Basket;
-    bill: Basket.IBill;
+    bill: Basket.ICalculatedBill;
   }
 
   export interface IOption {

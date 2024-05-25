@@ -66,7 +66,7 @@ export namespace xapi.basket.items.put {
     success: boolean;
 
     basket: Basket;
-    bill: Basket.IBill;
+    bill: Basket.ICalculatedBill;
   }
 
   export interface IOption {

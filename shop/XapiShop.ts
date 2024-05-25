@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {APIAbstract} from "@selldone/core-js";
+import {APIAbstract, Map} from "@selldone/core-js";
 import {XapiExchangeRate} from "./exchange-rates/XapiExchangeRate";
 import {ExchangeRate} from "@selldone/core-js";
 import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
@@ -126,7 +126,7 @@ export namespace XapiShop {
     /**
      * Represents a location with longitude and latitude.
      */
-    initial_location: ILocation;
+    initial_location: Map.ILocation;
 
     /**
      * List of viewed popups. Their stringified values should be included in the [S-Pops] header of requests.
@@ -140,10 +140,7 @@ export namespace XapiShop {
     type: string;
   }
 
-  export interface ILocation {
-    lng: number;
-    lat: number;
-  }
+
 
   export interface ISeenPopup {
     last: string; // Date format
