@@ -128,7 +128,10 @@ export class StorefrontSDK {
    * // Typical usage without providing shop name (relies on meta tag)
    * StorefrontSDK.Setup();
    */
-  static Setup(_shop_name?: string): void {
+  static Setup(
+      _shop_name?: string,
+               options: { cookie_key_access_token?: string } = { cookie_key_access_token: 'access_token' }
+  ): void {
     console.log("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
     console.log(`┣━━━━ Selldone® Storefront SDK | V${SDK_VERSION} ━━━━┫`);
     console.log("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
@@ -170,7 +173,7 @@ export class StorefrontSDK {
       custom_home = SetupService.GetMetaValue("custom-home") as Shop.Home;
 
       //――――――――――――――――――――――――― Axios ―――――――――――――――――――――――――
-      StorefrontAxiosSetup();
+      StorefrontAxiosSetup(options.cookie_key_access_token);
 
       //――――――――――――――――――――――――― Initialize Resources Origin ―――――――――――――――――――――――――
 

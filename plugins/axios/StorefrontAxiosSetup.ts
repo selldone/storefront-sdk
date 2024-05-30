@@ -16,7 +16,7 @@ import {SetupService} from "@selldone/core-js/server/SetupService";
 import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/StorefrontLocalStorages";
 import axios from "axios";
 
-export function StorefrontAxiosSetup() {
+export function StorefrontAxiosSetup(cookie_key_access_token:string='access_token') {
   const shop_name = SetupService.GetMetaValue("shop-name");
   const shop_prefix_address = SetupService.GetMetaValue(
     "shop-prefix-address",
@@ -42,7 +42,7 @@ export function StorefrontAxiosSetup() {
 
     // @ts-ignore
     window.$cookies.set(
-      "access_token",
+        cookie_key_access_token,
       window.SelldoneUser.access_token,
       expire_date.toUTCString(),
       shop_prefix_address,
@@ -51,7 +51,7 @@ export function StorefrontAxiosSetup() {
     );
   } else {
     // @ts-ignore
-    const access_token = window.$cookies.get("access_token");
+    const access_token = window.$cookies.get(cookie_key_access_token);
 
     if (access_token) {
       // User previously login
