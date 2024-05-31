@@ -34,13 +34,7 @@ function requestOTPSample() {
 }
 ```
 
-#### requestOTP.IResponse
 
-```typescript
-export interface IResponse {
-    success: boolean;
-}
-```
 
 ## STEP 2. Verify OTP
 
@@ -75,14 +69,6 @@ function verifyOTPSample() {
 }
 ```
 
-#### verifyOTP.IResponse
-
-```typescript
-export interface IResponse {
-    token: string;
-    expires_in: number;
-}
-```
 
 ## STEP 3. Register User
 
@@ -99,7 +85,7 @@ To register a new user, use the `registerUser` function. This function registers
 
 #### Returns
 
-- `Promise<ISMSVerifyOTPServerResponse_Login>`: A promise that resolves to an ISMSVerifyOTPServerResponse_Login object.
+- `Promise<XapiAuthSMSVerifyOtpTypes.ILoginResponse>`: A promise that resolves to an XapiAuthSMSVerifyOtpTypes.ILoginResponse object.
 
 #### Sample Usage
 
@@ -121,15 +107,7 @@ function registerUserSample() {
 }
 ```
 
-#### ISMSVerifyOTPServerResponse_Login
 
-```typescript
-export interface ISMSVerifyOTPServerResponse_Login {
-    method: 'login';
-    token: string;
-    expires_in: number;
-}
-```
 
 ## STEP 4. Select User
 
@@ -161,5 +139,4 @@ function selectUserSample() {
             this.busy = false;
         });
 }
-```
 ```

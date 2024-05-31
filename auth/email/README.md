@@ -35,7 +35,7 @@ function requestOTPSample() {
 }
 ```
 
-#### requestOTP.IResponse
+#### XapiAuthEmailRequestOtpTypes.IResponse
 
 ```typescript
 export interface IResponse {
@@ -80,7 +80,7 @@ function verifyOTPSample() {
 }
 ```
 
-#### verifyOTP.IResponse
+#### XapiAuthEmailVerifyOtpTypes.IResponse
 
 ```typescript
 export interface IResponse {

@@ -28,7 +28,7 @@ import {XapiAuthSMSVerifyOtpTypes} from "@selldone/sdk-storefront/auth/sms/verif
  * @param source - The source from which the registration is initiated, represented by the
  *                 Customer.Source enumeration.
  *
- * @returns A Promise that resolves to an `ISMSVerifyOTPServerResponse_Login` object which contains
+ * @returns A Promise that resolves to an `XapiAuthSMSVerifyOtpTypes.ILoginResponse` object which contains
  *          information about the registration and potential login process. This object will include
  *          the method of verification (specifically, `Method.LOGIN`), an optional token,
  *          and the expiration time for that token.
