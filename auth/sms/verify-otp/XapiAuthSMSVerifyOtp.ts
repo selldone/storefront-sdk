@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {XapiAuthSMS,} from "@selldone/sdk-storefront/auth/sms/XapiAuthSMS.ts";
+import {XapiAuthSMS,} from "@selldone/sdk-storefront/auth/sms/XapiAuthSMS";
 import {Customer} from "@selldone/core-js/models";
 
 /**

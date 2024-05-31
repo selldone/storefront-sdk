@@ -13,7 +13,7 @@
  */
 
 import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
-import XapiProductSubscriptionContentList from "@selldone/sdk-storefront/product/subscription/content-list/XapiProductSubscriptionContentList.ts";
+import XapiProductSubscriptionContentList from "@selldone/sdk-storefront/product/subscription/content-list/XapiProductSubscriptionContentList";
 
 export class XapiProductSubscription extends APIAbstract {
   public shop_name: string;

@@ -12,9 +12,9 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {XapiProduct} from "../XapiProduct.ts";
-import {Product} from "@selldone/core-js/models/shop/product/product.model.ts";
-import {Category} from "@selldone/core-js/models/shop/category/category.model.ts";
+import {XapiProduct} from "../XapiProduct";
+import {Product} from "@selldone/core-js/models/shop/product/product.model";
+import {Category} from "@selldone/core-js/models/shop/category/category.model";
 
 export default function XapiProductList(
   this: XapiProduct,

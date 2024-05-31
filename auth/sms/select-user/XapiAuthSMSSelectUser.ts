@@ -12,9 +12,9 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {XapiAuthSMS} from "@selldone/sdk-storefront/auth/sms/XapiAuthSMS.ts";
+import {XapiAuthSMS} from "@selldone/sdk-storefront/auth/sms/XapiAuthSMS";
 import {Customer} from "@selldone/core-js/models";
-import {XapiAuthSMSVerifyOtpTypes} from "@selldone/sdk-storefront/auth/sms/verify-otp/XapiAuthSMSVerifyOtp.ts";
+import {XapiAuthSMSVerifyOtpTypes} from "@selldone/sdk-storefront/auth/sms/verify-otp/XapiAuthSMSVerifyOtp";
 
 /**
  * Initiates the user selection process based on the provided code and source.

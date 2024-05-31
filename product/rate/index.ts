@@ -13,8 +13,8 @@
  */
 
 
-export * from "./XapiProductRate.ts";
+export * from "./XapiProductRate";
 
-export * from "./submit/XapiProductRateSubmit.ts";
+export * from "./submit/XapiProductRateSubmit";
 
 

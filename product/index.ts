@@ -15,8 +15,8 @@
 
 export * from "./rate";
 export * from "./subscription";
-export * from "./get/XapiProductGet.ts";
-export * from "./list/XapiProductList.ts";
+export * from "./get/XapiProductGet";
+export * from "./list/XapiProductList";
 
 
 

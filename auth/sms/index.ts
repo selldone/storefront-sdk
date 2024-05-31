@@ -13,10 +13,10 @@
  */
 
 
-export * from "./XapiAuthSMS.ts";
+export * from "./XapiAuthSMS";
 
-export * from "./register-user/XapiAuthSMSRegisterUser.ts";
-export * from "./request-otp/XapiAuthSMSRequestOtp.ts";
-export * from "./select-user/XapiAuthSMSSelectUser.ts";
-export * from "./verify-otp/XapiAuthSMSVerifyOtp.ts";
+export * from "./register-user/XapiAuthSMSRegisterUser";
+export * from "./request-otp/XapiAuthSMSRequestOtp";
+export * from "./select-user/XapiAuthSMSSelectUser";
+export * from "./verify-otp/XapiAuthSMSVerifyOtp";
 

@@ -13,8 +13,8 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import XapiAuthEmailRequestOtp from "@selldone/sdk-storefront/auth/email/request-otp/XapiAuthEmailRequestOtp.ts";
-import XapiAuthEmailVerifyOtp from "@selldone/sdk-storefront/auth/email/verify-otp/XapiAuthEmailVerifyOtp.ts";
+import XapiAuthEmailRequestOtp from "@selldone/sdk-storefront/auth/email/request-otp/XapiAuthEmailRequestOtp";
+import XapiAuthEmailVerifyOtp from "@selldone/sdk-storefront/auth/email/verify-otp/XapiAuthEmailVerifyOtp";
 
 export class XapiAuthEmail extends APIAbstract {
   public shop_name: string;

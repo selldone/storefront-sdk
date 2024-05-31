@@ -12,11 +12,11 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {XapiProduct} from "../XapiProduct.ts";
-import {Product} from "@selldone/core-js/models/shop/product/product.model.ts";
-import {Currency} from "@selldone/core-js/enums/payment/Currency.ts";
-import {Category} from "@selldone/core-js/models/shop/category/category.model.ts";
-import type {Article} from "@selldone/core-j";
+import {XapiProduct} from "../XapiProduct";
+import {Product} from "@selldone/core-js/models/shop/product/product.model";
+import {Currency} from "@selldone/core-js/enums/payment/Currency";
+import {Category} from "@selldone/core-js/models/shop/category/category.model";
+import type {Article} from "@selldone/core-js/models/article/article.model";
 
 /**
  * Language of returned article determine by 'X-Localization' in the header.

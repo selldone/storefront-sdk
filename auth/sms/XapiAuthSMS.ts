@@ -12,11 +12,11 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {APIAbstract} from "@selldone/core-js/server/APIAbstract.ts";
-import XapiAuthSMSRequestOtp from "@selldone/sdk-storefront/auth/sms/request-otp/XapiAuthSMSRequestOtp.ts";
-import XapiAuthSMSVerifyOtp from "@selldone/sdk-storefront/auth/sms/verify-otp/XapiAuthSMSVerifyOtp.ts";
-import XapiAuthSMSRegisterUser from "@selldone/sdk-storefront/auth/sms/register-user/XapiAuthSMSRegisterUser.ts";
-import XapiAuthSMSSelectUser from "@selldone/sdk-storefront/auth/sms/select-user/XapiAuthSMSSelectUser.ts";
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
+import XapiAuthSMSRequestOtp from "@selldone/sdk-storefront/auth/sms/request-otp/XapiAuthSMSRequestOtp";
+import XapiAuthSMSVerifyOtp from "@selldone/sdk-storefront/auth/sms/verify-otp/XapiAuthSMSVerifyOtp";
+import XapiAuthSMSRegisterUser from "@selldone/sdk-storefront/auth/sms/register-user/XapiAuthSMSRegisterUser";
+import XapiAuthSMSSelectUser from "@selldone/sdk-storefront/auth/sms/select-user/XapiAuthSMSSelectUser";
 
 export class XapiAuthSMS extends APIAbstract {
   public shop_name: string;

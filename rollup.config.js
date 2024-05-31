@@ -27,7 +27,7 @@ export default {
     }),
     commonjs(),
     typescript({
-      tsconfig: "./tsconfig.json",
+      tsconfig: "./sdk-tsconfig.json",
     }),
     url({
       include: [

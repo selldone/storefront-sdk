@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {XapiAuthSMS} from "@selldone/sdk-storefront/auth/sms/XapiAuthSMS.ts";
+import {XapiAuthSMS} from "@selldone/sdk-storefront/auth/sms/XapiAuthSMS";
 
 /**
  * Requests an OTP (One-Time Password) for phone-based authentication.

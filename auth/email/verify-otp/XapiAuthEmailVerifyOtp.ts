@@ -13,7 +13,7 @@
  */
 
 import {Customer} from "@selldone/core-js/models";
-import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail.ts";
+import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail";
 
 /**
  * STEP 2.

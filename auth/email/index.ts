@@ -12,4 +12,4 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-export * from "./XapiAuthEmail.ts";
+export * from "./XapiAuthEmail";

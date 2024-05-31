@@ -13,8 +13,8 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import XapiProductList from "./list/XapiProductList.ts";
-import XapiProductGet from "./get/XapiProductGet.ts";
+import XapiProductList from "./list/XapiProductList";
+import XapiProductGet from "./get/XapiProductGet";
 import {XapiProductRate} from "./rate/XapiProductRate";
 import {XapiProductSubscription} from "./subscription/XapiProductSubscription";
 

@@ -13,7 +13,7 @@
  */
 
 
-export * from "./XapiProductSubscription.ts";
+export * from "./XapiProductSubscription";
 
 export * from "./content-list/XapiProductSubscriptionContentList";
 

@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import XapiProductRateSubmit from "@selldone/sdk-storefront/product/rate/submit/XapiProductRateSubmit.ts";
+import XapiProductRateSubmit from "@selldone/sdk-storefront/product/rate/submit/XapiProductRateSubmit";
 import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
 
 export class XapiProductRate extends APIAbstract {

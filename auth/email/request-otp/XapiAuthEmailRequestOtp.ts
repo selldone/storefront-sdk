@@ -12,7 +12,7 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail.ts";
+import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail";
 
 /**
  * STEP 1.
