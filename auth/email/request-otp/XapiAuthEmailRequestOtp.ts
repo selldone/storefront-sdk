@@ -14,6 +14,38 @@
 
 import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail.ts";
 
+/**
+ * STEP 1.
+ * Sends a request for an OTP (One-Time Password) to the provided email.
+ *
+ * This function constructs the necessary parameters and URL to send a POST request
+ * to the XAPI endpoint for requesting an OTP. It then sends the request and returns
+ * the response.
+ *
+ * @param this - The XapiAuthEmail instance, bound to the function.
+ * @param email - The email address to which the OTP should be sent.
+ * @returns A Promise that resolves to an IResponse object containing the success status and email.
+ *
+ * @example
+ * ```typescript
+ * requestOTP() {
+ *   this.busy = true;
+ *
+ *   window.$storefront.auth.email
+ *     .requestOtp(this.email)
+ *     .then(({ success }) => {
+ *       // Success sending OTP
+ *     })
+ *     .catch((error) => {
+ *       console.error(error);
+ *     })
+ *     .finally(() => {
+ *       this.busy = false;
+ *     });
+ * }
+ * ```
+ */
+
 export default function requestOTP(this: XapiAuthEmail, email: string) {
   const params = {
     email: email,
@@ -27,8 +59,17 @@ export default function requestOTP(this: XapiAuthEmail, email: string) {
 //█████████████████████████████████████████████████████████████
 
 export namespace xapi.auth.email.requestOtp {
+  /**
+   * The response returned by the requestOTP function.
+   */
   export interface IResponse {
+    /**
+     * Indicates whether the request was successful.
+     */
     success: boolean;
+    /**
+     * The email address to which the OTP was sent.
+     */
     email: string;
   }
 }

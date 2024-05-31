@@ -15,6 +15,40 @@
 import {Customer} from "@selldone/core-js/models";
 import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail.ts";
 
+/**
+ * STEP 2.
+ * Verifies the OTP (One-Time Password) sent to the provided email.
+ *
+ * This function constructs the necessary parameters and URL to send a POST request
+ * to the XAPI endpoint for verifying the OTP. It then sends the request and returns
+ * the response containing the authentication token and its expiration time.
+ *
+ * @param this - The XapiAuthEmail instance, bound to the function.
+ * @param email - The email address to verify with the OTP.
+ * @param verification_code - The OTP sent to the email address.
+ * @param source - The source from which the verification is requested.
+ * @returns A Promise that resolves to an IResponse object containing the token and expiration time.
+ *
+ * @example
+ * ```typescript
+ * verifyOTP() {
+ *   this.busy = true;
+ *
+ *   window.$storefront.auth.email
+ *     .verifyOTP(this.email, this.otp, this.source)
+ *     .then(({ token, expires_in }) => {
+ *       // Success verifying OTP and Login
+ *       this.token = token;
+ *     })
+ *     .catch((error) => {
+ *       console.error(error);
+ *     })
+ *     .finally(() => {
+ *       this.busy = false;
+ *     });
+ * }
+ * ```
+ */
 export default function verifyOTP(
   this: XapiAuthEmail,
   email: string,
@@ -35,8 +69,17 @@ export default function verifyOTP(
 //█████████████████████████████████████████████████████████████
 
 export namespace xapi.auth.email.verifyOTP {
+  /**
+   * The response returned by the verifyOTP function.
+   */
   export interface IResponse {
-    token: boolean;
+    /**
+     * The authentication token returned upon successful OTP verification.
+     */
+    token: string;
+    /**
+     * The time in seconds until the token expires.
+     */
     expires_in: string;
   }
 }
