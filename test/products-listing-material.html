@@ -155,7 +155,8 @@
 <!-- Vuetify JS (Ensure this is loaded after Vue) -->
 <script src="https://cdn.jsdelivr.net/npm/vuetify@3.6.6/dist/vuetify.js"></script>
 <!-- Selldone SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@1.0.12/dist/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@1.5.32/dist/bundle.min.js"></script>
+<!--<script src="../dist/bundle.min.js"></script> -->
 
 <script>
     const {createApp, h} = Vue;
@@ -231,6 +232,7 @@
                 }
             },
             created() {
+                console.log('storefront',storefront)
                 const sdk = storefront.StorefrontSDK;
                 sdk.Setup();
 
