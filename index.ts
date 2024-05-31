@@ -2,9 +2,11 @@ import { StorefrontSDK } from "./StorefrontSDK";
 
 export { StorefrontSDK };
 
+export * from "./auth";
+
+
 export * from "./article/XapiArticle";
-export * from "./auth/XapiAuth";
-export * from "./auth/XapiAuthSMS";
+
 export * from "./basket/XapiBasket";
 export * from "./coupon/XapiCoupon";
 export * from "./database/StorefrontDatabase";

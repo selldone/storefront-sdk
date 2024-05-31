@@ -49,7 +49,7 @@ import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail.t
  * }
  * ```
  */
-export default function verifyOTP(
+export default function XapiAuthEmailVerifyOtp(
   this: XapiAuthEmail,
   email: string,
   verification_code: string,
@@ -61,14 +61,14 @@ export default function verifyOTP(
     source: source,
   };
   const url = window.XAPI.POST_SHOP_LOGIN_EMAIL_VERIFY(this.shop_name);
-  return this.postNow<xapi.auth.email.verifyOTP.IResponse>(url, params);
+  return this.postNow<XapiAuthEmailVerifyOtpTypes.IResponse>(url, params);
 }
 
 //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace xapi.auth.email.verifyOTP {
+export namespace XapiAuthEmailVerifyOtpTypes {
   /**
    * The response returned by the verifyOTP function.
    */

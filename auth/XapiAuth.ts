@@ -13,7 +13,7 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import {XapiAuthSMS} from "./XapiAuthSMS";
+import {XapiAuthSMS} from "./sms/XapiAuthSMS.ts";
 import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail.ts";
 
 export class XapiAuth extends APIAbstract {
@@ -37,4 +37,4 @@ export class XapiAuth extends APIAbstract {
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace XapiAuth {}
+export namespace XapiAuthTypes {}

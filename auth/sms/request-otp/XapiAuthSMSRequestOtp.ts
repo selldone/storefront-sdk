@@ -12,64 +12,55 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail.ts";
+import {XapiAuthSMS} from "@selldone/sdk-storefront/auth/sms/XapiAuthSMS.ts";
 
 /**
- * STEP 1.
- * Sends a request for an OTP (One-Time Password) to the provided email.
+ * Requests an OTP (One-Time Password) for phone-based authentication.
  *
- * This function constructs the necessary parameters and URL to send a POST request
- * to the XAPI endpoint for requesting an OTP. It then sends the request and returns
- * the response.
+ * This method sends a request to the specified endpoint to generate and send an OTP
+ * to the user's phone. It's typically used in two-factor authentication or phone number
+ * verification processes.
  *
- * @param this - The XapiAuthEmail instance, bound to the function.
- * @param email - The email address to which the OTP should be sent.
- * @returns A Promise that resolves to an IResponse object containing the success status and email.
+ * @param {string | number} dial_code - The dial code of the country/region (e.g., +1 for the US).
+ * @param {string} country_code - The ISO code of the country (e.g., 'US' for the United States).
+ * @param {string | number} phone - The phone number to which the OTP should be sent.
+ *
+ * @returns {Promise<ISMSRequestOTPServerResponse>} - Returns a promise that resolves with the
+ *                                                    server's response to the OTP request.
  *
  * @example
- * ```typescript
- * requestOTP() {
- *   this.busy = true;
  *
- *   window.$storefront.auth.email
- *     .requestOtp(this.email)
- *     .then(({ success }) => {
- *       // Success sending OTP
- *     })
- *     .catch((error) => {
- *       console.error(error);
- *     })
- *     .finally(() => {
- *       this.busy = false;
- *     });
- * }
- * ```
+ * requestOTP('+1', 'US', '1234567890')
+ *   .then(response => console.log(response))
+ *   .catch(error => console.error(error));
+ *
  */
 
-export default function XapiAuthEmailRequestOtp(this: XapiAuthEmail, email: string) {
+export default function XapiAuthSMSRequestOtp(
+  this: XapiAuthSMS,
+  dial_code: string | number,
+  country_code: string,
+  phone: string | number,
+) {
   const params = {
-    email: email,
+    dial_code: dial_code,
+    country_code: country_code,
+    phone: phone,
   };
-  const url = window.XAPI.POST_SHOP_LOGIN_EMAIL_REQUEST(this.shop_name);
-  return this.postNow<XapiAuthEmailRequestOtpTypes.IResponse>(url, params);
+  const url = window.XAPI.SHOP_LOGIN_REQUEST(this.shop_name);
+  return this.postNow<XapiAuthSMSRequestOtpTypes.IResponse>(url, params);
 }
 
 //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace XapiAuthEmailRequestOtpTypes {
+export namespace XapiAuthSMSRequestOtpTypes {
   /**
    * The response returned by the requestOTP function.
    */
   export interface IResponse {
-    /**
-     * Indicates whether the request was successful.
-     */
     success: boolean;
-    /**
-     * The email address to which the OTP was sent.
-     */
-    email: string;
+    phone: string;
   }
 }

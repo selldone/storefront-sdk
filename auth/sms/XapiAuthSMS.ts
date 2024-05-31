@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. Selldone® Business OS™
+ * Copyright (c) 2023-2024. Selldone® Business OS™
  *
  * Author: M.Pajuhaan
  * Web: https://selldone.com
@@ -12,15 +12,19 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import XapiAuthEmailRequestOtp from "@selldone/sdk-storefront/auth/email/request-otp/XapiAuthEmailRequestOtp.ts";
-import XapiAuthEmailVerifyOtp from "@selldone/sdk-storefront/auth/email/verify-otp/XapiAuthEmailVerifyOtp.ts";
+import {APIAbstract} from "@selldone/core-js/server/APIAbstract.ts";
+import XapiAuthSMSRequestOtp from "@selldone/sdk-storefront/auth/sms/request-otp/XapiAuthSMSRequestOtp.ts";
+import XapiAuthSMSVerifyOtp from "@selldone/sdk-storefront/auth/sms/verify-otp/XapiAuthSMSVerifyOtp.ts";
+import XapiAuthSMSRegisterUser from "@selldone/sdk-storefront/auth/sms/register-user/XapiAuthSMSRegisterUser.ts";
+import XapiAuthSMSSelectUser from "@selldone/sdk-storefront/auth/sms/select-user/XapiAuthSMSSelectUser.ts";
 
-export class XapiAuthEmail extends APIAbstract {
+export class XapiAuthSMS extends APIAbstract {
   public shop_name: string;
 
-  public requestOtp = XapiAuthEmailRequestOtp;
-  public verifyOTP = XapiAuthEmailVerifyOtp;
+  public requestOTP = XapiAuthSMSRequestOtp;
+  public verifyOTP = XapiAuthSMSVerifyOtp;
+  public registerUser = XapiAuthSMSRegisterUser;
+  public selectUser = XapiAuthSMSSelectUser;
 
   constructor(shop_name: string) {
     super();
@@ -32,4 +36,6 @@ export class XapiAuthEmail extends APIAbstract {
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace XapiAuthEmailTypes {}
+export namespace XapiAuthSMSTypes {
+
+}
