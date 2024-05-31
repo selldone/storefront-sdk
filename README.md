@@ -148,13 +148,9 @@ Choose a niche, design your application layer with Midjourny, and request code i
 ## Author
 
 Pajuhaan
-```
-
-
-
----
 
 ## License
+
 
 **Selldone Ecosystem License Agreement**
 
@@ -191,4 +187,3 @@ Pajuhaan
 
 By using the Code, the licensee acknowledges that they have read, understood, and agreed to the terms of this license.
 
----
