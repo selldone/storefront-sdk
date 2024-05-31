@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. Selldone® Business OS™
+ * Copyright (c) 2023-2024. Selldone® Business OS™
  *
  * Author: M.Pajuhaan
  * Web: https://selldone.com
@@ -12,10 +12,10 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {XapiProduct} from "../XapiProduct";
-import {Product} from "@selldone/core-js/models/shop/product/product.model";
-import {Currency} from "@selldone/core-js/enums/payment/Currency";
-import {Category} from "@selldone/core-js/models/shop/category/category.model";
+import {XapiProduct} from "../XapiProduct.ts";
+import {Product} from "@selldone/core-js/models/shop/product/product.model.ts";
+import {Currency} from "@selldone/core-js/enums/payment/Currency.ts";
+import {Category} from "@selldone/core-js/models/shop/category/category.model.ts";
 import type {Article} from "@selldone/core-j";
 
 /**
@@ -24,15 +24,15 @@ import type {Article} from "@selldone/core-j";
  * @param product_id
  * @param options
  */
-export default function getInfo(
+export default function XapiProductGet(
   this: XapiProduct,
   product_id: string | number,
-  options?: xapi.product.get.IOptions,
-): Promise<xapi.product.get.IResponse> {
+  options?: XapiProductGetTypes.IOptions,
+): Promise<XapiProductGetTypes.IResponse> {
   product_id = parseInt("" + product_id);
   const url = window.XAPI.GET_PRODUCT_INFO(this.shop_name, product_id);
 
-  return this.getNow<xapi.product.get.IResponse>(url, options, (caches) => {
+  return this.getNow<XapiProductGetTypes.IResponse>(url, options, (caches) => {
     // Find product in previously fetched products list:
     let foundProduct = null;
 
@@ -59,7 +59,7 @@ export default function getInfo(
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace xapi.product.get {
+export namespace XapiProductGetTypes {
   export interface IResponse {
     product: Product & {
       article_pack: {

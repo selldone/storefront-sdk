@@ -16,19 +16,43 @@ import type {XapiProductSubscription} from "../XapiProductSubscription";
 import type {ProductContent} from "@selldone/core-js/models/shop/product/product-content.model";
 import type {ProductFile} from "@selldone/core-js/models/shop/product/product-file.model";
 
-export default function getContents(
+/**
+ * Fetches a list of content for a subscribed product.
+ *
+ * @param product_id - The ID of the product whose content is being fetched.
+ * @param offset - The offset for pagination.
+ * @param limit - The number of items to fetch.
+ * @param options - Additional options for fetching the content, such as search, sorting, and sort direction.
+ * @returns A promise that resolves to the response containing the content list and total count.
+ *
+ * @example
+ * ```typescript
+ * // Assuming you have an instance of XapiProductSubscription
+ * const xapiProductSubscription = new XapiProductSubscription();
+ *
+ * // Fetch product contents
+ * xapiProductSubscription.getContents(12345, 0, 10, { search: "example", sortBy: "title", sortDesc: true })
+ *   .then(response => {
+ *     console.log('Contents fetched successfully:', response);
+ *   })
+ *   .catch(error => {
+ *     console.error('Error fetching contents:', error);
+ *   });
+ * ```
+ */
+export default function XapiProductSubscriptionContentList(
   this: XapiProductSubscription,
   product_id: string | number,
   offset: number,
   limit: number,
-  options: xapi.product.subscription.contents.get.IOptions,
+  options: XapiProductSubscriptionContentListTypes.IOptions,
 ) {
   const url = window.XAPI.GET_PRODUCT_MEMBERSHIP_CONTENTS(
     this.shop_name,
     product_id,
   );
   const params = { offset: offset, limit: limit, ...options };
-  return this.getNow<xapi.product.subscription.contents.get.IResponse>(
+  return this.getNow<XapiProductSubscriptionContentListTypes.IResponse>(
     url,
     params,
   );
@@ -38,7 +62,10 @@ export default function getContents(
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace xapi.product.subscription.contents.get {
+export namespace XapiProductSubscriptionContentListTypes {
+  /**
+   * Response interface for the product subscription content list.
+   */
   export interface IResponse {
     contents: (Pick<
       ProductContent,
@@ -60,6 +87,9 @@ export namespace xapi.product.subscription.contents.get {
     total: number;
   }
 
+  /**
+   * Options interface for fetching the product subscription content list.
+   */
   export interface IOptions {
     search?: string;
     sortBy?: string;

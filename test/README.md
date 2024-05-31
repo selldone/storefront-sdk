@@ -74,7 +74,7 @@ Live code: https://codepen.io/pajuhaan/pen/JjqGBWJ
     fetchProducts(dir, more, limit, options) {
       window.$storefront.products
         .optimize(600)
-        .fetchProducts(dir, more ? this.products.length : 0, limit, options)
+        .list(dir, more ? this.products.length : 0, limit, options)
         .then(({ products, folders }) => {
           this.products = products;
           this.folders = folders;

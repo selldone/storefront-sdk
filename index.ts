@@ -3,6 +3,7 @@ import { StorefrontSDK } from "./StorefrontSDK";
 export { StorefrontSDK };
 
 export * from "./auth";
+export * from "./product";
 
 
 export * from "./article/XapiArticle";

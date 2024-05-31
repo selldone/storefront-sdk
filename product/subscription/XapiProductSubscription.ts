@@ -12,24 +12,19 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import getContents from "./requests/xapi.product.subscription.contents.get";
-
+import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
+import XapiProductSubscriptionContentList from "@selldone/sdk-storefront/product/subscription/content-list/XapiProductSubscriptionContentList.ts";
 
 export class XapiProductSubscription extends APIAbstract {
+  public shop_name: string;
+  public getContents = XapiProductSubscriptionContentList;
 
-    public shop_name: string;
-    public getContents = getContents;
-
-    constructor(shop_name: string) {
-        super();
-        this.shop_name = shop_name;
-    }
-
-
+  constructor(shop_name: string) {
+    super();
+    this.shop_name = shop_name;
+  }
 }
 
 //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
-

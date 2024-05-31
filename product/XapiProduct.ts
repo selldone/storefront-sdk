@@ -13,8 +13,8 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import fetchProducts from "./requests/xapi.products.get";
-import getInfo from "./requests/xapi.product.get";
+import XapiProductList from "./list/XapiProductList.ts";
+import XapiProductGet from "./get/XapiProductGet.ts";
 import {XapiProductRate} from "./rate/XapiProductRate";
 import {XapiProductSubscription} from "./subscription/XapiProductSubscription";
 
@@ -22,8 +22,13 @@ export class XapiProduct extends APIAbstract {
   public shop_name: string;
   public rate: XapiProductRate;
   public subscription: XapiProductSubscription;
-  public fetchProducts = fetchProducts;
-  public getInfo = getInfo;
+
+  public list = XapiProductList;
+
+  /** @deprecated fetchProducts*/
+  public fetchProducts = XapiProductList;
+
+  public get = XapiProductGet;
 
   constructor(shop_name: string) {
     super();
@@ -37,4 +42,4 @@ export class XapiProduct extends APIAbstract {
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace XapiProduct {}
+export namespace XapiProductTypes {}

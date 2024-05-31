@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. Selldone® Business OS™
+ * Copyright (c) 2023-2024. Selldone® Business OS™
  *
  * Author: M.Pajuhaan
  * Web: https://selldone.com
@@ -12,20 +12,20 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {XapiProduct} from "../XapiProduct";
-import {Product} from "@selldone/core-js/models/shop/product/product.model";
-import {Category} from "@selldone/core-js/models/shop/category/category.model";
+import {XapiProduct} from "../XapiProduct.ts";
+import {Product} from "@selldone/core-js/models/shop/product/product.model.ts";
+import {Category} from "@selldone/core-js/models/shop/category/category.model.ts";
 
-export default function fetchProducts(
+export default function XapiProductList(
   this: XapiProduct,
   dir: string | null = null,
   offset: number = 0,
   limit: number = 10,
-  options?: xapi.products.get.IOptions,
-): Promise<xapi.products.get.IResponse> {
+  options?: XapiProductListTypes.IOptions,
+): Promise<XapiProductListTypes.IResponse> {
   const url = window.XAPI.GET_PRODUCTS(this.shop_name);
 
-  return this.getNow<xapi.products.get.IResponse>(url, {
+  return this.getNow<XapiProductListTypes.IResponse>(url, {
     dir,
     offset,
     limit,
@@ -37,7 +37,7 @@ export default function fetchProducts(
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace xapi.products.get {
+export namespace XapiProductListTypes {
   export interface IResponse {
     products: Product.IProduct[];
     folders: Category.ICategory[];

@@ -199,7 +199,7 @@
                 fetchProducts(dir, more, limit, options) {
                     window.$storefront.products
                         .optimize(600) // Cache products for 600 seconds
-                        .fetchProducts(dir, more ? this.products.length : 0, limit, options)
+                        .list(dir, more ? this.products.length : 0, limit, options)
                         .then(({products, folders}) => {
                             this.products = products;
                             this.folders = folders;

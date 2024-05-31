@@ -12,24 +12,19 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import submitMyRate from "./requests/xapi.product.rate.submit.post";
-import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-
+import XapiProductRateSubmit from "@selldone/sdk-storefront/product/rate/submit/XapiProductRateSubmit.ts";
+import { APIAbstract } from "@selldone/core-js/server/APIAbstract";
 
 export class XapiProductRate extends APIAbstract {
+  public shop_name: string;
+  public submitMyRate = XapiProductRateSubmit;
 
-    public shop_name: string;
-    public submitMyRate = submitMyRate;
-
-    constructor(shop_name: string) {
-        super();
-        this.shop_name = shop_name;
-    }
-
-
+  constructor(shop_name: string) {
+    super();
+    this.shop_name = shop_name;
+  }
 }
 
 //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
-

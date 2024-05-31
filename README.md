@@ -15,12 +15,12 @@
 A powerful toolkit that enables developers and entrepreneurs to easily create highly customized ecommerce platforms. In
 this article, we'll explore the capabilities of the Selldone SDK and how it can revolutionize the ecommerce landscape.
 
+# Documents
 
-# SDK Documents
-
-| Category                   | Description                                         | Namespace               |
-|----------------------------|-----------------------------------------------------|-------------------------|
-| **[Authentication](auth)** | User authentication methods with social, sms, email | window.$storefront.auth |
+| Category                   | Description                                                                                                                                                     | Namespace                   |
+|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
+| **[Authentication](auth)** | User authentication methods with social, sms, email                                                                                                             | window.$storefront.auth     |
+| **[Product](product)**     | Retrieve product listings, detailed information, search for products, manage customer-related actions such as rating products, and access subscription content. | window.$storefront.products |
 
 # Starter
 
@@ -41,6 +41,7 @@ yarn add @selldone/sdk-storefront
 Here's a basic example to get you started:
 
 ### Use in Vue, React, Bootstrap, or any other JS Framework
+
 ```javascript
 import {StorefrontSDK} from "@selldone/sdk-storefront";
 
@@ -49,16 +50,19 @@ StorefrontSDK.Setup(); // Set up the Shop SDK.
 ```
 
 ### Use in Html
+
 ```html  
+
 <script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@1.0.12/dist/bundle.min.js"></script>
 <script>
-   // Use the global variable StorefrontSDK
-   const sdk = storefront.StorefrontSDK;
-   sdk.Setup()
+    // Use the global variable StorefrontSDK
+    const sdk = storefront.StorefrontSDK;
+    sdk.Setup()
 </script>
 ```
 
-Change `1.0.12` to last version  <a href="https://www.npmjs.com/package/@selldone/sdk-storefront"><img src="https://img.shields.io/npm/v/@selldone/sdk-storefront.svg?sanitize=true" alt="Version"></a>!
+Change `1.0.12` to last
+version  <a href="https://www.npmjs.com/package/@selldone/sdk-storefront"><img src="https://img.shields.io/npm/v/@selldone/sdk-storefront.svg?sanitize=true" alt="Version"></a>!
 
 ### Add Meta Tags to HTML
 
@@ -104,28 +108,33 @@ API, facilitating the retrieval of your shop's data.
 
 ## Articles & Live Samples
 
-* **Medium Article:** [Build E-Commerce with Open-Source Selldone — Fetch List of Products + Vue3 Sample](https://pajuhaan.medium.com/build-e-commerce-with-open-source-selldone-fetch-list-of-products-vue3-sample-9e61108b0ca6)
+* **Medium Article:
+  ** [Build E-Commerce with Open-Source Selldone — Fetch List of Products + Vue3 Sample](https://pajuhaan.medium.com/build-e-commerce-with-open-source-selldone-fetch-list-of-products-vue3-sample-9e61108b0ca6)
 * **Live Sample Code:** https://codepen.io/pajuhaan/pen/pomvQWr
 
-
-
 # About
+
 ### Selldone SDK - Custom Ecommerce Development Toolkit
 
-The Selldone SDK offers essential components for creating online storefronts and managing customer authentication. With its open-source tools, developers can build custom ecommerce platforms tailored to specific needs.
+The Selldone SDK offers essential components for creating online storefronts and managing customer authentication. With
+its open-source tools, developers can build custom ecommerce platforms tailored to specific needs.
 
 ![Selldone Components](./_docs/images/selldone-screenshot.jpg)
+
 ### Easy to Use
 
-Even with just three months of JavaScript and HTML experience, users can create a fully customized online store in a day, making Selldone SDK ideal for developers and entrepreneurs alike.
+Even with just three months of JavaScript and HTML experience, users can create a fully customized online store in a
+day, making Selldone SDK ideal for developers and entrepreneurs alike.
 
 ### Unlimited Customization
 
-The SDK allows for extensive customization of components, enabling developers to build specialized ecommerce solutions for various industries and sell them as SaaS products.
+The SDK allows for extensive customization of components, enabling developers to build specialized ecommerce solutions
+for various industries and sell them as SaaS products.
 
 ### SaaS Solutions with Selldone SDK
 
-Develop SaaS solutions without backend coding. For instance, create a subscription service for marketing analysis or a platform for selling training courses, all powered by Selldone.
+Develop SaaS solutions without backend coding. For instance, create a subscription service for marketing analysis or a
+platform for selling training courses, all powered by Selldone.
 
 #### Case Study 1: Host Web App on My Backend
 
@@ -146,14 +155,15 @@ Develop SaaS solutions without backend coding. For instance, create a subscripti
 
 ### Build with AI + Selldone
 
-Choose a niche, design your application layer with Midjourny, and request code implementation using Selldone Components. Customize components with AI services like ChatGPT, BART, or Selldone's AI offerings, and launch your platform-based business.
+Choose a niche, design your application layer with Midjourny, and request code implementation using Selldone Components.
+Customize components with AI services like ChatGPT, BART, or Selldone's AI offerings, and launch your platform-based
+business.
 
 ## Author
 
 Pajuhaan
 
 ## License
-
 
 **Selldone Ecosystem License Agreement**
 
