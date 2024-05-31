@@ -1,7 +1,7 @@
+# Selldone Storefront SDK - Authentication > Email
 
-# Selldone Storefront SDK - Email Authentication
-
-This module provides functionality to authenticate users in a shop using email through the Selldone Storefront SDK. It includes functions to request an OTP (One-Time Password) and verify the OTP.
+This module provides functionality to authenticate users in a shop using email through the Selldone Storefront SDK. It
+includes functions to request an OTP (One-Time Password) and verify the OTP.
 
 ## STEP 1. Request OTP
 
@@ -15,24 +15,23 @@ To request an OTP, use the `requestOTP` function. This function sends an OTP to 
 
 - `Promise<IResponse>`: A promise that resolves to an IResponse object containing the success status and email.
 
-
 #### Sample Usage
 
 ```typescript
 function requestOTPSample() {
-  this.busy = true;
+    this.busy = true;
 
-  window.$storefront.auth.email
-    .requestOtp(this.email)
-    .then(({ success }) => {
-      
-    })
-    .catch((error) => {
+    window.$storefront.auth.email
+        .requestOtp(this.email)
+        .then(({success}) => {
 
-    })
-    .finally(() => {
-      this.busy = false;
-    });
+        })
+        .catch((error) => {
+
+        })
+        .finally(() => {
+            this.busy = false;
+        });
 }
 ```
 
@@ -40,17 +39,15 @@ function requestOTPSample() {
 
 ```typescript
 export interface IResponse {
-  success: boolean;
-  email: string;
+    success: boolean;
+    email: string;
 }
 ```
 
-
 ## STEP 2. Verify OTP
 
-To verify an OTP, use the `verifyOTP` function. This function verifies the OTP sent to the email address and returns an authentication token if successful.
-
-
+To verify an OTP, use the `verifyOTP` function. This function verifies the OTP sent to the email address and returns an
+authentication token if successful.
 
 #### Parameters
 
@@ -58,39 +55,37 @@ To verify an OTP, use the `verifyOTP` function. This function verifies the OTP s
 - `verification_code` (string): The OTP sent to the email address.
 - `source` (Customer.Source): The source from which the verification is requested.
 
+
 #### Returns
 
 - `Promise<IResponse>`: A promise that resolves to an IResponse object containing the token and expiration time.
-
-
 
 #### Sample Usage
 
 ```typescript
 function verifyOTPSample() {
-  this.busy = true;
+    this.busy = true;
 
-  window.$storefront.auth.email
-    .verifyOTP(this.email, this.otp, this.source)
-    .then(({ token, expires_in }) => {
-     
-    })
-    .catch((error) => {
+    window.$storefront.auth.email
+        .verifyOTP(this.email, this.otp, this.source)
+        .then(({token, expires_in}) => {
 
-    })
-    .finally(() => {
-      this.busy = false;
-    });
+        })
+        .catch((error) => {
+
+        })
+        .finally(() => {
+            this.busy = false;
+        });
 }
 ```
-
 
 #### verifyOTP.IResponse
 
 ```typescript
 export interface IResponse {
-  token: string;
-  expires_in: string;
+    token: string;
+    expires_in: string;
 }
 ```
 
