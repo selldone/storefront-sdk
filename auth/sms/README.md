@@ -1,4 +1,4 @@
-# Selldone Storefront SDK - Authentication > SMS
+# [Selldone Storefront SDK](../../) > [Authentication](../) > SMS
 
 This module provides functionality to authenticate users in a shop using SMS through the Selldone Storefront SDK. It includes functions to request an OTP (One-Time Password), verify the OTP, register a new user, and select a user when multiple users are associated with the same phone number.
 

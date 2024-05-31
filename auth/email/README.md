@@ -1,4 +1,4 @@
-# Selldone Storefront SDK - Authentication > Email
+# [Selldone Storefront SDK](../../) > [Authentication](../) > Email
 
 This module provides functionality to authenticate users in a shop using email through the Selldone Storefront SDK. It
 includes functions to request an OTP (One-Time Password) and verify the OTP.

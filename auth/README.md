@@ -1,4 +1,4 @@
-# Selldone Storefront SDK > Authentication
+# [Selldone Storefront SDK](../) > Authentication
 
 The Selldone Storefront SDK provides seamless authentication methods for customers. Users do not need to register beforehand. If a user tries to log in using any method, a customer account will be created automatically if it's their first time.
 
