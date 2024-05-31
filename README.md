@@ -51,7 +51,7 @@ StorefrontSDK.Setup(); // Set up the Shop SDK.
 
 Change `1.0.12` to last version!
 
-## Add Meta Tags to HTML
+### Add Meta Tags to HTML
 
 To integrate your web application with the Selldone ecosystem effectively, it's essential to embed specific meta tags
 within the <head> section of your HTML. These tags enable the Selldone SDK to establish a connection with the Selldone
@@ -93,7 +93,7 @@ API, facilitating the retrieval of your shop's data.
 
 ```
 
-## Starter Documentation
+## Starter
 
 * **Medium Article:** [Build E-Commerce with Open-Source Selldone — Fetch List of Products + Vue3 Sample](https://pajuhaan.medium.com/build-e-commerce-with-open-source-selldone-fetch-list-of-products-vue3-sample-9e61108b0ca6)
 * **Live Sample Code:** https://codepen.io/pajuhaan/pen/pomvQWr
@@ -106,12 +106,12 @@ API, facilitating the retrieval of your shop's data.
 | **[Authentication](auth)** | User authentication methods with social, sms, email | window.$storefront.auth |
 
 
-## Selldone SDK - Custom Ecommerce Development Toolkit
+# About
+### Selldone SDK - Custom Ecommerce Development Toolkit
 
 The Selldone SDK offers essential components for creating online storefronts and managing customer authentication. With its open-source tools, developers can build custom ecommerce platforms tailored to specific needs.
 
-![Selldone Components](_docs/images/selldone-sdk-layers.jpg)
-
+![Selldone Components](./_docs/images/selldone-screenshot.jpg)
 ### Easy to Use
 
 Even with just three months of JavaScript and HTML experience, users can create a fully customized online store in a day, making Selldone SDK ideal for developers and entrepreneurs alike.
