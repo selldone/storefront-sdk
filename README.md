@@ -15,6 +15,14 @@
 A powerful toolkit that enables developers and entrepreneurs to easily create highly customized ecommerce platforms. In
 this article, we'll explore the capabilities of the Selldone SDK and how it can revolutionize the ecommerce landscape.
 
+
+## Documents
+
+| Category                   | Description                                         | Namespace               |
+|----------------------------|-----------------------------------------------------|-------------------------|
+| **[Authentication](auth)** | User authentication methods with social, sms, email | window.$storefront.auth |
+
+
 ## Installation
 
 To install Selldone Core in your project, use the following command:
@@ -98,12 +106,6 @@ API, facilitating the retrieval of your shop's data.
 * **Medium Article:** [Build E-Commerce with Open-Source Selldone — Fetch List of Products + Vue3 Sample](https://pajuhaan.medium.com/build-e-commerce-with-open-source-selldone-fetch-list-of-products-vue3-sample-9e61108b0ca6)
 * **Live Sample Code:** https://codepen.io/pajuhaan/pen/pomvQWr
 
-
-# Documents
-
-| Category                   | Description                                         | Namespace               |
-|----------------------------|-----------------------------------------------------|-------------------------|
-| **[Authentication](auth)** | User authentication methods with social, sms, email | window.$storefront.auth |
 
 
 # About
