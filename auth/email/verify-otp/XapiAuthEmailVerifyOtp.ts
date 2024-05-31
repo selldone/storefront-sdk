@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. Selldone® Business OS™
+ * Copyright (c) 2023-2024. Selldone® Business OS™
  *
  * Author: M.Pajuhaan
  * Web: https://selldone.com
@@ -12,29 +12,31 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import {XapiAuthSMS} from "./XapiAuthSMS";
+import {Customer} from "@selldone/core-js/models";
 import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail.ts";
 
-export class XapiAuth extends APIAbstract {
-  public shop_name: string;
-  public sms: XapiAuthSMS;
-  public email: XapiAuthEmail;
-
-  constructor(shop_name: string) {
-    super();
-    this.shop_name = shop_name;
-    this.sms = new XapiAuthSMS(this.shop_name);
-    this.email = new XapiAuthEmail(this.shop_name);
-  }
-
-  public logout(): Promise<{ success: true }> {
-    const url = window.XAPI.LOGOUT(this.shop_name);
-    return this.postNow<{ success: true }>(url, null);
-  }
+export default function verifyOTP(
+  this: XapiAuthEmail,
+  email: string,
+  verification_code: string,
+  source: Customer.Source,
+) {
+  const params = {
+    email: email,
+    verification_code: verification_code,
+    source: source,
+  };
+  const url = window.XAPI.POST_SHOP_LOGIN_EMAIL_VERIFY(this.shop_name);
+  return this.postNow<xapi.auth.email.verifyOTP.IResponse>(url, params);
 }
+
 //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace XapiAuth {}
+export namespace xapi.auth.email.verifyOTP {
+  export interface IResponse {
+    token: boolean;
+    expires_in: string;
+  }
+}

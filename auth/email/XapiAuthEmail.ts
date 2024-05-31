@@ -13,28 +13,23 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import {XapiAuthSMS} from "./XapiAuthSMS";
-import {XapiAuthEmail} from "@selldone/sdk-storefront/auth/email/XapiAuthEmail.ts";
+import requestOTP from "@selldone/sdk-storefront/auth/email/request-otp/XapiAuthEmailRequestOtp.ts";
+import verifyOTP from "@selldone/sdk-storefront/auth/email/verify-otp/XapiAuthEmailVerifyOtp.ts";
 
-export class XapiAuth extends APIAbstract {
+export class XapiAuthEmail extends APIAbstract {
   public shop_name: string;
-  public sms: XapiAuthSMS;
-  public email: XapiAuthEmail;
+
+  public requestOtp = requestOTP;
+  public verifyOTP = verifyOTP;
 
   constructor(shop_name: string) {
     super();
     this.shop_name = shop_name;
-    this.sms = new XapiAuthSMS(this.shop_name);
-    this.email = new XapiAuthEmail(this.shop_name);
-  }
-
-  public logout(): Promise<{ success: true }> {
-    const url = window.XAPI.LOGOUT(this.shop_name);
-    return this.postNow<{ success: true }>(url, null);
   }
 }
+
 //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace XapiAuth {}
+export namespace XapiAuthEmail {}
