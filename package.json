@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc -p sdk-tsconfig.json",
     "bundle": "rollup -c",
-    "clean": "tsc --build --clean -p sdk-tsconfig.json",
+    "clean": "tsc --build --clean",
     "prepublishOnly": "yarn build && yarn bundle",
     "publish-npm": "npm publish --access public"
   },
