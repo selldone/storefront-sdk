@@ -1,6 +1,17 @@
 # [Selldone Storefront SDK](../) > Authentication
 
-The Selldone Storefront SDK provides seamless authentication methods for customers. Users do not need to register beforehand. If a user tries to log in using any method, a customer account will be created automatically if it's their first time.
+The Selldone Storefront SDK provides seamless authentication methods for customers. Users do not need to register
+beforehand. If a user tries to log in using any method, a customer account will be created automatically if it's their
+first time.
+
+# Documents
+
+This table provides an overview of the different categories available in the Auth API.
+
+| Category           | Description      | Namespace                       |
+|--------------------|------------------|---------------------------------|
+| **[Email](email)** | Login with email | `window.$storefront.auth.email` |
+| **[SMS](sms)**     | Login with sms   | `window.$storefront.auth.sms`   |
 
 ## Authentication Methods
 
@@ -18,11 +29,13 @@ Authenticate customers using their phone number. This method also involves two s
 1. **Send OTP**: The customer provides their phone number, and an OTP is sent to that number.
 2. **Verify OTP**: The customer enters the OTP they received to verify their phone number.
 
-If a user has more than one account associated with the verified phone number, they will be presented with a list of accounts to choose from for login.
+If a user has more than one account associated with the verified phone number, they will be presented with a list of
+accounts to choose from for login.
 
 #### Additional Information for SMS Authentication
 
 - If the user logs in for the first time as a new user, their name and email will be requested.
-- Providing an email is optional, but the email cannot be one that is already registered with Selldone for security and privacy reasons.
+- Providing an email is optional, but the email cannot be one that is already registered with Selldone for security and
+  privacy reasons.
 
 

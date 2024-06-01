@@ -17,10 +17,10 @@ this article, we'll explore the capabilities of the Selldone SDK and how it can 
 
 # Documents
 
-| Category                   | Description                                                                                                                                                     | Namespace                   |
-|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| **[Authentication](auth)** | User authentication methods with social, sms, email                                                                                                             | window.$storefront.auth     |
-| **[Product](product)**     | Retrieve product listings, detailed information, search for products, manage customer-related actions such as rating products, and access subscription content. | window.$storefront.products |
+| Category                   | Description                                                                                                                                                     | Namespace                     |
+|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
+| **[Authentication](auth)** | User authentication methods with social, sms, email                                                                                                             | `window.$storefront.auth`     |
+| **[Product](product)**     | Retrieve product listings, detailed information, search for products, manage customer-related actions such as rating products, and access subscription content. | `window.$storefront.products` |
 
 # Starter
 
@@ -61,7 +61,7 @@ StorefrontSDK.Setup(); // Set up the Shop SDK.
 </script>
 ```
 
-Change `1.0.12` to last
+⚡ Change `1.0.12` to last
 version  <a href="https://www.npmjs.com/package/@selldone/sdk-storefront"><img src="https://img.shields.io/npm/v/@selldone/sdk-storefront.svg?sanitize=true" alt="Version"></a>!
 
 ### Add Meta Tags to HTML

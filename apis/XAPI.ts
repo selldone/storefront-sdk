@@ -12,8 +12,8 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import { SetupService } from "@selldone/core-js/server/SetupService";
-import { Currency } from "@selldone/core-js/enums/payment/Currency";
+import {SetupService} from "@selldone/core-js/server/SetupService";
+import {Currency} from "@selldone/core-js/enums/payment/Currency";
 
 export class XAPI {
   selldone_xapi_url: string = "";
@@ -35,6 +35,7 @@ export class XAPI {
   SHOP_LOGIN_REQUEST(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/sms-login/request`;
   }
+
   SHOP_LOGIN_VERIFY(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/sms-login/verify`;
   }
@@ -51,9 +52,11 @@ export class XAPI {
   POST_SHOP_LOGIN_EMAIL_REQUEST(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/email-login/request`;
   }
+
   POST_SHOP_LOGIN_EMAIL_VERIFY(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/email-login/verify`;
   }
+
   //―――――――――――――――――――――― User ――――――――――――――――――――
 
   /**
@@ -82,6 +85,7 @@ export class XAPI {
   POST_SUBSCRIBE(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/subscribe`;
   }
+
   //―――――――――――――――――――――― Shop ――――――――――――――――――――
 
   GET_SHOP_INFO(shop_name: string): string {
@@ -97,6 +101,7 @@ export class XAPI {
   GET_PRODUCTS(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/all`;
   }
+
   GET_PRODUCTS_LIST(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/list`;
   }
@@ -104,29 +109,31 @@ export class XAPI {
   GET_PRODUCT_INFO(shop_name: string, product_id: string | number): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/info`;
   }
+
   GET_PRODUCT_INFO_CARD(
     shop_name: string,
-    product_id: string | number
+    product_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/info-card`;
   }
 
   GET_PRODUCT_INFO_INSTAGRAM(
     shop_name: string,
-    product_id: string | number
+    product_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/info-instagram`;
   }
+
   GET_PRODUCT_INFO_HYPER(
     shop_name: string,
-    product_id: string | number
+    product_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/info-hyper`;
   }
 
   POST_SET_PRODUCT_RATING(
     shop_name: string,
-    product_id: string | number
+    product_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/set-my-rating`;
   }
@@ -135,35 +142,37 @@ export class XAPI {
 
   PUT_PHYSICAL_ITEM_IN_BASKET(
     shop_name: string,
-    product_id: string | number
+    product_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/basket/${product_id}`;
   }
+
   DELETE_PHYSICAL_ITEM_FROM_BASKET(
     shop_name: string,
-    product_id: string | number
+    product_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/basket/${product_id}`;
   }
 
   POST_BASKET_ITEM_MESSAGE(
     shop_name: string,
-    product_id: string | number
+    product_id: string | number,
   ): string {
     // Also support PUT!
     return `${this.selldone_xapi_url}/shops/@${shop_name}/basket/${product_id}/message`;
   }
+
   DELETE_BASKET_ITEM_FILE(
     shop_name: string,
     basket_id: string | number,
-    file_id: string | number
+    file_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/files/${file_id}`;
   }
 
   PUT_BASKET_ITEM_PREFERENCES(
     shop_name: string,
-    product_id: string | number
+    product_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/basket/${product_id}/preferences`;
   }
@@ -181,11 +190,12 @@ export class XAPI {
   POST_BUY_BASKET(shop_name: string, type: string, gateway: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/basket/${type}/buy/${gateway}`;
   }
+
   POST_PAY_BILL(
     shop_name: string,
     basket_id: string | number,
     bill_id: string | number,
-    gateway: string
+    gateway: string,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/basket/${basket_id}/bills/${bill_id}/pay/${gateway}`;
   }
@@ -200,14 +210,14 @@ export class XAPI {
 
   PUT_ORDER_EDIT_RECEIVER_INFO(
     shop_name: string,
-    basket_id: string | number
+    basket_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/receiver-info`;
   }
 
   POST_BASKET_GENERATE_SHARE_LINK(
     shop_name: string,
-    basket_id: string | number
+    basket_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/share`;
   }
@@ -215,11 +225,12 @@ export class XAPI {
   POST_BASKET_IMPORT(shop_name: string, type: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/basket/${type}/import`;
   }
+
   //▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ Basket > 🎗️ Subscription > 🥵 User ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
   POST_BASKET_CREATE_SUBSCRIPTION_PORTAL_URL(
     shop_name: string,
-    basket_id: string | number
+    basket_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/portal`;
   }
@@ -229,36 +240,40 @@ export class XAPI {
   GET_ORDER_BASKET_INFO(shop_name: string, basket_id: string | number): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}`;
   }
+
   GET_ORDER_POS_BASKET_INFO(
     shop_name: string,
-    basket_id: string | number
+    basket_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/pos-baskets/${basket_id}`;
   }
 
   POST_ORDER_BASKET_CONFIRM_RECEIVED(
     shop_name: string,
-    basket_id: string | number
+    basket_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/confirm-received`;
   }
 
   PUT_ORDER_EDIT_BILLING(
     shop_name: string,
-    basket_id: string | number
+    basket_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/billing`;
   }
+
   GET_MY_ORDERS_HISTORY_PHYSICAL(shop_name: string, type: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/basket/orders-${type}`;
   }
+
   GET_MY_BASKET_ITEM_RETURNS(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/basket/orders/return-requests`;
   }
+
   POST_BASKET_ITEM_RETURN_REQUEST(
     shop_name: string,
     basket_id: string | number,
-    item_id: string | number
+    item_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/return/${item_id}`;
   }
@@ -266,7 +281,7 @@ export class XAPI {
   GENERATE_DOWNLOAD_PRODUCT_FILE_TEMP_URL(
     shop_name: string,
     product_id: string | number,
-    file_id: string | number
+    file_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/files/${file_id}`;
   }
@@ -285,26 +300,28 @@ export class XAPI {
 
   PUT_TO_WAITING_FOR_BE_AVAILABLE(
     shop_id: string | number,
-    product_id: string | number
+    product_id: string | number,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_id}/products/${product_id}/waiting-be-available`;
   }
 
   DELETE_FROM_WAITING_FOR_BE_AVAILABLE(
     shop_id: string | number,
-    product_id: string | number
+    product_id: string | number,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_id}/products/${product_id}/waiting-be-available`;
   }
+
   PUT_TO_WAITING_FOR_AUCTION(
     shop_id: string | number,
-    product_id: string | number
+    product_id: string | number,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_id}/products/${product_id}/waiting-auction`;
   }
+
   DELETE_FROM_WAITING_FOR_AUCTION(
     shop_id: string | number,
-    product_id: string | number
+    product_id: string | number,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_id}/products/${product_id}/waiting-auction`;
   }
@@ -316,7 +333,7 @@ export class XAPI {
 
   DELETE_WISHLIST_PRODUCT(
     shop_name: string,
-    product_id: string | number
+    product_id: string | number,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/wishlist`;
   }
@@ -332,9 +349,11 @@ export class XAPI {
   GET_MY_GIFT_CARDS(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/giftcards`;
   }
+
   GET_MY_GIFT_CARDS_LIST(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/giftcards/list`;
   }
+
   POST_ADD_GIFT_CARDS(shop_name: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/giftcards`;
   }
@@ -362,7 +381,7 @@ export class XAPI {
   GET_PENDING_PAYMENT_INFO(
     shop_name: string,
     gateway: string,
-    transaction_id: string
+    transaction_id: string,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/gateways/${gateway}/${transaction_id}`;
   }
@@ -371,7 +390,7 @@ export class XAPI {
     shop_name: string,
     gateway: string,
     transaction_id: string,
-    unique_id: string
+    unique_id: string,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/gateways/${gateway}/transactions/${transaction_id}/${unique_id}`;
   }
@@ -395,7 +414,7 @@ export class XAPI {
     shop_name: string,
     basket_id: string | number,
     basketItem_id: string | number,
-    type: string
+    type: string,
   ): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/return/${basketItem_id}/temp/upload/${type}`;
   }
@@ -429,9 +448,11 @@ export class XAPI {
       page_name ? "/" + page_name : ""
     }`;
   }
+
   GET_PAGE_STATISTIC(shop_name: string, page_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/pages/${page_name}/statistic`;
   }
+
   GET_INCLUDE_PAGE_DATA(shop_name: string, include_id = "") {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/includes/${include_id}`;
   }
@@ -439,7 +460,7 @@ export class XAPI {
   //―――――――――――――――――――――― Stripe ――――――――――――――――――――
   GET_CHECK_SHOP_STRIPE_PAYMENT_INTENT(
     shop_name: string,
-    paymentIntent_id: string
+    paymentIntent_id: string,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/gateways/stripe/${paymentIntent_id}/check`;
   }
@@ -454,10 +475,11 @@ export class XAPI {
   POST_UPLOAD_DIRECT_PAYMENT_RECEIPT(
     shop_name: string,
     transaction_id: number | string,
-    currency: keyof typeof Currency
+    currency: keyof typeof Currency,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/transactions/${transaction_id}/receipt/${currency}`;
   }
+
   //―――――――――――――――――――――― Address Book (Shared!) ――――――――――――――――――――
 
   GET_MY_ADDRESSES() {
@@ -475,9 +497,11 @@ export class XAPI {
   POST_ADDRESS() {
     return `${this.selldone_xapi_url}/address`;
   }
+
   GET_GEO_TO_ADDRESS() {
     return `${this.selldone_xapi_url}/address/gto-to-address`;
   }
+
   GET_AUTOCOMPLETE() {
     return `${this.selldone_xapi_url}/address/autocomplete`;
   }
@@ -524,6 +548,7 @@ export class XAPI {
   GET_FETCH_LOTTERIES(shop_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/lottery`;
   }
+
   POST_FETCH_LOTTERIES(shop_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/lottery/play`;
   }
@@ -546,9 +571,10 @@ export class XAPI {
   GET_SHOP_TICKETS_LIST(shop_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/contacts`;
   }
+
   PUT_SHOP_TICKET_UPDATE_MESSAGE(
     shop_name: string,
-    contact_id: number | string
+    contact_id: number | string,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/contacts/${contact_id}`;
   }
@@ -556,7 +582,7 @@ export class XAPI {
   DELETE_SHOP_TICKET_MESSAGE_RESPONSE(
     shop_name: string,
     contact_id: number | string,
-    index: number
+    index: number,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/contacts/${contact_id}/${index}`;
   }
@@ -564,6 +590,7 @@ export class XAPI {
   POST_SHOP_TICKET_CLOSE(shop_name: string, contact_id: number | string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/contacts/${contact_id}/close`;
   }
+
   PUT_SHOP_TICKET_RATE(shop_name: string, contact_id: number | string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/contacts/${contact_id}/rate`;
   }
@@ -578,6 +605,7 @@ export class XAPI {
   GET_CUSTOMER_OPEN_AVOCADO(shop_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/avocado`;
   }
+
   GET_CUSTOMER_HISTORY_AVOCADOS(shop_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/avocados`;
   }
@@ -585,13 +613,15 @@ export class XAPI {
   POST_ADD_OPEN_AVOCADO_ITEM(shop_name: string, hash: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/avocado/${hash}/items`;
   }
+
   DELETE_OPEN_AVOCADO_ITEM(
     shop_name: string,
     hash: string,
-    item_id: string | number
+    item_id: string | number,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/avocado/${hash}/items/${item_id}`;
   }
+
   POST_RESERVE_AVOCADO(shop_name: string, hash: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/avocado/${hash}/reserve`;
   }
@@ -599,9 +629,11 @@ export class XAPI {
   GET_CUSTOMER_INFO_FOR_AVOCADO(shop_name: string, hash: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/avocado/${hash}`;
   }
+
   PUT_SET_CUSTOMER_INFO_FOR_AVOCADO(shop_name: string, hash: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/avocado/${hash}`;
   }
+
   POST_PAY_AVOCADO(shop_name: string, hash: string, gateway: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/avocado/${hash}/pay/${gateway}`;
   }
@@ -614,18 +646,23 @@ export class XAPI {
   GET_CUSTOMER_OPEN_HYPER(shop_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/hyper`;
   }
+
   POST_ADD_OPEN_HYPER_ITEM(shop_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/hyper/items`;
   }
+
   GET_CUSTOMER_HISTORY_HYPERS(shop_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/hypers`;
   }
+
   POST_PAY_HYPER(shop_name: string, gateway: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/hyper/pay/${gateway}`;
   }
+
   DELETE_OPEN_HYPER_ITEM(shop_name: string, item_id: string | number) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/hyper/items/${item_id}`;
   }
+
   GET_CUSTOMER_INFO_FOR_HYPER(shop_name: string, hyper_id: string | number) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/hyper/${hyper_id}`;
   }
@@ -656,7 +693,7 @@ export class XAPI {
   //―――――――――――――――――――――― Translate ――――――――――――――――――――
   POST_TRANSLATE_PRODUCT_ARTICLE(
     shop_id: string | number,
-    product_id: string | number
+    product_id: string | number,
   ) {
     return `${this.selldone_xapi_url}/shops/${shop_id}/products/${product_id}/translate-article`;
   }
@@ -665,12 +702,15 @@ export class XAPI {
   POST_LIKE_ARTICLE(article_id: string | number) {
     return `${this.selldone_xapi_url}/articles/${article_id}/like`;
   }
+
   POST_STAR_ARTICLE(article_id: string | number) {
     return `${this.selldone_xapi_url}/articles/${article_id}/star`;
   }
+
   POST_CLAPS_OF_ARTICLE(article_id: string | number) {
     return `${this.selldone_xapi_url}/articles/${article_id}/claps`;
   }
+
   POST_REPORT_ARTICLE(article_id: string | number, report: number) {
     return `${this.selldone_xapi_url}/articles/${article_id}/report/${report}`;
   }
@@ -696,6 +736,7 @@ export class XAPI {
     if (!extra) return `${this.selldone_xapi_url}/article/${type}/upload`;
     return `${this.selldone_xapi_url}/article/${type}/upload/${extra}`;
   }
+
   UPLOAD_ARTICLE_BLOG_IMAGE(shop_id: string | number): string {
     return `${this.selldone_xapi_url}/shops/${shop_id}/blogs/upload`;
   }
@@ -709,12 +750,14 @@ export class XAPI {
   GET_SHOP_ARTICLE_TAGS(shop_id: string | number): string {
     return `${this.selldone_xapi_url}/shops/${shop_id}/articles/tags`;
   }
+
   PUT_CHANGE_TAG(shop_id: string | number): string {
     return `${this.selldone_xapi_url}/shops/${shop_id}/articles/tags`;
   }
+
   POST_SET_SHOP_ARTICLE_TAGS(
     shop_id: string | number,
-    article_id: string | number
+    article_id: string | number,
   ) {
     return `${this.selldone_xapi_url}/shops/${shop_id}/articles/tags/${article_id}`;
   }
@@ -723,9 +766,11 @@ export class XAPI {
   POST_ADD_COMMENT(article_id: string | number) {
     return `${this.selldone_xapi_url}/article/${article_id}/comment`;
   }
+
   PUT_UPDATE_COMMENT(comment_id: string | number) {
     return `${this.selldone_xapi_url}/comment/${comment_id}`;
   }
+
   DELETE_COMMENT(comment_id: string | number) {
     return `${this.selldone_xapi_url}/comment/${comment_id}`;
   }
@@ -737,7 +782,7 @@ export class XAPI {
 
   POST_CUSTOMER_BASKET_CHAT_ADD_MESSAGE(
     shop_name: string,
-    basket_id: string | number
+    basket_id: string | number,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/chat`;
   }
@@ -745,7 +790,7 @@ export class XAPI {
   DELETE_CUSTOMER_BASKET_CHAT_MESSAGE(
     shop_name: string,
     basket_id: string | number,
-    message_index: number
+    message_index: number,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/chat/${message_index}`;
   }
@@ -755,6 +800,7 @@ export class XAPI {
   GET_VENDORS(shop_name: string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/vendors`;
   }
+
   GET_VENDOR_INFO(shop_name: string, vendor_id: number | string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/vendors/${vendor_id}`;
   }
@@ -763,9 +809,10 @@ export class XAPI {
   POST_SUBSCRIBE_NOW(shop_name: string, product_id: number | string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/subscribe`;
   }
+
   GET_PRODUCT_MEMBERSHIP_CONTENTS(
     shop_name: string,
-    product_id: number | string
+    product_id: number | string,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/contents`;
   }
@@ -773,7 +820,7 @@ export class XAPI {
   POST_PRODUCT_MEMBERSHIP_CONTENTS_SEND_MY_RATING(
     shop_name: string,
     product_id: number | string,
-    content_id: number | string
+    content_id: number | string,
   ) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/contents/${content_id}/rate`;
   }
@@ -790,13 +837,14 @@ export class XAPI {
   POST_STREAM_USER_ADD(
     domain: string,
     shop_id: string | number,
-    key: string
+    key: string,
   ): string {
     return `${domain}/shops/${shop_id}/audience/${key}`;
   }
+
   POST_STREAM_USER_ADD_NEWSLETTER(
     shop_id: string | number,
-    key = "newsletter"
+    key = "newsletter",
   ) {
     return `${this.selldone_xapi_url}/shops/${shop_id}/audience/${key}`;
   }
