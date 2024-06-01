@@ -13,13 +13,13 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import addItem from "./requests/xapi.basket.items.put";
-import removeItem from "./requests/xapi.basket.items.delete";
+import XapiBasketAddItem from "./add-item/XapiBasketAddItem.ts";
+import XapiBasketDeleteItem from "./delete-item/XapiBasketDeleteItem.ts";
 
 export class XapiBasket extends APIAbstract {
   public shop_name: string;
-  public addItem = addItem;
-  public removeItem = removeItem;
+  public addItem = XapiBasketAddItem;
+  public deleteItem = XapiBasketDeleteItem;
 
   constructor(shop_name: string) {
     super();
@@ -31,4 +31,4 @@ export class XapiBasket extends APIAbstract {
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace XapiBasket {}
+export namespace XapiBasketTypes {}

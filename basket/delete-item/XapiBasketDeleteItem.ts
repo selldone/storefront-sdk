@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. Selldone® Business OS™
+ * Copyright (c) 2023-2024. Selldone® Business OS™
  *
  * Author: M.Pajuhaan
  * Web: https://selldone.com
@@ -12,20 +12,38 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {Currency} from "@selldone/core-js/enums/payment/Currency";
-import {XapiBasket} from "../XapiBasket";
-import {Basket} from "@selldone/core-js";
+import {Currency} from "@selldone/core-js/enums/payment/Currency.ts";
+import {XapiBasket} from "../XapiBasket.ts";
+import {Basket} from "@selldone/core-js/index.ts";
 
 /**
- * Fetches eligible coupons for the buyer.
- * Retrieves previously entered coupon codes from local storage.
+ * Deletes an item from the basket.
+ *
+ * This function is used to remove a specified product variant from the basket.
+ *
+ * @param {number} product_id - The ID of the product to be deleted.
+ * @param {number | null} variant_id - The ID of the product variant, or null if not applicable.
+ * @param {XapiBasketDeleteItemTypes.IOption} [options] - Optional parameters for deleting the item.
+ * @returns {Promise<XapiBasketDeleteItemTypes.IResponse>} - The response from the server after attempting to delete the item.
+ *
+ * @example
+ * window.$storefront.basket
+ *   .deleteItem(product_id, variant_id)
+ *   .then(({ basket, bill }) => {
+ *     this.setBasket(basket);
+ *     this.setBasketBill(basket, bill);
+ *     if (callbackSuccess) callbackSuccess(basket);
+ *   })
+ *   .catch((error) => {
+ *     this.showLaravelError(error);
+ *     if (callbackError) callbackError(error);
+ *   });
  */
-
-export default function removeItem(
+export default function XapiBasketDeleteItem(
   this: XapiBasket,
   product_id: number,
   variant_id: number | null,
-  options?: xapi.basket.items.remove.IOption,
+  options?: XapiBasketDeleteItemTypes.IOption,
 ) {
   const params = {
     currency: options?.currency
@@ -39,14 +57,14 @@ export default function removeItem(
     this.shop_name,
     product_id,
   );
-  return this.deleteNow<xapi.basket.items.remove.IResponse>(url, params);
+  return this.deleteNow<XapiBasketDeleteItemTypes.IResponse>(url, params);
 }
 
 //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace xapi.basket.items.remove {
+export namespace XapiBasketDeleteItemTypes {
   export interface IResponse {
     success: boolean;
     basket: Basket;

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. Selldone® Business OS™
+ * Copyright (c) 2023-2024. Selldone® Business OS™
  *
  * Author: M.Pajuhaan
  * Web: https://selldone.com
@@ -12,22 +12,54 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {Currency} from "@selldone/core-js/enums/payment/Currency";
-import {BasketItem} from "@selldone/core-js/models/shop/order/basket/basket_item.model";
-import {XapiBasket} from "../XapiBasket";
-import {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
+import {Currency} from "@selldone/core-js/enums/payment/Currency.ts";
+import {BasketItem} from "@selldone/core-js/models/shop/order/basket/basket_item.model.ts";
+import {XapiBasket} from "../XapiBasket.ts";
+import {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model.ts";
 
 /**
- * Fetches eligible coupons for the buyer.
- * Retrieves previously entered coupon codes from local storage.
+ * Adds an item to the basket.
+ *
+ * This function is used to add a specified product variant to the basket with the given quantity and optional parameters.
+ *
+ * @param {number} product_id - The ID of the product to be added.
+ * @param {number | null} variant_id - The ID of the product variant, or null if not applicable.
+ * @param {number} count - The quantity of the item to be added.
+ * @param {XapiBasketAddItemTypes.IOption} [options] - Optional parameters for adding the item.
+ * @returns {Promise<XapiBasketAddItemTypes.IResponse>} - The response from the server after attempting to add the item.
+ *
+ * @example
+ * window.$storefront.basket
+ *   .addItem(product_id, variant_id, count, {
+ *     preferences: preferences,
+ *     vendor_product_id: vendor_product_id, // 🟣 Marketplace 🟣
+ *     price_id: subscription_price_id, // 🎗️ Subscription
+ *   })
+ *   .then(({ basket, bill, refresh, error, error_msg }) => {
+ *     if (basket) {
+ *       this.setBasket(basket);
+ *       this.setBasketBill(basket, bill);
+ *       if (callbackSuccess) callbackSuccess(basket);
+ *     }
+ *
+ *     if (error) {
+ *       this.showErrorAlert(null, error_msg);
+ *       if (callbackError) callbackError(error_msg!);
+ *     }
+ *
+ *     if (refresh) this.fetchBasketAndShop(); // Important! Fetch data from server. (Ex. Remove item automatically from basket)
+ *   })
+ *   .catch((error) => {
+ *     this.showLaravelError(error);
+ *     if (callbackError) callbackError(error);
+ *   });
  */
-
-export default function addItem(
+export default function XapiBasketAddItem(
   this: XapiBasket,
   product_id: number,
   variant_id: number | null,
   count: number,
-  options?: xapi.basket.items.put.IOption,
+  options?: XapiBasketAddItemTypes.IOption,
 ) {
   const params = {
     currency: options?.currency
@@ -47,9 +79,9 @@ export default function addItem(
     this.shop_name,
     product_id,
   );
-  return this.putNow<xapi.basket.items.put.IResponse>(url, params, {
+  return this.putNow<XapiBasketAddItemTypes.IResponse>(url, params, {
     accept_error_response:
-      true /*It can return error and error_msg and at the same time return basket and bill!*/,
+      true /* It can return error and error_msg and at the same time return basket and bill! */,
   });
 }
 
@@ -57,7 +89,7 @@ export default function addItem(
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
 
-export namespace xapi.basket.items.put {
+export namespace XapiBasketAddItemTypes {
   export interface IResponse {
     error: boolean;
     error_msg: string | null;
