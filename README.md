@@ -108,8 +108,7 @@ API, facilitating the retrieval of your shop's data.
 
 ## Articles & Live Samples
 
-* **Medium Article:
-  ** [Build E-Commerce with Open-Source Selldone — Fetch List of Products + Vue3 Sample](https://pajuhaan.medium.com/build-e-commerce-with-open-source-selldone-fetch-list-of-products-vue3-sample-9e61108b0ca6)
+* **Medium Article:** [Build E-Commerce with Open-Source Selldone — Fetch List of Products + Vue3 Sample](https://pajuhaan.medium.com/build-e-commerce-with-open-source-selldone-fetch-list-of-products-vue3-sample-9e61108b0ca6)
 * **Live Sample Code:** https://codepen.io/pajuhaan/pen/pomvQWr
 
 # About
