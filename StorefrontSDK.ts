@@ -13,12 +13,10 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {SetupService} from "@selldone/core-js";
+import {CDN, SelldoneCore, SetupService, URLS, User} from "@selldone/core-js";
 import {XapiUser} from "./user/XapiUser";
 import {XAPI} from "./apis/XAPI";
 import {XapiShop} from "./shop/XapiShop";
-import {CDN} from "@selldone/core-js";
-import {URLS} from "@selldone/core-js";
 import {XapiAuth} from "./auth/XapiAuth";
 import {Shop} from "@selldone/core-js/models/shop/shop.model";
 import {StorefrontAxiosSetup} from "./plugins/axios/StorefrontAxiosSetup";
@@ -34,7 +32,6 @@ import {XapiVendor} from "./vendor/XapiVendor";
 import {XapiAvocado} from "./avocado/XapiAvocado";
 import {XapiArticle} from "./article/XapiArticle";
 import {StorefrontRoutesName} from "@selldone/core-js/enums/route/StorefrontRoutesName";
-import {SelldoneCore} from "@selldone/core-js";
 
 const SDK_VERSION = "0.02";
 //█████████████████████████████████████████████████████████████
@@ -75,6 +72,8 @@ declare global {
 
     // Global SDK Interface
     $storefront: {
+      USER: User|null; // Get current longed in user information
+
       name: string;
       prefix_url: string; // Ex. '/@pajuhaan' or ''
       local_storage_path: string; // Local storage base path.
@@ -129,8 +128,10 @@ export class StorefrontSDK {
    * StorefrontSDK.Setup();
    */
   static Setup(
-      _shop_name?: string,
-               options: { cookie_key_access_token?: string } = { cookie_key_access_token: 'access_token' }
+    _shop_name?: string,
+    options: { cookie_key_access_token?: string } = {
+      cookie_key_access_token: "access_token",
+    },
   ): void {
     console.log("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
     console.log(`┣━━━━ Selldone® Storefront SDK | V${SDK_VERSION} ━━━━┫`);

@@ -18,6 +18,7 @@ import {AxiosError} from "axios";
 import setUserCurrency from "./requests/xapi.user.currency.put";
 import setFcmToken from "./requests/xapi.user.fcm.post";
 import {UserProfile} from "@selldone/core-js/models/user/user_profile.model";
+import {User} from "@selldone/core-js/models";
 
 export class XapiUser extends APIAbstract {
   /** Name of the shop for which the API operations will be performed. */
@@ -35,14 +36,33 @@ export class XapiUser extends APIAbstract {
     onSuccess: (data: XapiUser.IMeServerResponse) => void,
     onError?: (error: IErrorResponse | AxiosError) => void,
   ): void {
+    this.setCurrentUser(null);
     const params = {
       codes: StorefrontLocalStorages.GetShopHistoryGuestAllCodes(),
       guest_code: StorefrontLocalStorages.GetShopGuestCode(),
     };
     const url = window.XAPI.GET_USER();
-    this.getDebounce(url, params, onSuccess, onError, {
-      max_valid_status_code: 500 /*We assume any error response except 5xx (server error) as success response to be able auto logout user!*/,
-    });
+    this.getDebounce(
+      url,
+      params,
+      (data) => {
+        // Set current user information
+        this.setCurrentUser(data);
+        onSuccess(data);
+      },
+      onError,
+      {
+        max_valid_status_code: 500 /*We assume any error response except 5xx (server error) as success response to be able auto logout user!*/,
+      },
+    );
+  }
+
+  /**
+   * Important set current user information!
+   * @param user
+   */
+  setCurrentUser(user: User | null) {
+    window.$storefront.USER = user;
   }
 } //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――

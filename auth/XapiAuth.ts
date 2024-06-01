@@ -30,9 +30,13 @@ export class XapiAuth extends APIAbstract {
 
   public logout(): Promise<{ success: true }> {
     const url = window.XAPI.LOGOUT(this.shop_name);
-    return this.postNow<{ success: true }>(url, null);
+    return this.postNow<{ success: true }>(url, null).then((data) => {
+      window.$storefront.USER = null; // Clear user info from sdk!
+      return data; // Pass data!
+    });
   }
 }
+
 //█████████████████████████████████████████████████████████████
 //―――――――――――――――― 🦫 Types ――――――――――――――――
 //█████████████████████████████████████████████████████████████
