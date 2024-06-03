@@ -457,6 +457,10 @@ export class XAPI {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/includes/${include_id}`;
   }
 
+  GET_VENDOR_PAGE_DATA(shop_name: string, include_id = "") {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/vendors/${include_id}`;
+  }
+
   //―――――――――――――――――――――― Stripe ――――――――――――――――――――
   GET_CHECK_SHOP_STRIPE_PAYMENT_INTENT(
     shop_name: string,
