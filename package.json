@@ -40,7 +40,7 @@
   ],
   "dependencies": {
     "@selldone/core-js": "^1.5.32",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
