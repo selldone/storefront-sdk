@@ -358,6 +358,13 @@ export class XAPI {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/giftcards`;
   }
 
+  //―――――――――――――――――――――― Wallet ――――――――――――――――――――
+
+  GET_MY_WALLETS(shop_name: string): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/wallets`;
+  }
+
+
   //―――――――――――――――――――――― Discount Code ――――――――――――――――――――
 
   PUT_DISCOUNT_CODE(shop_name: string) {
