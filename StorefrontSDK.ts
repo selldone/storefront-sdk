@@ -32,6 +32,7 @@ import {XapiVendor} from "./vendor/XapiVendor";
 import {XapiAvocado} from "./avocado/XapiAvocado";
 import {XapiArticle} from "./article/XapiArticle";
 import {StorefrontRoutesName} from "@selldone/core-js/enums/route/StorefrontRoutesName";
+import {XapiCashback} from "@selldone/sdk-storefront/cashback/XapiCashback.ts";
 
 const SDK_VERSION = "0.02";
 //█████████████████████████████████████████████████████████████
@@ -72,7 +73,7 @@ declare global {
 
     // Global SDK Interface
     $storefront: {
-      USER: User|null; // Get current longed in user information
+      USER: User | null; // Get current longed in user information
 
       name: string;
       prefix_url: string; // Ex. '/@pajuhaan' or ''
@@ -88,6 +89,8 @@ declare global {
       lottery: XapiLottery;
       coupon: XapiCoupon;
       offer: XapiOffer;
+      cashback: XapiCashback;
+
       basket: XapiBasket;
       vendor: XapiVendor;
       avocado: XapiAvocado;
@@ -207,6 +210,7 @@ export class StorefrontSDK {
       lottery: new XapiLottery(shop_name),
       coupon: new XapiCoupon(shop_name),
       offer: new XapiOffer(shop_name),
+      cashback: new XapiCashback(shop_name),
       basket: new XapiBasket(shop_name),
       vendor: new XapiVendor(shop_name),
       avocado: new XapiAvocado(shop_name),

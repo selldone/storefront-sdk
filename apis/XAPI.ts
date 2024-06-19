@@ -864,4 +864,10 @@ export class XAPI {
   GET_SHOP_LANGUAGE_PACK(shop_name: string, language: string): string {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/languages/${language}`;
   }
+
+  //―――――――――――――――――――――― Cashback Program (Get eligible) ――――――――――――――――――――
+  GET_SHOP_CASHBACK_PROGRAM(shop_name: string): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/cashback`;
+  }
+
 }
