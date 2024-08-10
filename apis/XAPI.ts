@@ -86,6 +86,10 @@ export class XAPI {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/subscribe`;
   }
 
+  POST_SAVE_MY_CUSTOMER_PROFILE(shop_name: string): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/customer`;
+  }
+
   //―――――――――――――――――――――― Shop ――――――――――――――――――――
 
   GET_SHOP_INFO(shop_name: string): string {
