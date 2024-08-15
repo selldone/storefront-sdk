@@ -17,6 +17,7 @@ import {StorefrontLocalStorages} from "@selldone/core-js/helper/local-storage/St
 import axios from "axios";
 
 export function StorefrontAxiosSetup(cookie_key_access_token:string='access_token') {
+  console.log("🞧 Storefront Axios Setup...");
   const shop_name = SetupService.GetMetaValue("shop-name");
   const shop_prefix_address = SetupService.GetMetaValue(
     "shop-prefix-address",
