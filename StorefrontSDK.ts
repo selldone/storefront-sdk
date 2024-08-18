@@ -32,7 +32,7 @@ import {XapiVendor} from "./vendor/XapiVendor";
 import {XapiAvocado} from "./avocado/XapiAvocado";
 import {XapiArticle} from "./article/XapiArticle";
 import {StorefrontRoutesName} from "@selldone/core-js/enums/route/StorefrontRoutesName";
-import {XapiCashback} from "@selldone/sdk-storefront/cashback/XapiCashback.ts";
+import {XapiCashback} from "@selldone/sdk-storefront/cashback/XapiCashback";
 
 const SDK_VERSION = "0.02";
 //█████████████████████████████████████████████████████████████

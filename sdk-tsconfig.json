@@ -6,7 +6,7 @@
     "outDir": "./dist",
     "importHelpers": true,
     "moduleResolution": "node",
-    "noEmitOnError": true,
+    "noEmitOnError": false,
     "composite": false,
     "jsx": "preserve",
     "noImplicitThis": true,

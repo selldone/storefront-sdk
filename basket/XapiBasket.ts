@@ -13,8 +13,8 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import XapiBasketAddItem from "./add-item/XapiBasketAddItem.ts";
-import XapiBasketDeleteItem from "./delete-item/XapiBasketDeleteItem.ts";
+import XapiBasketAddItem from "./add-item/XapiBasketAddItem";
+import XapiBasketDeleteItem from "./delete-item/XapiBasketDeleteItem";
 
 export class XapiBasket extends APIAbstract {
   public shop_name: string;

@@ -12,10 +12,10 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {Currency} from "@selldone/core-js/enums/payment/Currency.ts";
-import {BasketItem} from "@selldone/core-js/models/shop/order/basket/basket_item.model.ts";
-import {XapiBasket} from "../XapiBasket.ts";
-import {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model.ts";
+import {Currency} from "@selldone/core-js/enums/payment/Currency";
+import {BasketItem} from "@selldone/core-js/models/shop/order/basket/basket_item.model";
+import {XapiBasket} from "../XapiBasket";
+import {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
 
 /**
  * Adds an item to the basket.

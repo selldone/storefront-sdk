@@ -14,6 +14,7 @@
 
 import {Currency} from "@selldone/core-js/enums/payment/Currency";
 import {Cashback} from "@selldone/core-js";
+import {XapiCashback} from "@selldone/sdk-storefront/cashback/XapiCashback";
 
 /**
  * Fetches eligible cashback for the buyer.

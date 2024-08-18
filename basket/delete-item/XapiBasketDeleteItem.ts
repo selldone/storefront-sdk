@@ -12,9 +12,9 @@
  * Tread carefully, for you're treading on dreams.
  */
 
-import {Currency} from "@selldone/core-js/enums/payment/Currency.ts";
-import {XapiBasket} from "../XapiBasket.ts";
-import {Basket} from "@selldone/core-js/index.ts";
+import {Currency} from "@selldone/core-js/enums/payment/Currency";
+import {XapiBasket} from "../XapiBasket";
+import {Basket} from "@selldone/core-js/index";
 
 /**
  * Deletes an item from the basket.

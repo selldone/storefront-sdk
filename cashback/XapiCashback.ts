@@ -13,7 +13,7 @@
  */
 
 import {APIAbstract} from "@selldone/core-js/server/APIAbstract";
-import XapiCashbackGet from "@selldone/sdk-storefront/cashback/get/xapi.cashback.get.ts";
+import XapiCashbackGet from "@selldone/sdk-storefront/cashback/get/xapi.cashback.get";
 
 export class XapiCashback extends APIAbstract {
   public shop_name: string;
