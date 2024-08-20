@@ -96,26 +96,26 @@ export function StorefrontAxiosSetup(cookie_key_access_token:string='access_toke
 
   if (SetupService.GetCampaignId()) {
     // 🞧 Header: Campaign
-    window.axios.defaults.headers.common["campaign_id"] =
+    window.axios.defaults.headers.common["S-Campaign-Id"] =
       SetupService.GetCampaignId();
   }
   if (SetupService.GetCampaignLinkId()) {
     // 🞧 Header: Campaign link
-    window.axios.defaults.headers.common["link_id"] =
+    window.axios.defaults.headers.common["S-Link-Id"] =
       SetupService.GetCampaignLinkId();
   }
 
   //――――――――――――――――――――――――― Set Email Marketing data in header ―――――――――――――――――――――――――
   if (SetupService.GetEmailId()) {
     // 🞧 Header: Email campaign
-    window.axios.defaults.headers.common["email_id"] =
+    window.axios.defaults.headers.common["S-Email-Id"] =
       SetupService.GetEmailId();
   }
 
   //――――――――――――――――――――――――― Set Affiliate data in header ―――――――――――――――――――――――――
   if (SetupService.GetAffiliateId()) {
     // 🞧 Header: Affiliate
-    window.axios.defaults.headers.common["affiliate_id"] =
+    window.axios.defaults.headers.common["S-Affiliate-Id"] =
       SetupService.GetAffiliateId();
   }
 
