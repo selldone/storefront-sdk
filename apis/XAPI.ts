@@ -468,9 +468,6 @@ export class XAPI {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/includes/${include_id}`;
   }
 
-  GET_VENDOR_PAGE_DATA(shop_name: string, vendor_id = "") {
-    return `${this.selldone_xapi_url}/shops/@${shop_name}/vendors/${vendor_id}`;
-  }
 
   //―――――――――――――――――――――― Stripe ――――――――――――――――――――
   GET_CHECK_SHOP_STRIPE_PAYMENT_INTENT(
@@ -819,6 +816,11 @@ export class XAPI {
   GET_VENDOR_INFO(shop_name: string, vendor_id: number | string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/vendors/${vendor_id}`;
   }
+
+  GET_VENDOR_PAGE_DATA(shop_name: string, vendor_id = "") {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/vendors/${vendor_id}/page`;
+  }
+
 
   //―――――――――――――――――――――― 🎗️ Subscription ――――――――――――――――――――
   POST_SUBSCRIBE_NOW(shop_name: string, product_id: number | string) {
