@@ -17,6 +17,8 @@ import {Product} from "@selldone/core-js/models/shop/product/product.model";
 import {Currency} from "@selldone/core-js/enums/payment/Currency";
 import {Category} from "@selldone/core-js/models/shop/category/category.model";
 import type {Article} from "@selldone/core-js/models/article/article.model";
+import {CrossSelling} from "@selldone/core-js/models/shop/cross-selling/cross-sell.model.ts";
+import {ProductVariant} from "@selldone/core-js";
 
 /**
  * Language of returned article determine by 'X-Localization' in the header.
@@ -73,13 +75,43 @@ export namespace XapiProductGetTypes {
         catch_power?: boolean;
         reported?: boolean;
       };
+
+      categories?: Pick<
+        Category,
+        "id" | "title" | "name" | "description" | "parent_id" | "icon"
+      >[];
+
+      ross_sells?: Pick<CrossSelling, any> & {
+        target: Pick<
+          Product,
+          "id" | "type" | "title" | "title_en" | "icon" | "price" | "currency"
+        >;
+        product_variants: Pick<
+          ProductVariant,
+          | "id"
+          | "product_id"
+          | "color"
+          | "style"
+          | "volume"
+          | "weight"
+          | "pack"
+          | "type"
+          | "pricing"
+          | "price"
+          | "quantity"
+          | "image"
+        >[];
+      };
     };
 
     campaign_id: number | null;
     link_id: number | null;
-    comments_count: number | null;
     "preferred-language": keyof typeof Currency;
 
+    /**
+     * @deprecated
+     * Now categories will be in the product object!
+     */
     categories?: Pick<
       Category,
       "id" | "title" | "name" | "description" | "parent_id" | "icon"
