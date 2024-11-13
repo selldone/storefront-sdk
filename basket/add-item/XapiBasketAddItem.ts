@@ -43,7 +43,7 @@ import {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
  *     }
  *
  *     if (error) {
- *       this.showErrorAlert(null, error_msg);
+ *       NotificationService.showErrorAlert(null, error_msg);
  *       if (callbackError) callbackError(error_msg!);
  *     }
  *

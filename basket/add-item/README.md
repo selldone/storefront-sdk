@@ -65,7 +65,7 @@ window.$storeunfront.basket
     }
 
     if (error) {
-      this.showErrorAlert(null, error_msg);
+      NotificationService.showErrorAlert(null, error_msg);
       if (callbackError) callbackError(error_msg!);
     }
 
