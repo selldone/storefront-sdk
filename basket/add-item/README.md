@@ -72,7 +72,7 @@ window.$storeunfront.basket
     if (refresh) this.fetchBasketAndShop(); // Important! Fetch data from server.
   })
   .catch((error) => {
-    this.showLaravelError(error);
+      NotificationService.showLaravelError(error);
     if (callbackError) callbackError(error);
   });
 ```

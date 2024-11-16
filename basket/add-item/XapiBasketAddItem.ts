@@ -50,7 +50,7 @@ import {Basket} from "@selldone/core-js/models/shop/order/basket/basket.model";
  *     if (refresh) this.fetchBasketAndShop(); // Important! Fetch data from server. (Ex. Remove item automatically from basket)
  *   })
  *   .catch((error) => {
- *     this.showLaravelError(error);
+ *     NotificationService.showLaravelError(error);
  *     if (callbackError) callbackError(error);
  *   });
  */

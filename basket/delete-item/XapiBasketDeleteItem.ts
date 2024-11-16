@@ -35,7 +35,7 @@ import {Basket} from "@selldone/core-js/index";
  *     if (callbackSuccess) callbackSuccess(basket);
  *   })
  *   .catch((error) => {
- *     this.showLaravelError(error);
+ *     NotificationService.showLaravelError(error);
  *     if (callbackError) callbackError(error);
  *   });
  */
