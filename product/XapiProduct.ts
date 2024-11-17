@@ -23,11 +23,17 @@ export class XapiProduct extends APIAbstract {
   public rate: XapiProductRate;
   public subscription: XapiProductSubscription;
 
+  /**
+   * window.$storefront.products.list()
+   */
   public list = XapiProductList;
 
   /** @deprecated fetchProducts*/
   public fetchProducts = XapiProductList;
 
+  /**
+   * window.$storefront.products.get()
+   */
   public get = XapiProductGet;
 
   constructor(shop_name: string) {

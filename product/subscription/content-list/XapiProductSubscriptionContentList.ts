@@ -51,7 +51,7 @@ export default function XapiProductSubscriptionContentList(
     this.shop_name,
     product_id,
   );
-  const params = { offset: offset, limit: limit, ...options };
+  const params = {  ...options,offset: offset, limit: limit };
   return this.getNow<XapiProductSubscriptionContentListTypes.IResponse>(
     url,
     params,

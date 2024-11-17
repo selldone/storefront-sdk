@@ -25,12 +25,8 @@ export default function XapiProductList(
 ): Promise<XapiProductListTypes.IResponse> {
   const url = window.XAPI.GET_PRODUCTS(this.shop_name);
 
-  return this.getNow<XapiProductListTypes.IResponse>(url, {
-    dir,
-    offset,
-    limit,
-    ...options,
-  });
+  const params={    ...options, dir, offset, limit,};
+  return this.getNow<XapiProductListTypes.IResponse>(url,params);
 }
 
 //█████████████████████████████████████████████████████████████
