@@ -40,7 +40,7 @@
   ],
   "dependencies": {
     "@selldone/core-js": "latest",
-    "axios": "^1.7.7",
+    "axios": "^1.7.9",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
@@ -49,15 +49,15 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-url": "^8.0.2",
     "@types/lodash-es": "^4.17.12",
-     "@typescript-eslint/eslint-plugin": "^8.15.0",
-    "@typescript-eslint/parser": "^8.15.0",
-    "eslint": "^9.15.0",
+     "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.3.3",
-    "rollup": "^4.27.0",
+    "prettier": "^3.4.2",
+    "rollup": "^4.28.1",
     "rollup-plugin-typescript2": "^0.36.0",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.7.2"
   }
 }
