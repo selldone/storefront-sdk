@@ -454,7 +454,13 @@ export class XAPI {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/home/default?page_id=${page_id}`;
   }
 
-  GET_PAGE_DATA(shop_name: string, page_name = "") {
+  /**
+   * We can send page id in query (page_id) with empty page_name
+   * @param shop_name
+   * @param page_name
+   * @constructor
+   */
+  GET_PAGE_DATA(shop_name: string, page_name:string|null = "") {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/pages${
       page_name ? "/" + page_name : ""
     }`;
