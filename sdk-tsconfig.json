@@ -26,9 +26,9 @@
       "dom.iterable",
       "scripthost"
     ],
-    "rootDir": ".",
+    "rootDir": "../",
     "paths": {
-       "@selldone/sdk-storefront/*": ["/*"]
+       //"@selldone/sdk-storefront/*": ["/*"]
     }
   },
   "include": [
