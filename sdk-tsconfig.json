@@ -33,7 +33,7 @@
    //   "@selldone/core-js/*": ["../core-js/*"] // Adjust this to your project structure
     //  "@selldone/core-js/*": ["../core-js/*"]
       // Adjust paths according to your project structure
-      // "@selldone/sdk-storefront/*": ["/*"]
+       "@selldone/sdk-storefront/*": ["/*"]
     }
   },
   "include": [
