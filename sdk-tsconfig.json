@@ -2,17 +2,14 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
+    "declaration": true,
     "outDir": "./dist",
-    "declaration": true,                      // Generates corresponding '.d.ts' file
-
     "importHelpers": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "noEmitOnError": false,
-    "composite": true,
+    "composite": false,
     "jsx": "preserve",
-    "jsxImportSource": "vue",
-    "noImplicitThis": false,
+    "noImplicitThis": true,
     "strict": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
@@ -21,6 +18,7 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "noEmit": false,
     "downlevelIteration": true,
     "lib": [
       "esnext",
@@ -28,31 +26,15 @@
       "dom.iterable",
       "scripthost"
     ],
-    "rootDir": ".",
+    "rootDir": "../",
     "paths": {
    //   "@selldone/core-js/*": ["../core-js/*"] // Adjust this to your project structure
     //  "@selldone/core-js/*": ["../core-js/*"]
       // Adjust paths according to your project structure
-     //  "@selldone/sdk-storefront/*": ["/*"]
+      // "@selldone/sdk-storefront/*": ["src/*"]
     }
   },
   "include": [
-    "apis",
-    "article",
-    "auth",
-    "avocado",
-    "basket",
-    "cashback",
-    "coupon",
-    "database",
-    "lottery",
-    "offer",
-    "plugins",
-    "product",
-    "shop",
-    "types",
-    "user",
-    "vendor",
     "**/*.ts",
     "**/*.tsx",
     "*.ts",
