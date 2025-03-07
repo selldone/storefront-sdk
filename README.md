@@ -54,7 +54,7 @@ StorefrontSDK.Setup(); // Set up the Shop SDK.
 
 ```html  
 
-<script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@1.0.12/dist/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@1.8.19/dist/bundle.min.js"></script>
 <script>
     // Use the global variable StorefrontSDK
     const sdk = storefront.StorefrontSDK;
