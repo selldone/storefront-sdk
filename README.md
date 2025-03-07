@@ -54,7 +54,7 @@ StorefrontSDK.Setup(); // Set up the Shop SDK.
 
 ```html  
 
-<script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@1.8.19/dist/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@{version}/dist/bundle.min.js"></script>
 <script>
     // Use the global variable StorefrontSDK
     const sdk = storefront.StorefrontSDK;
@@ -62,7 +62,7 @@ StorefrontSDK.Setup(); // Set up the Shop SDK.
 </script>
 ```
 
-⚡ Change `1.8.19` to last version: <a href="https://www.npmjs.com/package/@selldone/sdk-storefront"><img src="https://img.shields.io/npm/v/@selldone/sdk-storefront.svg?sanitize=true" alt="Version"></a>
+⚡ Change `{version}` to last version: <a href="https://www.npmjs.com/package/@selldone/sdk-storefront"><img src="https://img.shields.io/npm/v/@selldone/sdk-storefront.svg?sanitize=true" alt="Version"></a>
 
 ### Add Meta Tags to HTML
 
