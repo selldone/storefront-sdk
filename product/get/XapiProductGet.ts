@@ -17,7 +17,7 @@ import {Product} from "@selldone/core-js/models/shop/product/product.model";
 import {Currency} from "@selldone/core-js/enums/payment/Currency";
 import {Category} from "@selldone/core-js/models/shop/category/category.model";
 import type {Article} from "@selldone/core-js/models/article/article.model";
-import {CrossSelling} from "@selldone/core-js/models/shop/cross-selling/cross-sell.model.ts";
+import {CrossSelling} from "@selldone/core-js/models/shop/cross-selling/cross-sell.model";
 import {ProductVariant} from "@selldone/core-js";
 
 /**

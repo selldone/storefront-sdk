@@ -1,6 +1,6 @@
 {
   "name": "@selldone/sdk-storefront",
-  "version": "1.8.19",
+  "version": "1.8.22",
   "private": false,
   "author": "Mehrdad Pajuhaan <mehrdad@selldone.com> (https://selldone.com)",
   "description": "A TypeScript SDK to connect to your shop and build a fully functional storefront and website by simply developing a frontend web application. All backend operations are seamlessly managed by the serverless Selldone solution.",
@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc -p sdk-tsconfig.json",
     "bundle": "rollup -c",
-    "clean": "tsc --build --clean",
+    "clean": "tsc  --build  sdk-tsconfig.json --clean",
     "prepublishOnly": "yarn build && yarn bundle",
     "publish-npm": "npm publish --access public"
   },
