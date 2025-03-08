@@ -3,6 +3,7 @@
 <a href="https://www.npmjs.com/package/@selldone/sdk-storefront"><img src="https://img.shields.io/npm/v/@selldone/sdk-storefront.svg?sanitize=true" alt="Version"></a>
 ![Selldone](https://img.shields.io/badge/type-Selldone-f39f37?style=flat&label=Storefront&labelColor=%23567&color=%23000)
 ![License](https://img.shields.io/github/license/selldone/storefront-sdk.svg)
+[![GitHub](https://img.shields.io/badge/GitHub-Storefront--SDK-blue?style=flat&logo=github)](https://github.com/selldone/storefront-sdk)
 
 # Selldone ⮕ Storefront SDK
 
@@ -63,6 +64,20 @@ StorefrontSDK.Setup(); // Set up the Shop SDK.
 ```
 
 ⚡ Change `{version}` to last version: <a href="https://www.npmjs.com/package/@selldone/sdk-storefront"><img src="https://img.shields.io/npm/v/@selldone/sdk-storefront.svg?sanitize=true" alt="Version"></a>
+
+Other CDN Options:
+```html
+You can always fetch the latest version of @selldone/sdk-storefront using jsDelivr’s latest version alias:
+<script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@latest/dist/bundle.min.js"></script>
+
+Alternative (Using Unpkg)
+If you prefer unpkg, you can use:
+<script src="https://unpkg.com/@selldone/sdk-storefront/dist/bundle.min.js"></script>
+
+⚠️ Important:
+Using @latest can sometimes break your app if new versions introduce breaking changes. If stability is a concern, it's best to specify a fixed version or use semantic versioning, e.g.:
+<script src="https://cdn.jsdelivr.net/npm/@selldone/sdk-storefront@1/dist/bundle.min.js"></script>
+```
 
 ### Add Meta Tags to HTML
 
