@@ -235,7 +235,7 @@ export class StorefrontSDK {
     window.$storefront.currency = _database.currency.getCurrency();
 
     console.style(
-      `✅ Selldone® Storefront SDK [<b='color:#009688'>@${shop_name}</b>] initialized successfully.`,
+      `✅  Selldone® Storefront SDK [<b='color:#009688'>@${shop_name}</b>] initialized successfully.`,
     );
   }
 

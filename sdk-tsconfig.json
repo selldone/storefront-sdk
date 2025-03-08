@@ -42,6 +42,9 @@
     "_docs",
     "public",
     "dist",
-    "standalone"
+    "standalone",
+    "**/*.test.ts",
+    "**/__tests__/**/*",
+    "tests"
   ]
 }

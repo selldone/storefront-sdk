@@ -1,63 +1,94 @@
 # [Selldone Storefront SDK](../../) > [Products](../) > List Products
 
-### Fetching Product List
+## **Fetching Product List**
 
-To fetch a list of products, use the `XapiProductList` function. The function takes four arguments:
-- `dir`: The directory or category to list products from.
-- `offset`: The offset for pagination, used to skip a number of items.
-- `limit`: The number of items to fetch.
-- `options`: An optional object containing additional options for fetching the product list.
+To retrieve a list of products, use the `XapiProductList` function. This function allows you to fetch products based on
+categories, pagination, and additional filtering options.
 
-### Example
+### **Function Parameters**
 
-Here is an example of how to use the `XapiProductList` function to fetch a list of products:
+The function accepts four arguments:
+
+- **`dir`** *(string or null)* – The directory or category to retrieve products from. Use `null` to fetch from the home
+  category.
+- **`offset`** *(number)* – The number of items to skip (useful for pagination).
+- **`limit`** *(number)* – The number of products to fetch.
+- **`options`** *(object, optional)* – Additional filtering and sorting options.
+
+---
+
+## **Usage Example**
+
+Here’s how to use `XapiProductList` to fetch a paginated list of products:
 
 ```typescript
-// Assuming you have an instance of XapiProduct
-const xapiProduct = new XapiProduct();
+// Initialize the SDK
+const sdk = storefront.StorefrontSDK;
+sdk.Setup();
 
-// Fetch product list
-xapiProduct.getProductList(null, 0, 10, { search: "example", sortBy: "title", sortDesc: true })
-  .then(response => {
-    console.log('Product list fetched successfully:', response);
-  })
-  .catch(error => {
-    console.error('Error fetching product list:', error);
-  });
+// Fetch product list with sorting and pagination
+window.$storefront.products
+    .optimize(600) // Cache products for 600 seconds (optional)
+    .list(
+        null, // Category ID (null for homepage)
+        0,    // Offset (pagination)
+        10,   // Limit (number of products to fetch)
+        {search: null, sortBy: "title", sortDesc: true} // Options
+    )
+    .then(response => {
+        console.log("Product list fetched successfully:", response);
+    })
+    .catch(error => {
+        console.error("Error fetching product list:", error);
+    });
 ```
 
-### Request Structure
+---
 
-The `XapiProductList` function sends a request with the following structure:
+## **Request Parameters**
 
-- `dir`: (string | null) The directory or category to list products from.
-- `offset`: (number) The offset for pagination.
-- `limit`: (number) The number of items to fetch.
-- `options`: (object) Additional options for fetching the product list. This can include:
-    - `search`: (string) Search term to filter products.
-    - `sortBy`: (string) Field to sort the products by.
-    - `sortDesc`: (boolean) Whether to sort in descending order.
-    - `bounds`: ([number, number, number, number]) Bounding coordinates for product location constraints.
-    - `tags`: (string[]) Filter products by tags.
-    - `vendor_id`: (string) Show products only for this vendor.
-    - `surrounded`: (boolean) Controls category visibility.
-    - `map`: (number | null) Only for this map tag ID.
-    - `only_stared`: (boolean) Filter for starred products.
-    - `only_in_wishlist`: (boolean) Filter for wishlist products.
-    - `with_page`: (boolean) Only return page if true.
-    - `with_total`: (boolean) Include total count in the response.
+The `XapiProductList` function allows for various filtering and sorting options:
 
-### Response Structure
+### **Basic Parameters**
 
-The `XapiProductList` function returns a promise that resolves to a response object. The response object contains the following properties:
+| Parameter | Type               | Description                                      |
+|-----------|--------------------|--------------------------------------------------|
+| `dir`     | `string` or `null` | The directory or category to list products from. |
+| `offset`  | `number`           | The offset for pagination (skip items).          |
+| `limit`   | `number`           | The number of items to fetch.                    |
 
-- `products`: An array of product objects.
-- `folders`: An array of category objects.
-- `parent`: The parent category object.
-- `after`: (string | null) Search info about limited timespan.
-- `before`: (string | null) Search info about limited timespan.
-- `total`: (number) Total number of products available.
-- `relation-mode`: (string[] | "same-category") Related list mode.
-- `tax_profile`: (object | null) Extra search object.
-- `valuation`: (object | null) Extra search object.
-- `time_filter`: (object | null) Extra search object.
+### **Optional Filters**
+
+| Option             | Type               | Description                                                  |
+|--------------------|--------------------|--------------------------------------------------------------|
+| `search`           | `string`           | Filter products by a search term.                            |
+| `sortBy`           | `string`           | Field to sort the products by (e.g., `price`, `title`).      |
+| `sortDesc`         | `boolean`          | `true` for descending order, `false` for ascending.          |
+| `bounds`           | `array of numbers` | Bounding coordinates to filter by location.                  |
+| `tags`             | `array of strings` | Filter products by specific tags.                            |
+| `vendor_id`        | `string`           | Fetch products from a specific vendor.                       |
+| `surrounded`       | `boolean`          | Controls category visibility.                                |
+| `map`              | `number` or `null` | Filter by map tag ID.                                        |
+| `only_starred`     | `boolean`          | Fetch only products marked as favorite by the user.          |
+| `only_in_wishlist` | `boolean`          | Fetch only products added to the wishlist.                   |
+| `with_page`        | `boolean`          | If `true`, only returns a page reference.                    |
+| `with_total`       | `boolean`          | If `true`, includes the total product count in the response. |
+
+---
+
+## **Response Structure**
+
+The function returns a **Promise** that resolves to an object containing product details:
+
+| Field           | Type               | Description                             |
+|-----------------|--------------------|-----------------------------------------|
+| `products`      | `array`            | List of fetched product objects.        |
+| `folders`       | `array`            | List of related categories.             |
+| `parent`        | `object` or `null` | The parent category, if applicable.     |
+| `after`         | `string` or `null` | Search metadata for a limited timespan. |
+| `before`        | `string` or `null` | Search metadata for a limited timespan. |
+| `total`         | `number`           | Total count of products available.      |
+| `relation-mode` | `array of strings` | Mode for related products.              |
+| `tax_profile`   | `object` or `null` | Additional tax-related data.            |
+| `valuation`     | `object` or `null` | Extra valuation information.            |
+| `time_filter`   | `object` or `null` | Time-based filtering metadata.          |

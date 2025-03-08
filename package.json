@@ -1,15 +1,23 @@
 {
   "name": "@selldone/sdk-storefront",
-  "version": "1.8.22",
+  "version": "1.8.23",
   "private": false,
   "author": "Mehrdad Pajuhaan <mehrdad@selldone.com> (https://selldone.com)",
   "description": "A TypeScript SDK to connect to your shop and build a fully functional storefront and website by simply developing a frontend web application. All backend operations are seamlessly managed by the serverless Selldone solution.",
-  "main": "dist/index.js",
+
+  "main": "dist/index.cjs",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+
   "files": [
     "dist/**/*"
   ],
   "type": "module",
+  "exports": {
+    "import": "./dist/index.esm.js",
+    "require": "./dist/index.cjs"
+  },
+
   "scripts": {
     "build": "tsc -p sdk-tsconfig.json",
     "bundle": "rollup -c",
@@ -58,6 +66,8 @@
     "rollup-plugin-typescript2": "^0.36.0",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "jsdom": "^26.0.0",
+    "vitest": "^3.0.8"
   }
 }

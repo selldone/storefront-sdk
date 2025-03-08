@@ -20,7 +20,18 @@ export default {
       sourcemap: true,
       plugins: [terser()], // Minify this output
     },
+    {
+      file: "dist/index.esm.js",  // ✅ ADD THIS FOR ES MODULE SUPPORT
+      format: "esm",              // ✅ Generate ES Module
+      sourcemap: true,
+    },
+    {
+      file: "dist/index.cjs",      // ✅ ADD THIS FOR COMMONJS SUPPORT
+      format: "cjs",               // ✅ Generate CommonJS Module
+      sourcemap: true,
+    }
   ],
+  external: (id) => id.includes(".test.ts"), // ✅ Exclude test files
   plugins: [
     nodeResolve({
       browser: true,
@@ -28,6 +39,7 @@ export default {
     commonjs(),
     typescript({
       tsconfig: "./sdk-tsconfig.json",
+      exclude: ["**/*.test.ts", "**/__tests__/**/*"], // ✅ Ensure tests are excluded
     }),
     url({
       include: [

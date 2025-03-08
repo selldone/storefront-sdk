@@ -173,6 +173,8 @@ export namespace XapiProductListTypes {
 
     /**
      * Filter for starred products.
+     * Starred products are those marked as favorites by the user.
+     * Users can add products to their favorites from the product detail page.
      */
     only_stared?: boolean;
 
