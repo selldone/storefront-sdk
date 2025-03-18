@@ -11,8 +11,9 @@ To fetch the details of a product, use the `XapiProductGet` function. The functi
 Here is an example of how to use the `XapiProductGet` function to fetch the details of a product with ID `12345`:
 
 ```typescript
-// Assuming you have an instance of XapiProduct
-const xapiProduct = new XapiProduct();
+// Initialize the SDK
+const sdk = storefront.StorefrontSDK;
+sdk.Setup();
 
 // Fetch product details
 xapiProduct.getProductDetails(12345, { no_article: true })
