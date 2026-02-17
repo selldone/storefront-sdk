@@ -882,4 +882,77 @@ export class XAPI {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/cashback`;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+  //―――――――――――――――――――――― Listing (Storefront) ――――――――――――――――――――
+
+  GET_SHOP_LISTING_INFO(shop_name: string): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing`;
+  }
+
+  GET_SHOP_LISTING_CATEGORIES(shop_name: string): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/categories`;
+  }
+
+  GET_SHOP_LISTING_ITEMS(shop_name: string): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/items`;
+  }
+
+  GET_SHOP_LISTING_ITEM(shop_name: string, item_id: string | number): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/items/${item_id}`;
+  }
+
+
+
+  // Listing item reviews (storefront)
+  GET_SHOP_LISTING_ITEM_REVIEWS(shop_name: string, item_id: string | number) {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/items/${item_id}/reviews`;
+  }
+
+  POST_SHOP_LISTING_ITEM_REVIEW(shop_name: string, item_id: string | number) {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/items/${item_id}/reviews`;
+  }
+
+  DELETE_SHOP_LISTING_ITEM_REVIEW(shop_name: string, item_id: string | number) {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/items/${item_id}/reviews`;
+  }
+
+
+
+  POST_SHOP_LISTING_MESSAGE(shop_name: string): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/messages`;
+  }
+
+  POST_SHOP_LISTING_ITEM_MESSAGE(shop_name: string, item_id: number | string): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/items/${item_id}/messages`;
+  }
+
+
+
+  GET_SHOP_LISTING_ITEMS_COMPARE(shop: string) {
+    return `/xapi/shops/@${shop}/listing/compare`;
+  }
+
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// Storefront ▶ Listing ▶ Search Config
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  GET_SHOP_LISTING_SEARCH(shop_name: string) {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/search`;
+  }
+
+
+
+
+
 }
