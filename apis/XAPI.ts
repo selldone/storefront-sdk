@@ -952,6 +952,16 @@ export class XAPI {
   }
 
 
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// Storefront ▶ Listing ▶ Badges
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  GET_SHOP_LISTING_ITEM_BADGES(shop_name: string) {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/listing/badges`;
+  }
+
+
+
 
 
 
