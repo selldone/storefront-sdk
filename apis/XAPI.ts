@@ -41,8 +41,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/sms-login/request
-   * @source Backend: App\Http\Controllers\Auth\ShopSmsLoginController::api_shopLoginRequest
-   * @source Route: Backend/routes/xapi.php:400
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -83,8 +81,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/sms-login/verify
-   * @source Backend: App\Http\Controllers\Auth\ShopSmsLoginController::api_shopLoginVerify
-   * @source Route: Backend/routes/xapi.php:401
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -125,8 +121,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/sms-login/select-user
-   * @source Backend: App\Http\Controllers\Auth\ShopSmsLoginController::api_shopLoginSelectUser
-   * @source Route: Backend/routes/xapi.php:402
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -167,8 +161,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/sms-login/new-user
-   * @source Backend: App\Http\Controllers\Auth\ShopSmsLoginController::api_shopLoginNewUser
-   * @source Route: Backend/routes/xapi.php:403
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -210,8 +202,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/email-login/request
-   * @source Backend: App\Http\Controllers\Auth\ShopEmailLoginController::api_shopEmailLoginRequest
-   * @source Route: Backend/routes/xapi.php:408
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -252,8 +242,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/email-login/verify
-   * @source Backend: App\Http\Controllers\Auth\ShopEmailLoginController::api_shopEmailLoginVerify
-   * @source Route: Backend/routes/xapi.php:409
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -303,8 +291,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /me
-   * @source Backend: App\Http\Controllers\Shop\Customers\ShopCustomersController::xapi_shopGetMe
-   * @source Route: Backend/routes/xapi.php:275
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -346,8 +332,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/logout
-   * @source Backend: App\Http\Controllers\Shop\Login\ShopLogoutController::shopLogout
-   * @source Route: Backend/routes/xapi.php:143
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -389,8 +373,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/exchange/rates
-   * @source Backend: App\Http\Controllers\Shop\Exchange\ShopExchangeController::api_getShopCurrenciesRate
-   * @source Route: Backend/routes/xapi.php:437
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -431,8 +413,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/leave
-   * @source Backend: App\Http\Controllers\Shop\Login\ShopLeaveController::shopLeave
-   * @source Route: Backend/routes/xapi.php:147
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -474,8 +454,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/subscribe
-   * @source Backend: App\Http\Controllers\Shop\Customers\ShopCustomersController::api_setShopCustomerSubscribe
-   * @source Route: Backend/routes/xapi.php:134
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -517,8 +495,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/customer
-   * @source Backend: App\Http\Controllers\Shop\Customers\ShopCustomersController::xapi_setMyShopCustomerProfile
-   * @source Route: Backend/routes/xapi.php:136
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -562,8 +538,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/info
-   * @source Backend: App\Http\Controllers\Shop\ShopPublic\ShopPublicController::getGeneralShopInfo
-   * @source Route: Backend/routes/xapi.php:413
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -605,8 +579,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/profiles/{type}
-   * @source Backend: App\Http\Controllers\Shop\Profile\ShopProfileController::api_getShopProfilePublic
-   * @source Route: Backend/routes/xapi.php:432
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -650,8 +622,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/products/all
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductController::xapi_getProductsAll
-   * @source Route: Backend/routes/xapi.php:441
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -695,8 +665,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/products/list
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductController::api_getProducts
-   * @source Route: Backend/routes/xapi.php:451
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -740,8 +708,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/products/{product_id}/info
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductPublicController::api_getProduct
-   * @source Route: Backend/routes/xapi.php:443
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -784,8 +750,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/products/{product_id}/info-card
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductIframeController::api_getProduct_Card
-   * @source Route: Backend/routes/xapi.php:445
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -831,8 +795,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/products/{product_id}/info-instagram
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductInstagramController::api_getProduct_Instagram
-   * @source Route: Backend/routes/xapi.php:446
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -878,8 +840,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/products/{product_id}/info-hyper
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductHyperController::api_getProduct_Hyper
-   * @source Route: Backend/routes/xapi.php:447
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -925,8 +885,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/products/{product_id}/set-my-rating
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductRatingController::api_setMyRating
-   * @source Route: Backend/routes/xapi.php:155
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -974,8 +932,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/basket/{product_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketItemsController::api_addItemToBasket
-   * @source Route: Backend/routes/xapi.php:174 (also lines 336)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1021,8 +977,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /shops/@{shop}/basket/{product_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketItemsController::api_deleteItemFromBasket
-   * @source Route: Backend/routes/xapi.php:175 (also lines 337)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1068,8 +1022,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/basket/{product_id}/message
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketItemsController::api_setBasketItemMessage
-   * @source Route: Backend/routes/xapi.php:177 (also lines 339)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1116,8 +1068,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /shops/@{shop}/baskets/{basket_id}/files/{file_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketItemsController::api_deleteBasketItemFile
-   * @source Route: Backend/routes/xapi.php:178 (also lines 340)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1165,8 +1115,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/basket/{product_id}/preferences
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketItemsController::api_setBasketItemPreferences
-   * @source Route: Backend/routes/xapi.php:181 (also lines 342)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1214,8 +1162,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/baskets/{basket_id}/config
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketReceiverController::api_SetBasketReceiverInfo
-   * @source Route: Backend/routes/xapi.php:190 (also lines 350)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1258,8 +1204,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/basket/{type}/bill
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketBillController::api_getBasketBill
-   * @source Route: Backend/routes/xapi.php:182 (also lines 343)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1302,8 +1246,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/basket/{type}/buy/{gateway_code}
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketController::api_BuyBasket
-   * @source Route: Backend/routes/xapi.php:185 (also lines 346)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1347,8 +1289,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/basket/{basket_id}/bills/{bill_id}/pay/{gateway_code}
-   * @source Backend: App\Http\Controllers\Shop\Order\Bill\BillPaymentController::api_PayBill
-   * @source Route: Backend/routes/xapi.php:186 (also lines 347)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1398,8 +1338,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/basket/{type}/submit
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketController::api_SubmitServiceBasket
-   * @source Route: Backend/routes/xapi.php:193 (also lines 353)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1442,8 +1380,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/baskets/{basket_type}/my-location
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketSetMyLocationController::xapi_setMyLocation
-   * @source Route: Backend/routes/xapi.php:196 (also lines 356)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1486,8 +1422,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/baskets/{basket_id}/receiver-info
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketReceiverController::xapi_editOrderReceiverInfo
-   * @source Route: Backend/routes/xapi.php:200 (also lines 360)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1533,8 +1467,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/baskets/{basket_id}/share
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketShareController::xapi_shareOrder
-   * @source Route: Backend/routes/xapi.php:202 (also lines 362)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1580,8 +1512,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/basket/{type}/import
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketShareController::xapi_importOrder
-   * @source Route: Backend/routes/xapi.php:203 (also lines 363)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1626,8 +1556,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/baskets/{basket_id}/portal
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketCustomersController::xapi_createBasketPortalLink
-   * @source Route: Backend/routes/xapi.php:206
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -1675,8 +1603,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/baskets/{basket_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketCustomersController::api_getMyOrderInfo
-   * @source Route: Backend/routes/xapi.php:219 (also lines 373)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1719,8 +1645,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/pos-baskets/{basket_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\POS\POSOrdersController::xapi_getMyOrderInfo
-   * @source Route: Backend/routes/xapi.php:222 (also lines 375)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1766,8 +1690,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/baskets/{basket_id}/confirm-received
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketCustomersController::xapi_updateConfirmReceived
-   * @source Route: Backend/routes/xapi.php:199 (also lines 359)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1813,8 +1735,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/baskets/{basket_id}/billing
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketBillController::xapi_editOrderBillingInfo
-   * @source Route: Backend/routes/xapi.php:201 (also lines 361)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1860,8 +1780,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/basket/orders-{type}
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketCustomersController::api_getMyOrders
-   * @source Route: Backend/routes/xapi.php:218 (also lines 372)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -1904,8 +1822,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/basket/orders/return-requests
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketItemReturnController::api_getMyItemReturnRequests
-   * @source Route: Backend/routes/xapi.php:234
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -1947,8 +1863,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/baskets/{basket_id}/return/{item_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketItemReturnController::api_addItemReturnRequest
-   * @source Route: Backend/routes/xapi.php:230
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -1996,8 +1910,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/products/{product_id}/files/{file_id}
-   * @source Backend: App\Http\Controllers\Shop\File\FileDownloadController::generate_buyer_download_url
-   * @source Route: Backend/routes/xapi.php:242 (also lines 382)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -2045,8 +1957,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/tax/{country}/regions
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketTaxController::api_getTaxRegionsOfCountry
-   * @source Route: Backend/routes/xapi.php:211 (also lines 366)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -2091,8 +2001,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/search/suggestion/{text}
-   * @source Backend: App\Http\Controllers\Shop\Search\SearchController::api_searchSuggestion
-   * @source Route: Backend/routes/xapi.php:463
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -2136,8 +2044,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/products/{product_id}/waiting-be-available
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductInformController::api_addToWaitingListForBeAvailable
-   * @source Route: Backend/routes/xapi.php:159
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2183,8 +2089,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /shops/@{shop}/products/{product_id}/waiting-be-available
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductInformController::api_deleteFromWaitingListForBeAvailable
-   * @source Route: Backend/routes/xapi.php:160
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2230,8 +2134,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/products/{product_id}/waiting-auction
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductInformController::api_addToWaitingListForAuction
-   * @source Route: Backend/routes/xapi.php:163
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2277,8 +2179,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /shops/@{shop}/products/{product_id}/waiting-auction
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductInformController::api_deleteFromWaitingListForAuction
-   * @source Route: Backend/routes/xapi.php:164
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2325,8 +2225,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/products/{product_id}/wishlist
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductWishlistController::api_addToWishlist
-   * @source Route: Backend/routes/xapi.php:168
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2369,8 +2267,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /shops/@{shop}/products/{product_id}/wishlist
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductWishlistController::api_deleteToWishlist
-   * @source Route: Backend/routes/xapi.php:169
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2418,8 +2314,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/comments
-   * @source Backend: App\Http\Controllers\Social\ArticleController::getMyShopComments
-   * @source Route: Backend/routes/xapi.php:246
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2463,8 +2357,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/giftcards
-   * @source Backend: App\Http\Controllers\Shop\GiftCard\GiftCardPublicController::api_getMyGiftCards
-   * @source Route: Backend/routes/xapi.php:250
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2506,8 +2398,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/giftcards/list
-   * @source Backend: App\Http\Controllers\Shop\GiftCard\GiftCardPublicController::api_getMyGiftCardsList
-   * @source Route: Backend/routes/xapi.php:251
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2549,8 +2439,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/giftcards
-   * @source Backend: App\Http\Controllers\Shop\GiftCard\GiftCardPublicController::api_addMyGiftCard
-   * @source Route: Backend/routes/xapi.php:252
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2594,8 +2482,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/wallets
-   * @source Backend: App\Http\Controllers\Shop\Wallets\CustomerWalletsPublicController::api_getMyCustomerWallets
-   * @source Route: Backend/routes/xapi.php:255
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2640,8 +2526,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/discount-code
-   * @source Backend: App\Http\Controllers\Shop\DiscountCode\ShopDiscountCodeController::api_setDiscountCodeForBasket
-   * @source Route: Backend/routes/xapi.php:422
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -2684,8 +2568,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/blogs
-   * @source Backend: App\Http\Controllers\Shop\Blog\ShopBlogController::api_getShopBlogsPublic
-   * @source Route: Backend/routes/xapi.php:498
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -2728,8 +2610,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/fcm/token
-   * @source Backend: App\Http\Controllers\Samin\Firebase\FCMController::api_setShopFCMToken
-   * @source Route: Backend/routes/xapi.php:140
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2773,8 +2653,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/gateways/{gateway_code}/{transaction_id}
-   * @source Backend: App\Http\Controllers\Shop\Payment\ShopPaymentsController::getPendingPaymentInfo
-   * @source Route: Backend/routes/xapi.php:111 (also lines 378)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -2822,8 +2700,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/gateways/{gateway_code}/transactions/{transaction_id}/{unique_id}
-   * @source Backend: App\Http\Controllers\Shop\Payment\ShopPaymentsController::checkIntervalPaymentForShop
-   * @source Route: Backend/routes/xapi.php:114
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2873,8 +2749,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/apps/{app_code}/status
-   * @source Backend: App\Http\Controllers\Shop\App\ShopAppController::api_shopAppCustomerBlock
-   * @source Route: Backend/routes/xapi.php:150
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2928,8 +2802,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/baskets/{basket_id}/return/{item_id}/temp/upload/{type}
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketItemReturnController::uploadImageForReturnRequest
-   * @source Route: Backend/routes/xapi.php:231
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -2981,8 +2853,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/contact-us
-   * @source Backend: App\Http\Controllers\Shop\Contact\ShopContactCustomersController::api_sendShopMessage
-   * @source Route: Backend/routes/xapi.php:488
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3024,8 +2894,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/faqs/tags
-   * @source Backend: App\Http\Controllers\Shop\FAQ\ShopFAQController::api_getShopFAQTags
-   * @source Route: Backend/routes/xapi.php:483
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3066,8 +2934,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/faqs
-   * @source Backend: App\Http\Controllers\Shop\FAQ\ShopFAQController::api_getShopFAQs
-   * @source Route: Backend/routes/xapi.php:482
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3108,8 +2974,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/faqs
-   * @source Backend: App\Http\Controllers\Shop\FAQ\ShopFAQController::api_askShopQuestion
-   * @source Route: Backend/routes/xapi.php:258
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -3152,8 +3016,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/home/default
-   * @source Backend: App\Http\Controllers\Shop\PageBuilder\PageBuilderController::api_getHomePageInfo
-   * @source Route: Backend/routes/xapi.php:477
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3201,8 +3063,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/pages/{page_name?}
-   * @source Backend: App\Http\Controllers\Shop\PageBuilder\PageBuilderController::api_getPageInfo
-   * @source Route: Backend/routes/xapi.php:467
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3246,8 +3106,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/pages/{page_id}/statistic
-   * @source Backend: App\Http\Controllers\Shop\PageBuilder\PageBuilderUserBehaviorController::api_setPageUserBehavior
-   * @source Route: Backend/routes/xapi.php:470
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3289,8 +3147,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/includes/{include_id}
-   * @source Backend: App\Http\Controllers\Shop\PageBuilder\IncludeItems\PageBuilderIncludeItemController::api_getIncludePageInfo
-   * @source Route: Backend/routes/xapi.php:473
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3334,8 +3190,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/gateways/stripe/{payment_id}/check
-   * @source Backend: App\Http\Controllers\Gateway\Stripe\StripeController::checkStripePaymentForShop
-   * @source Route: Backend/routes/xapi.php:118
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -3382,8 +3236,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/gateways/paypal/client-token/{currency}
-   * @source Backend: App\Http\Controllers\Gateway\Paypal\PaypalController::getClientTokenForShop
-   * @source Route: Backend/routes/xapi.php:121 (also lines 369)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -3428,8 +3280,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/transactions/{transaction_id}/receipt/{currency}
-   * @source Backend: App\Http\Controllers\Gateway\DIR\DirectGatewayController::uploadImageForPaymentReceipt
-   * @source Route: Backend/routes/xapi.php:125 (also lines 396)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -3479,8 +3329,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /address/all
-   * @source Backend: App\Http\Controllers\Shop\Map\AddressController::api_addressesGetAll
-   * @source Route: Backend/routes/xapi.php:584
    * @auth Customer token (`auth:api`); route is imported from `routes/modules/address.php`.
    *
    * Path parameters:
@@ -3522,8 +3370,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /address/{address_id}
-   * @source Backend: App\Http\Controllers\Shop\Map\AddressController::api_deleteAddress
-   * @source Route: Backend/routes/xapi.php:584
    * @auth Customer token (`auth:api`); route is imported from `routes/modules/address.php`.
    *
    * Path parameters:
@@ -3565,8 +3411,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /address/{address_id}
-   * @source Backend: App\Http\Controllers\Shop\Map\AddressController::api_updateAddress
-   * @source Route: Backend/routes/xapi.php:584
    * @auth Customer token (`auth:api`); route is imported from `routes/modules/address.php`.
    *
    * Path parameters:
@@ -3608,8 +3452,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /address
-   * @source Backend: App\Http\Controllers\Shop\Map\AddressController::api_addAddress
-   * @source Route: Backend/routes/xapi.php:584
    * @auth Customer token (`auth:api`); route is imported from `routes/modules/address.php`.
    *
    * Path parameters:
@@ -3651,8 +3493,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /address/gto-to-address
-   * @source Backend: App\Http\Controllers\Shop\Map\AddressController::api_geoToAddress
-   * @source Route: Backend/routes/xapi.php:532
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3693,8 +3533,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /address/autocomplete
-   * @source Backend: App\Http\Controllers\Shop\Map\AddressController::api_autocomplete
-   * @source Route: Backend/routes/xapi.php:533
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3739,8 +3577,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/{shop_id}/blog/categories
-   * @source Backend: App\Http\Controllers\Shop\Blog\ShopBlogCategoryController::api_getShopBlogCategoriesPublic
-   * @source Route: Backend/routes/xapi.php:527
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3781,8 +3617,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/blogs/{blog_id}
-   * @source Backend: App\Http\Controllers\Shop\Blog\ShopBlogController::api_getShopBlog
-   * @source Route: Backend/routes/xapi.php:459
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3825,8 +3659,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /iframe/preview
-   * @source Backend: App\Http\Controllers\Samin\Embed\EmbedController::getEmbedPreview
-   * @source Route: Backend/routes/xapi.php:99
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3869,8 +3701,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/coupons
-   * @source Backend: App\Http\Controllers\Shop\Coupon\CouponController::api_getMyEligibleCouponsInShop
-   * @source Route: Backend/routes/xapi.php:417
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3911,8 +3741,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/coupons/{coupon_code}
-   * @source Backend: App\Http\Controllers\Shop\Coupon\CouponController::api_getMyEligibleCouponByCode
-   * @source Route: Backend/routes/xapi.php:418
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3954,8 +3782,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/coupon
-   * @source Backend: App\Http\Controllers\Shop\Coupon\CouponController::api_setCouponForBasket
-   * @source Route: Backend/routes/xapi.php:419
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -3998,8 +3824,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/offers
-   * @source Backend: App\Http\Controllers\Shop\Offer\OfferController::api_getMyEligibleOffersInShop
-   * @source Route: Backend/routes/xapi.php:427
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -4042,8 +3866,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/lottery
-   * @source Backend: App\Http\Controllers\Shop\Lottery\LotteryController::xapi_getMyEligibleLotteries
-   * @source Route: Backend/routes/xapi.php:263
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4085,8 +3907,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/lottery/play
-   * @source Backend: App\Http\Controllers\Shop\Lottery\LotteryController::xapi_playShopLottery
-   * @source Route: Backend/routes/xapi.php:264
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4128,8 +3948,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/lottery/wins
-   * @source Backend: App\Http\Controllers\Shop\Lottery\LotteryController::xapi_getMyShopLotteryPrizes
-   * @source Route: Backend/routes/xapi.php:265
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4171,8 +3989,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/lottery
-   * @source Backend: App\Http\Controllers\Shop\Lottery\LotteryController::xapi_setLotteryForBasket
-   * @source Route: Backend/routes/xapi.php:266
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4216,8 +4032,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/currency
-   * @source Backend: App\Http\Controllers\Shop\Customers\ShopCustomersController::api_setCustomerCurrency
-   * @source Route: Backend/routes/xapi.php:270 (also lines 385)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -4260,8 +4074,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/contacts
-   * @source Backend: App\Http\Controllers\Shop\Contact\ShopContactCustomersController::api_getCustomerShopContacts
-   * @source Route: Backend/routes/xapi.php:286
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4303,8 +4115,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/contacts/{contact_id}
-   * @source Backend: App\Http\Controllers\Shop\Contact\ShopContactCustomersController::api_sendContactMessage
-   * @source Route: Backend/routes/xapi.php:280
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4352,8 +4162,6 @@ export class XAPI {
    * TODO: This SDK URL is not backed by an active storefront route in the inspected backend source.
    *
    * @endpoint DELETE /shops/@{shop}/contacts/{contact_id}/{index}
-   * @source Backend: App\Http\Controllers\Shop\Contact\ShopContactCustomersController::api_removeContactResponse
-   * @source Route: Backend/routes/xapi.php:281 (commented out)
    * @auth TODO: Route is commented out in `Backend/routes/xapi.php`; do not treat this URL as active until backend route is restored.
    *
    * Path parameters:
@@ -4400,8 +4208,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/contacts/{contact_id}/close
-   * @source Backend: App\Http\Controllers\Shop\Contact\ShopContactCustomersController::api_closeMyContactTicket
-   * @source Route: Backend/routes/xapi.php:282
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4444,8 +4250,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/contacts/{contact_id}/rate
-   * @source Backend: App\Http\Controllers\Shop\Contact\ShopContactCustomersController::api_rateMyShopTicket
-   * @source Route: Backend/routes/xapi.php:283
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4490,8 +4294,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/channels/instagram
-   * @source Backend: App\Http\Controllers\Samin\SocialSell\InstagramController::api_fetchPublicDataFromInstagram
-   * @source Route: Backend/routes/xapi.php:454
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -4533,8 +4335,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/avocado
-   * @source Backend: App\Http\Controllers\Shop\Order\Avocado\AvocadoBuyerController::xapi_getMyOpenAvocado
-   * @source Route: Backend/routes/xapi.php:290
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4576,8 +4376,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/avocados
-   * @source Backend: App\Http\Controllers\Shop\Order\Avocado\AvocadoBuyerController::xapi_getMyAvocadosHistory
-   * @source Route: Backend/routes/xapi.php:291
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4619,8 +4417,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/avocado/{hash}/items
-   * @source Backend: App\Http\Controllers\Shop\Order\Avocado\AvocadoBuyerController::xapi_addItemToMyOpenAvocado
-   * @source Route: Backend/routes/xapi.php:294
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4663,8 +4459,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /shops/@{shop}/avocado/{hash}/items/{item_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\Avocado\AvocadoBuyerController::xapi_deleteAvocadoItem
-   * @source Route: Backend/routes/xapi.php:295
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4712,8 +4506,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/avocado/{hash}/reserve
-   * @source Backend: App\Http\Controllers\Shop\Order\Avocado\AvocadoBuyerController::xapi_submitAvocadoOrder
-   * @source Route: Backend/routes/xapi.php:296
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4756,8 +4548,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/avocado/{hash}
-   * @source Backend: App\Http\Controllers\Shop\Order\Avocado\AvocadoBuyerController::xapi_getAvocadoInfo
-   * @source Route: Backend/routes/xapi.php:518
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -4799,8 +4589,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/@{shop}/avocado/{hash}
-   * @source Backend: App\Http\Controllers\Shop\Order\Avocado\AvocadoBuyerController::xapi_setReceiverInfoAvocado
-   * @source Route: Backend/routes/xapi.php:519
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -4842,8 +4630,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/avocado/{hash}/pay/{gateway}
-   * @source Backend: App\Http\Controllers\Shop\Order\Avocado\AvocadoPaymentController::xapi_PayAvocado
-   * @source Route: Backend/routes/xapi.php:520
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -4886,8 +4672,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/avo-baskets/{avocado_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\Avocado\AvocadoBuyerController::xapi_getMyOrderInfo
-   * @source Route: Backend/routes/xapi.php:225
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4931,8 +4715,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/hyper
-   * @source Backend: App\Http\Controllers\Shop\Order\Hyper\HyperBuyerController::xapi_getMyOpenHyper
-   * @source Route: Backend/routes/xapi.php:300
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -4974,8 +4756,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/hyper/items
-   * @source Backend: App\Http\Controllers\Shop\Order\Hyper\HyperBuyerController::xapi_addItemToMyOpenHyper
-   * @source Route: Backend/routes/xapi.php:303
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5017,8 +4797,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/hypers
-   * @source Backend: App\Http\Controllers\Shop\Order\Hyper\HyperBuyerController::xapi_getMyHypersHistory
-   * @source Route: Backend/routes/xapi.php:301
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5060,8 +4838,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/hyper/pay/{gateway}
-   * @source Backend: App\Http\Controllers\Shop\Order\Hyper\HyperBuyerController::xapi_buyHyperOrder
-   * @source Route: Backend/routes/xapi.php:305
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5104,8 +4880,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /shops/@{shop}/hyper/items/{item_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\Hyper\HyperBuyerController::xapi_deleteHyperItem
-   * @source Route: Backend/routes/xapi.php:304
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5148,8 +4922,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/hyper/{hyper_id}
-   * @source Backend: App\Http\Controllers\Shop\Order\Hyper\HyperBuyerController::xapi_getHyperInfo
-   * @source Route: Backend/routes/xapi.php:308
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5197,8 +4969,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /paypal-standard/@{shop}/verify
-   * @source Backend: App\Http\Controllers\Gateway\PaypalStandard\PaypalStandardController::xapi_verifyOrder
-   * @source Route: Backend/routes/xapi.php:541
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -5244,8 +5014,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/{shop_id}/seo-audit/articles/{article_id}
-   * @source Backend: App\Http\Controllers\Samin\SEO\ShopSEOAuditingController::auditArticle
-   * @source Route: Backend/routes/xapi.php:592
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5289,8 +5057,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/{shop_id}/converter/word/html
-   * @source Backend: App\Http\Controllers\Samin\Blog\BlogImportController::importWordForShop
-   * @source Route: Backend/routes/xapi.php:596
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5333,8 +5099,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/{shop_id}/products/{product_id}/translate-article
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductTranslateController::api_productTranslateArticle
-   * @source Route: Backend/routes/xapi.php:599
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5381,8 +5145,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /articles/{article_id}/like
-   * @source Backend: App\Http\Controllers\Social\ArticleController::likeArticle
-   * @source Route: Backend/routes/xapi.php:602
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5424,8 +5186,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /articles/{article_id}/star
-   * @source Backend: App\Http\Controllers\Social\ArticleController::starArticle
-   * @source Route: Backend/routes/xapi.php:603
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5467,8 +5227,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /articles/{article_id}/claps
-   * @source Backend: App\Http\Controllers\Samin\Users\Bonus\PowerController::apiGetPowerReadArticle
-   * @source Route: Backend/routes/xapi.php:604
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5510,8 +5268,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /articles/{article_id}/report/{category}
-   * @source Backend: App\Http\Controllers\Social\ArticleController::apiReportArticle
-   * @source Route: Backend/routes/xapi.php:605
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5555,8 +5311,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/{shop_id}/timeline/articles
-   * @source Backend: App\Http\Controllers\Social\ArticleController::getShopArticleTimeLine
-   * @source Route: Backend/routes/xapi.php:608
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5599,8 +5353,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /article/{type}/edit
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductArticleController / App\Http\Controllers\Shop\Blog\ShopBlogController::api_addOrUpdateProductArticle / api_addOrUpdateBlogArticle
-   * @source Route: Backend/routes/xapi.php:611-612
    * @auth Customer token (`auth:api`). `type` dispatches to `product` or `shop-blog` routes.
    *
    * Path parameters:
@@ -5649,8 +5401,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /article/product/upload/{shop_id}
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductArticleController::uploadArticleImageProduct
-   * @source Route: Backend/routes/xapi.php:615
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5694,8 +5444,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/{shop_id}/blogs/upload
-   * @source Backend: App\Http\Controllers\Shop\Blog\ShopBlogController::uploadArticleImageBlog
-   * @source Route: Backend/routes/xapi.php:616
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5738,8 +5486,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /article/{type}/{article_id}
-   * @source Backend: App\Http\Controllers\Shop\Product\ProductArticleController / App\Http\Controllers\Shop\Blog\ShopBlogController::api_DeleteProductArticle / api_DeleteShopBlogArticle
-   * @source Route: Backend/routes/xapi.php:619-620
    * @auth Customer token (`auth:api`). `type` dispatches to `product` or `shop-blog` routes.
    *
    * Path parameters:
@@ -5783,8 +5529,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/{shop_id}/articles/tags
-   * @source Backend: App\Http\Controllers\Shop\Blog\ShopBlogController::api_getShopArticleTags
-   * @source Route: Backend/routes/xapi.php:624
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5826,8 +5570,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /shops/{shop_id}/articles/tags
-   * @source Backend: App\Http\Controllers\Shop\Blog\ShopBlogController::api_editShopArticleTag
-   * @source Route: Backend/routes/xapi.php:623
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5869,8 +5611,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/{shop_id}/articles/tags/{article_id}
-   * @source Backend: App\Http\Controllers\Social\ArticleController::api_setShopArticleTags
-   * @source Route: Backend/routes/xapi.php:625
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5917,8 +5657,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /article/{article_id}/comment
-   * @source Backend: App\Http\Controllers\Social\ArticleController::addComment
-   * @source Route: Backend/routes/xapi.php:629
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -5960,8 +5698,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint PUT /comment/{comment_id}
-   * @source Backend: App\Http\Controllers\Social\ArticleController::updateComment
-   * @source Route: Backend/routes/xapi.php:630
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -6003,8 +5739,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /comment/{comment_id}
-   * @source Backend: App\Http\Controllers\Social\ArticleController::deleteComment
-   * @source Route: Backend/routes/xapi.php:631
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -6047,8 +5781,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /user/follow/{following_user_id}
-   * @source Backend: App\Http\Controllers\Samin\Community\FollowController::follow
-   * @source Route: Backend/routes/xapi.php:634
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -6090,8 +5822,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/baskets/{basket_id}/chat
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketChatCustomerController::xapi_addChat
-   * @source Route: Backend/routes/xapi.php:312 (also lines 388)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -6137,8 +5867,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /shops/@{shop}/baskets/{basket_id}/chat/{message_index}
-   * @source Backend: App\Http\Controllers\Shop\Order\Basket\BasketChatCustomerController::xapi_deleteChat
-   * @source Route: Backend/routes/xapi.php:313 (also lines 389)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -6188,8 +5916,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/vendors
-   * @source Backend: App\Http\Controllers\Shop\Marketplace\ShopPublicVendorsController::xapi_getVendorsList
-   * @source Route: Backend/routes/xapi.php:503
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6230,8 +5956,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/vendors/{vendor_id}
-   * @source Backend: App\Http\Controllers\Shop\Marketplace\ShopPublicVendorsController::xapi_getVendorInfo
-   * @source Route: Backend/routes/xapi.php:504
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6273,8 +5997,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/vendors/{vendor_id}/page
-   * @source Backend: App\Http\Controllers\Shop\Marketplace\ShopPublicVendorsController::xapi_getVendorPage
-   * @source Route: Backend/routes/xapi.php:505
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6318,8 +6040,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/products/{product_id}/subscribe
-   * @source Backend: App\Http\Controllers\Shop\Order\Subscribe\ShopBuySubscriptionController::xapi_subscribeNow
-   * @source Route: Backend/routes/xapi.php:318
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -6362,8 +6082,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/products/{product_id}/contents
-   * @source Backend: App\Http\Controllers\Shop\Ribbon\ShopProductContentsBuyerController::xapi_getProductContentsList
-   * @source Route: Backend/routes/xapi.php:319
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -6409,8 +6127,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/products/{product_id}/contents/{content_id}/rate
-   * @source Backend: App\Http\Controllers\Shop\Ribbon\ShopProductContentsBuyerController::xapi_ContentSetMyRate
-   * @source Route: Backend/routes/xapi.php:320
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -6467,8 +6183,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/{shop_id}/audience/{access_key}
-   * @source Backend: App\Http\Controllers\Shop\Stream\StreamUserPublicController::api_submitForm
-   * @source Route: Backend/routes/xapi.php:510
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6515,8 +6229,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/{shop_id}/audience/{access_key}
-   * @source Backend: App\Http\Controllers\Shop\Stream\StreamUserPublicController::api_submitForm
-   * @source Route: Backend/routes/xapi.php:510
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6562,8 +6274,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/languages/{language}
-   * @source Backend: App\Http\Controllers\Shop\Options\ShopPublicLanguageController::xapi_getOverridePack
-   * @source Route: Backend/routes/xapi.php:546
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6606,8 +6316,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/cashback
-   * @source Backend: App\Http\Controllers\Shop\Cashback\public\CashbackPublicController::xapi_getEligibleCashback
-   * @source Route: Backend/routes/xapi.php:324 (also lines 393)
    * @auth Optional customer token or guest session. This route is registered in both public and `auth:api` groups.
    *
    * Path parameters:
@@ -6662,8 +6370,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/listing
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingController::info
-   * @source Route: Backend/routes/xapi.php:563
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6704,8 +6410,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/listing/categories
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingCategoriesController::list
-   * @source Route: Backend/routes/xapi.php:564
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6746,8 +6450,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/listing/items
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingItemsController::list
-   * @source Route: Backend/routes/xapi.php:565
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6788,8 +6490,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/listing/items/{item_id}
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingItemsController::get
-   * @source Route: Backend/routes/xapi.php:566
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6834,8 +6534,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/listing/items/{item_id}/reviews
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingItemReviewsController::list
-   * @source Route: Backend/routes/xapi.php:569
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -6877,8 +6575,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/listing/items/{item_id}/reviews
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingItemReviewsController::setMyReview
-   * @source Route: Backend/routes/xapi.php:639
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -6921,8 +6617,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint DELETE /shops/@{shop}/listing/items/{item_id}/reviews
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingItemReviewsController::deleteMyReview
-   * @source Route: Backend/routes/xapi.php:640
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -6969,8 +6663,6 @@ export class XAPI {
    * TODO: This SDK URL is not backed by an active storefront route in the inspected backend source.
    *
    * @endpoint POST /shops/@{shop}/listing/messages
-   * @source Backend: No active storefront controller route found in `Backend/routes/xapi.php`; use `StorefrontShopListingItemMessagesController::send` on `/listing/items/{item}/messages` for active item-level messages.
-   * @source Route: Backend/routes/xapi.php:not found
    * @auth TODO: No active XAPI route found. Active backend route only accepts item-level messages at `/listing/items/{item}/messages`.
    *
    * Path parameters:
@@ -7011,8 +6703,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint POST /shops/@{shop}/listing/items/{item}/messages
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingItemMessagesController::send
-   * @source Route: Backend/routes/xapi.php:644
    * @auth Customer token (`auth:api`).
    *
    * Path parameters:
@@ -7057,8 +6747,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/listing/compare
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingItemsCompareController::get
-   * @source Route: Backend/routes/xapi.php:575
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
@@ -7106,8 +6794,6 @@ export class XAPI {
    * TODO: This SDK URL is not backed by an active storefront route in the inspected backend source.
    *
    * @endpoint GET /shops/@{shop}/listing/search
-   * @source Backend: No active storefront controller route found in `Backend/routes/xapi.php`; dashboard search settings live under `App\Http\Controllers\Selldone\Listing\Search` but are not XAPI routes.
-   * @source Route: Backend/routes/xapi.php:not found
    * @auth TODO: No active storefront XAPI route found. Dashboard search-settings controllers exist under `App\Http\Controllers\Selldone\Listing\Search`, but are not registered in `routes/xapi.php`.
    *
    * Path parameters:
@@ -7153,8 +6839,6 @@ export class XAPI {
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
    * @endpoint GET /shops/@{shop}/listing/badges
-   * @source Backend: App\Http\Controllers\Shop\Listing\StorefrontShopListingBadgesController::list
-   * @source Route: Backend/routes/xapi.php:571
    * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
    *
    * Path parameters:
