@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023. Selldone® Business OS™
  *
  * Author: M.Pajuhaan
@@ -1597,6 +1597,17 @@ export class XAPI {
 
   // ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
+  /**
+   * Build the XAPI URL for customer order withdrawal.
+   *
+   * @endpoint POST /shops/@{shop}/baskets/{basket_id}/withdraw
+   */
+  POST_ORDER_BASKET_WITHDRAW(
+    shop_name: string,
+    basket_id: string | number,
+  ): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/withdraw`;
+  }
   /**
    * Build the XAPI URL for order basket info.
    *
