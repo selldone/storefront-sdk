@@ -1651,6 +1651,19 @@ export class XAPI {
   }
 
   /**
+   * Build the XAPI URL for downloading a customer's order receipt as PDF.
+   *
+   * @endpoint GET /shops/@{shop}/baskets/{basket_id}/receipt/pdf
+   * @auth Optional customer token, matching guest order code, or a valid signed order link.
+   */
+  GET_ORDER_BASKET_RECEIPT(
+    shop_name: string,
+    basket_id: string | number,
+  ): string {
+    return `${this.selldone_xapi_url}/shops/@${shop_name}/baskets/${basket_id}/receipt/pdf`;
+  }
+
+  /**
    * Build the XAPI URL for order pos basket info.
    *
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
