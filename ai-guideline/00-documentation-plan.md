@@ -14,7 +14,7 @@ The generated storefront must cover:
 - Basket, checkout, payment, typed order dashboards, guest checkout, coupons, offers, lottery prizes, returns, and share/import flows.
 - Customer account: profile, addresses, order histories, returns, favorites, comments, gift cards, and wallets.
 - Content: page-builder pages, include pages, blogs, official profiles, contact, FAQ, and article interactions.
-- Special flows: avocado, hyper, POS, Instagram channel, maps, marketplace vendors, listing directory, and community.
+- Special flows: avocado, hyper, POS, maps, marketplace vendors, listing directory, and community.
 
 ## Source Of Truth
 
@@ -34,11 +34,11 @@ The generated storefront must cover:
 
 | File | Coverage |
 |---|---|
-| `_generated/route-index.md` | 63 normalized public route patterns. |
-| `_generated/api-url-builders.md` | 119 first-pass XAPI endpoint rows using `https://xapi.selldone.com`. |
-| `_generated/api-url-builders-supplement.md` | 39 additional URL builders extracted from `XAPI.ts` method bodies. |
+| `_generated/route-index.md` | 62 normalized public route patterns. |
+| `_generated/api-url-builders.md` | 118 first-pass XAPI endpoint rows using `https://xapi.selldone.com`. |
+| `_generated/api-url-builders-supplement.md` | 38 additional URL builders extracted from `XAPI.ts` method bodies. |
 | `_generated/api-usage-by-area.md` | 63 observed SDK/source XAPI usages grouped by storefront area. |
-| `_generated/source-module-index.md` | 185 storefront source files grouped by area. |
+| `_generated/source-module-index.md` | 184 storefront source files grouped by area. |
 
 ## Manual Guide Files
 
@@ -65,7 +65,7 @@ The generated storefront must cover:
 | `storefront/04-basket-checkout-payment.md` | Cart, checkout, payment, order details. |
 | `storefront/05-user-account-orders.md` | Account dashboard and customer histories. |
 | `storefront/06-content-pages-blog-faq.md` | Pages, profiles, blog, contact, FAQ. |
-| `storefront/07-special-commerce-flows.md` | Avocado, hyper, POS, Instagram, maps, vendors. |
+| `storefront/07-special-commerce-flows.md` | Avocado, hyper, POS, maps, vendors. |
 | `storefront/08-listing-directory.md` | Listing/directory product. |
 | `storefront/09-community-localization-integrations.md` | Community, localization, currency, headers, integrations. |
 | `storefront/10-product-pricing-marketplace-options.md` | Price calculation, custom pricing, variants, marketplace vendors, subscriptions, buy payload. |

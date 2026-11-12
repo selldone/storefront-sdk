@@ -99,7 +99,6 @@ Use this as a coverage checklist for a complete Selldone storefront.
 | Avocado | Inquiry/open order, hash cart, reserve, pay, history, dashboard. |
 | Hyper | Open cart, item add/delete, history, pay, order page. |
 | POS | `/pos/:basket_id` cart view and `/orders/pos/POS-:basket_id` dashboard. |
-| Instagram | `/instagram` channel page and product info. |
 | Marketplace vendors | Vendors list, vendor info, vendor page. |
 | Map vendors | `/map-vendors` fullscreen map. |
 | Listing directory | Categories, items, item profile, reviews, badges, compare. |

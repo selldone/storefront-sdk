@@ -138,7 +138,6 @@ Use login gate for protected pages.
 | Avocado | Inquiry/order form by hash, reserve, item edit, payment, order dashboard. |
 | Hyper | Open cart, item edit, history, payment, order detail. |
 | POS | Scan/open POS basket and show authenticated POS order detail. |
-| Instagram | Channel-specific product/social feed and product links. |
 | Map | Fullscreen product/vendor map with route chrome disabled. |
 | Listing | Directory categories, filters, location, item profile, reviews, compare. |
 | Community | Home/feed/category/topic pages integrated into storefront routing. |

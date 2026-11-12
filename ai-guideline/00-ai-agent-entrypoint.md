@@ -57,7 +57,7 @@ The registry should store at least this shape:
 |---|---|
 | App bootstrap | Meta tags, SDK setup, XAPI base, CDN base, shop prefix, custom home, theme variables, language, PWA, native app mode. |
 | Shop shell | Global shop context, header, search, top menu, footer, support, social buttons, campaign banners, popups, comparison, payment dialog, cookie consent, notifications, private-shop access check. |
-| Commerce discovery | Home, page builder landing pages, shop listing, category listing, vendor listing, product cards, quick buy, map products/vendors, Instagram channel. |
+| Commerce discovery | Home, page builder landing pages, shop listing, category listing, vendor listing, product cards, quick buy, map products/vendors. |
 | Product detail | Product overview, images, share, brand, ratings, variants, marketplace vendor selector, price, tax, cashback, coupons, buy button, waiting lists, auctions, valuation, service preferences, subscription plan selector, article, files, membership content, shipping, warranty, guide, comments, related products/categories, cross-sell, offers. |
 | Basket and checkout | Basket by type, item add/remove, coupon, lottery prize, discount code, cross-selling discount, receiver info, delivery options, pickup, billing, form data, calculated bill, COD, gateway payment, subscription payment, service submit, share order, imported baskets. |
 | Customer account | Login by OAuth/SMS/email, profile, addresses, wishlist, comments, gift cards, wallets, return requests, order history, logout, leave shop, subscribe to shop, currency preference, push FCM token. |

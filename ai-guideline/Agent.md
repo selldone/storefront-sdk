@@ -26,7 +26,7 @@ You are building a Selldone customer storefront in the user's requested framewor
 8. Basket, checkout, payment, order detail, including `storefront/11-checkout-payment-account-deep-dive.md`.
 9. Customer account.
 10. Content pages/blog/FAQ.
-11. Special flows: avocado, hyper, POS, Instagram, maps, listing, community.
+11. Special flows: avocado, hyper, POS, maps, listing, community.
 
 ## Required Routes
 
@@ -50,7 +50,7 @@ You are building a Selldone customer storefront in the user's requested framewor
 - `/in/:path-:include_id`
 - `/blog/**`
 - `/about-us`, `/terms`, `/privacy`, `/contact-us`, `/faq/:tag?`
-- `/avocado/**`, `/hyper/**`, `/pos/:basket_id`, `/instagram`, `/map`, `/map-vendors`
+- `/avocado/**`, `/hyper/**`, `/pos/:basket_id`, `/map`, `/map-vendors`
 - `/listing/**`
 - `/community/**`
 - `/:pathMatch(.*)*`

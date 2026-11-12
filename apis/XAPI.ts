@@ -790,51 +790,6 @@ export class XAPI {
   }
 
   /**
-   * Build the XAPI URL for product info instagram.
-   *
-   * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
-   *
-   * @endpoint GET /shops/@{shop}/products/{product_id}/info-instagram
-   * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
-   *
-   * Path parameters:
-   * - `shop_name`: Public shop name passed to the `{shop}` route binding after `@`; missing or penalized shops return 404 in `RouteServiceProvider`.
-   * - `product_id`: Product id from `shop_products.id`.
-   *
-   * Query parameters:
-   * - No query string is appended by this SDK method unless shown in its URL template. Any controller-specific query filters are read directly by the cited backend method.
-   *
-   * Request body:
-   * - No request body.
-   *
-   * Response:
-   * - `product`: {@link Product} with loaded storefront relations such as `productVariants`, `images`, `ratings`, `category`, `page`, `files`, `extraPricings`, `includes`, `vendor_products`, or subscription prices depending on product type and controller.
-   * - Authenticated requests may also include `my_ratings` and `informs` arrays.
-   *
-   * Possible errors:
-   * - 400 `bad_request`: malformed input or a business-rule rejection from the controller.
-   * - 404 `not_found`: shop route binding failed or the addressed resource does not belong to the shop/user.
-   * - 422 `validation_error`: Laravel validation failure with field-level errors.
-   * - 429 `too_many_requests`: XAPI or login throttle limit exceeded.
-   *
-   * @returns Absolute XAPI URL string based on the `selldone-xapi` meta tag.
-   *
-   * @example
-   * ```ts
-   * const xapi = new XAPI();
-   * const url = xapi.GET_PRODUCT_INFO_INSTAGRAM("my-shop", 123);
-   * const response = await fetch(url, { method: "GET" });
-   * const data = await response.json();
-   * ```
-   */
-  GET_PRODUCT_INFO_INSTAGRAM(
-    shop_name: string,
-    product_id: string | number,
-  ): string {
-    return `${this.selldone_xapi_url}/shops/@${shop_name}/products/${product_id}/info-instagram`;
-  }
-
-  /**
    * Build the XAPI URL for product info hyper.
    *
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
@@ -4308,48 +4263,6 @@ export class XAPI {
    */
   PUT_SHOP_TICKET_RATE(shop_name: string, contact_id: number | string) {
     return `${this.selldone_xapi_url}/shops/@${shop_name}/contacts/${contact_id}/rate`;
-  }
-
-  //―――――――――――――――――――――― Instagram ――――――――――――――――――――
-
-  /**
-   * Build the XAPI URL for instagram data.
-   *
-   * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
-   *
-   * @endpoint GET /shops/@{shop}/channels/instagram
-   * @auth Public. The global `customer-access` middleware may attach guest/customer context when available.
-   *
-   * Path parameters:
-   * - `shop_name`: Public shop name passed to the `{shop}` route binding after `@`; missing or penalized shops return 404 in `RouteServiceProvider`.
-   *
-   * Query parameters:
-   * - No query string is appended by this SDK method unless shown in its URL template. Any controller-specific query filters are read directly by the cited backend method.
-   *
-   * Request body:
-   * - No request body.
-   *
-   * Response:
-   * - Raw Selldone JSON response returned by the cited controller. Success responses commonly include `success: true` plus endpoint-specific keys; validation failures use Laravel validation error JSON.
-   *
-   * Possible errors:
-   * - 400 `bad_request`: malformed input or a business-rule rejection from the controller.
-   * - 404 `not_found`: shop route binding failed or the addressed resource does not belong to the shop/user.
-   * - 422 `validation_error`: Laravel validation failure with field-level errors.
-   * - 429 `too_many_requests`: XAPI or login throttle limit exceeded.
-   *
-   * @returns Absolute XAPI URL string based on the `selldone-xapi` meta tag.
-   *
-   * @example
-   * ```ts
-   * const xapi = new XAPI();
-   * const url = xapi.GET_INSTAGRAM_DATA("my-shop");
-   * const response = await fetch(url, { method: "GET" });
-   * const data = await response.json();
-   * ```
-   */
-  GET_INSTAGRAM_DATA(shop_name: string) {
-    return `${this.selldone_xapi_url}/shops/@${shop_name}/channels/instagram`;
   }
 
   //―――――――――――――――――――――― Avocado ――――――――――――――――――――

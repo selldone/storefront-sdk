@@ -55,7 +55,7 @@ Use `https://xapi.selldone.com` as the default public storefront API base. Do no
 
 ## Coverage Baseline
 
-The generated baseline includes 63 route patterns, 158 XAPI URL builders: 119 first-pass endpoint rows plus 39 supplement rows, 63 observed API usages, and 185 storefront source files. Full coverage means every module in `06-feature-inventory.md` has a route or reachable UI, every route in `_generated/route-index.md` is handled, and every implemented network call uses a full endpoint from `_generated/api-url-builders.md` or `_generated/api-url-builders-supplement.md`.
+The generated baseline includes 62 route patterns, 156 XAPI URL builders: 118 first-pass endpoint rows plus 38 supplement rows, 63 observed API usages, and 184 storefront source files. Full coverage means every module in `06-feature-inventory.md` has a route or reachable UI, every route in `_generated/route-index.md` is handled, and every implemented network call uses a full endpoint from `_generated/api-url-builders.md` or `_generated/api-url-builders-supplement.md`.
 
 
 

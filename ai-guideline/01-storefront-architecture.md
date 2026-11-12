@@ -131,7 +131,7 @@ Primary auth endpoints:
 | `requiresAuth` | Enforce authenticated customer. |
 | `title` | SEO title fallback. |
 | `dark`, `light_header`, `transparent_header` | Header/text treatment. |
-| `channel` | Channel-specific mode, for example Instagram. |
+| `channel` | Optional entry-channel attribution for channel-aware navigation. |
 | `card` | Account card/chrome treatment. |
 
 ## Error And Loading Behavior

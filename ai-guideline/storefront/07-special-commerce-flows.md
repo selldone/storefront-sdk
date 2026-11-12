@@ -81,26 +81,6 @@ UI requirements:
 - Basket/order summary.
 - Auth gate where route metadata requires it.
 
-## Instagram Channel
-
-Route:
-
-`/instagram`
-
-Endpoint:
-
-`GET https://xapi.selldone.com/shops/@{shop}/channels/instagram`
-
-Product endpoint:
-
-`GET https://xapi.selldone.com/shops/@{shop}/instagram/product/{product_id}`
-
-UI requirements:
-
-- Channel-specific layout.
-- Product/social media cards.
-- Links to normal product detail where appropriate.
-
 ## Maps
 
 Routes:

@@ -99,7 +99,6 @@ Preserve order type prefixes.
 |---|---|
 | Product map | `/map` |
 | Vendor map | `/map-vendors` |
-| Instagram channel | `/instagram` |
 | Avocado order form | `/avocado/:hash` |
 | Avocado inquiry | `/avocado` |
 | Hyper order detail | `/hyper/:basket_id` |
@@ -139,6 +138,6 @@ The final route is `/:pathMatch(.*)*`. Add it after every specific route, includ
 | `comparison` | Product comparison floating entry. |
 | `support` | Support/contact widgets. |
 | `fullscreen` | Map/POS/special fullscreen pages. |
-| `channel` | Channel-specific pages like Instagram. |
+| `channel` | Optional entry-channel attribution for channel-aware navigation. |
 | `title` | SEO fallback. |
 

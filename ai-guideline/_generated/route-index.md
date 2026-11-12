@@ -51,7 +51,6 @@ Generated from `src/Applications/Storefront/router/StorefrontRouter.ts` and norm
 | Avocado order detail | `/orders/avocado/AVO-:basket_id` | `AvocadoOrderDetailPage` | `StorefrontPageAvocadoOrderDashboard` | requiresAuth | `src/Applications/Storefront/router/StorefrontRouter.ts:778` |
 | Map products | `/map` | `StorefrontRoutesName.MAP_PRODUCTS_PAGE` | `StorefrontPageMapProducts` | fullscreen map products | `src/Applications/Storefront/router/StorefrontRouter.ts:796` |
 | Map vendors | `/map-vendors` | `unnamed` | `StorefrontPageMapVendors` | fullscreen map vendors | `src/Applications/Storefront/router/StorefrontRouter.ts:804` |
-| Instagram channel | `/instagram` | `InstagramPage` | `StorefrontPageInstagram` | channel=instagram | `src/Applications/Storefront/router/StorefrontRouter.ts:829` |
 | Avocado order form by hash | `/avocado/:hash` | `AvocadoOrderPage` | `StorefrontPageAvocadoCart` | open avocado order cart | `src/Applications/Storefront/router/StorefrontRouter.ts:854` |
 | Avocado inquiry | `/avocado` | `StorefrontRoutesName.AVOCADO_PAGE` | `StorefrontPageAvocado` | avocado inquiry page | `src/Applications/Storefront/router/StorefrontRouter.ts:866` |
 | Hyper order detail | `/hyper/:basket_id` | `HyperOrderPage` | `StorefrontPageHyperOrder` | hyper order page | `src/Applications/Storefront/router/StorefrontRouter.ts:882` |

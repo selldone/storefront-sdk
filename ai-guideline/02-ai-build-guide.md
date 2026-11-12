@@ -16,7 +16,7 @@ Do not start from visual components. Start from data contracts, public routes, s
 6. Basket, checkout, payment, and typed order dashboards.
 7. Customer account and order histories.
 8. Content pages, blog, FAQ, and official profiles.
-9. Special flows: avocado, hyper, POS, Instagram, maps, marketplace vendors, listing, community.
+9. Special flows: avocado, hyper, POS, maps, marketplace vendors, listing, community.
 10. SEO, analytics, localization, currency, skeletons, empty states, responsive behavior.
 
 ## Framework-Neutral Project Shape
@@ -32,7 +32,7 @@ Do not start from visual components. Start from data contracts, public routes, s
 | `features/basket` | Cart, bill, checkout, payment, shipping, discounts, order detail. |
 | `features/account` | Login, profile, addresses, orders, returns, wallet, gift cards. |
 | `features/content` | Page builder, include pages, blog, official profiles, FAQ. |
-| `features/special` | Avocado, hyper, POS, Instagram, maps, listing, community. |
+| `features/special` | Avocado, hyper, POS, maps, listing, community. |
 
 ## API Client Requirements
 

@@ -186,7 +186,6 @@ Generated from `src/Applications/Storefront`. This is the coverage checklist for
 | `src/Applications/Storefront/pages/hyper/cart/StorefrontPageHyperCart.vue` | Route page or page-local component |
 | `src/Applications/Storefront/pages/hyper/order/StorefrontPageHyperOrder.vue` | Route page or page-local component |
 | `src/Applications/Storefront/pages/info/StorefrontPageInfo.vue` | Route page or page-local component |
-| `src/Applications/Storefront/pages/instagram/StorefrontPageInstagram.vue` | Route page or page-local component |
 | `src/Applications/Storefront/pages/landing/StorefrontPageLanding.vue` | Route page or page-local component |
 | `src/Applications/Storefront/pages/listing/compare/StorefrontPageListingCompare.vue` | Route page or page-local component |
 | `src/Applications/Storefront/pages/listing/item/StorefrontPageListingItem.vue` | Route page or page-local component |

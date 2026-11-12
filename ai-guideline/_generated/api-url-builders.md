@@ -7,7 +7,7 @@ Rules:
 - Do not invent REST paths. If an endpoint is marked `todo`, verify backend availability before production use.
 - SDK methods returning local `/xapi/...` are normalized here to `https://xapi.selldone.com/...` for framework-independent clients.
 
-Total builders: 119
+Total builders: 118
 
 ## address
 
@@ -87,7 +87,6 @@ Total builders: 119
 
 | Builder | Method | Full endpoint | Auth | Status | Source |
 |---|---|---|---|---|---|
-| `GET_INSTAGRAM_DATA(shop_name: string)` | `GET` | `https://xapi.selldone.com/shops/@{shop}/channels/instagram` | Public. The global `customer-access` middleware may attach guest/customer context when available. | active-or-sdk-defined | `@selldone/sdk-storefront/apis/XAPI.ts:4327` |
 ## content-pages
 
 | Builder | Method | Full endpoint | Auth | Status | Source |

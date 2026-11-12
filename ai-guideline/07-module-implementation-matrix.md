@@ -76,7 +76,6 @@ Use this matrix for planning, code ownership, and coverage checks.
 | Avocado | `/avocado`, `/avocado/:hash` | avocado endpoints | Open/history, item edit, reserve, customer info, pay. |
 | Hyper | `/hyper`, `/hyper/:basket_id` | hyper endpoints | Open cart, item edit, history, pay, order detail. |
 | POS | `/pos/:basket_id` | `GET https://xapi.selldone.com/shops/@{shop}/pos-baskets/{basket_id}` | Customer POS basket view. |
-| Instagram | `/instagram` | `GET https://xapi.selldone.com/shops/@{shop}/channels/instagram` | Channel page and product links. |
 | Vendor map | `/map-vendors` | vendor/listing data | Fullscreen vendor map. |
 | Listing | `/listing/**` | listing endpoints | Categories/items/profile/reviews/compare. |
 | Community | `/community/**` | CAPI/community SDK | Home, feed, category, topic, comments. |

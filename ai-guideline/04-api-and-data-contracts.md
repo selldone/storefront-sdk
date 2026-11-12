@@ -1,6 +1,6 @@
 ﻿# API And Data Contracts
 
-The complete endpoint baseline is `_generated/api-url-builders.md` plus `_generated/api-url-builders-supplement.md`. Together they contain 158 URL builders from `@selldone/sdk-storefront/apis/XAPI.ts`, normalized as full URLs where the SDK targets XAPI.
+The complete endpoint baseline is `_generated/api-url-builders.md` plus `_generated/api-url-builders-supplement.md`. Together they contain 156 URL builders from `@selldone/sdk-storefront/apis/XAPI.ts`, normalized as full URLs where the SDK targets XAPI.
 
 ## Base URL
 
@@ -85,7 +85,6 @@ Common listing response fields used by UI:
 |---|---|
 | Full product info | `GET https://xapi.selldone.com/shops/@{shop}/products/{product_id}/info` |
 | Product card | `GET https://xapi.selldone.com/shops/@{shop}/products/{product_id}/info-card` |
-| Instagram product | `GET https://xapi.selldone.com/shops/@{shop}/products/{product_id}/info-instagram` |
 | Hyper product | `GET https://xapi.selldone.com/shops/@{shop}/products/{product_id}/info-hyper` |
 | Product rating | `POST https://xapi.selldone.com/shops/@{shop}/products/{product_id}/set-my-rating` |
 | Add wishlist | `PUT https://xapi.selldone.com/shops/@{shop}/products/{product_id}/wishlist` |
@@ -211,7 +210,6 @@ Checkout data to model:
 | Hyper history | `GET https://xapi.selldone.com/shops/@{shop}/hypers` |
 | Pay hyper | `POST https://xapi.selldone.com/shops/@{shop}/hyper/{basket_id}/pay/{gateway}` |
 | Hyper basket | `GET https://xapi.selldone.com/shops/@{shop}/hyper/{basket_id}` |
-| Instagram channel | `GET https://xapi.selldone.com/shops/@{shop}/channels/instagram` |
 | Vendors list | `GET https://xapi.selldone.com/shops/@{shop}/vendors` |
 | Vendor info | `GET https://xapi.selldone.com/shops/@{shop}/vendors/{vendor_id}` |
 | Vendor page | `GET https://xapi.selldone.com/shops/@{shop}/vendors/{vendor_id}/page` |

@@ -9,12 +9,11 @@ Rules:
 - Item-level basket add/delete/message/preferences use `{product_id}` in the path and `variant_id` in body/query.
 - Basket file delete uses `{basket_id}` and `{file_id}`.
 
-Total supplement builders: 39
+Total supplement builders: 38
 
 | Builder | Method | Full endpoint | Notes | Source |
 |---|---|---|---|---|
 | `GET_PRODUCT_INFO_CARD(shop_name, product_id)` | `GET` | `https://xapi.selldone.com/shops/@{shop}/products/{product_id}/info-card` | Product card/detail helper. | `@selldone/sdk-storefront/apis/XAPI.ts:784` |
-| `GET_PRODUCT_INFO_INSTAGRAM(shop_name, product_id)` | `GET` | `https://xapi.selldone.com/shops/@{shop}/products/{product_id}/info-instagram` | Instagram product info. | `@selldone/sdk-storefront/apis/XAPI.ts:829` |
 | `GET_PRODUCT_INFO_HYPER(shop_name, product_id)` | `GET` | `https://xapi.selldone.com/shops/@{shop}/products/{product_id}/info-hyper` | Hyper product info. | `@selldone/sdk-storefront/apis/XAPI.ts:874` |
 | `POST_SET_PRODUCT_RATING(shop_name, product_id)` | `POST` | `https://xapi.selldone.com/shops/@{shop}/products/{product_id}/set-my-rating` | Product rating submit. | `@selldone/sdk-storefront/apis/XAPI.ts:919` |
 | `PUT_PHYSICAL_ITEM_IN_BASKET(shop_name, product_id)` | `PUT` | `https://xapi.selldone.com/shops/@{shop}/basket/{product_id}` | Add/update basket item. Body carries `variant_id`, `count`, `preferences`, `vendor_product_id`, `price_id`, `currency`. | `@selldone/sdk-storefront/apis/XAPI.ts:966` |
