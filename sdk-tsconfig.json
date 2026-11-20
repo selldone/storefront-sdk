@@ -43,6 +43,7 @@
     "public",
     "dist",
     "standalone",
+    "vitest.config.ts",
     "**/*.test.ts",
     "**/__tests__/**/*",
     "tests"
