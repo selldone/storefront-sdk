@@ -5,7 +5,7 @@
     "declaration": true,
     "outDir": "./dist",
     "importHelpers": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "noEmitOnError": false,
     "composite": false,
     "jsx": "preserve",
@@ -17,9 +17,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "noEmit": false,
-    "downlevelIteration": true,
     "lib": [
       "esnext",
       "dom",

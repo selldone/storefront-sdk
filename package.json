@@ -52,6 +52,7 @@
     "lodash-es": "^4.17.22"
   },
   "devDependencies": {
+    "@typescript/native-cli": "npm:typescript@^7.0.2",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.2",
@@ -66,7 +67,7 @@
     "rollup-plugin-typescript2": "^0.37.0",
     "ts-loader": "^9.5.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
     "jsdom": "^29.1.1",
     "vitest": "^5.1.1"
   }
