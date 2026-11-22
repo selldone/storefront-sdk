@@ -4138,13 +4138,11 @@ export class XAPI {
    *
    * This method only constructs the storefront XAPI endpoint URL; it does not execute the request. Send query/body data with your HTTP client and preserve exact Selldone API/database field names.
    *
-   * TODO: This SDK URL is not backed by an active storefront route in the inspected backend source.
-   *
    * @endpoint DELETE /shops/@{shop}/contacts/{contact_id}/{index}
-   * @auth TODO: Route is commented out in `Backend/routes/xapi.php`; do not treat this URL as active until backend route is restored.
+   * @auth This endpoint is currently inactive.
    *
    * Path parameters:
-   * - `shop_name`: Public shop name passed to the `{shop}` route binding after `@`; missing or penalized shops return 404 in `RouteServiceProvider`.
+   * - `shop_name`: Public shop name after `@`. Missing or penalized shops return 404.
    * - `contact_id`: Customer support/contact ticket id.
    * - `index`: Message index inside the ticket message array.
    *
